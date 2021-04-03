@@ -1,0 +1,60 @@
+@import '../../Variables';
+
+.brand {
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.site-header {
+  position: relative;
+  background-color: $primary-color;
+}
+
+.site-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-header__wrapper {
+}
+.site-header__wrapper > * {
+  flex: 1;
+}
+.site-header__start {
+  text-align: center;
+}
+
+.site-header__middle {
+  order: -1;
+}
+
+.site-header__end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav__wrapper {
+  display: flex;
+  padding-inline-start: unset;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.nav__item a {
+  display: block;
+  padding: 1.5rem 1rem;
+}
+
+.nav__item a {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav__toggle {
+  display: none;
+}

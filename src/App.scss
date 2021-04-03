@@ -1,0 +1,35 @@
+@import 'Variables';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.wrapper {
+  max-width: 1400px;
+  width: calc(100% - 80px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: $padding-large;
+}
+
+.page__wrapper {
+  margin-top: $padding;
+  background-color: $background-color-container;
+
+  .page__container {
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $text-color-light;
+}
+
+ul {
+  list-style-type: none;
+}
