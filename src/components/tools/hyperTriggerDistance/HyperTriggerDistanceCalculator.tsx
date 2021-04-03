@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import HyperTriggerDistanceForm from "./HyperTriggerDistanceForm";
+import HyperTriggerDistanceForm from './HyperTriggerDistanceForm'
 
 export default function HyperTriggerDistanceCalculator() {
   const [circleSize, setCircleSize] = useState(4.0)
@@ -66,7 +66,12 @@ export default function HyperTriggerDistanceCalculator() {
   return (
     <div className="row">
       <div className="col-6">
-        <HyperTriggerDistanceForm bpm={bpm} setBpm={setBpm} circleSize={circleSize} setCircleSize={setCircleSize} />
+        <HyperTriggerDistanceForm
+          bpm={bpm}
+          setBpm={setBpm}
+          circleSize={circleSize}
+          setCircleSize={setCircleSize}
+        />
       </div>
       <table className="col-6">
         <tr>
@@ -77,12 +82,8 @@ export default function HyperTriggerDistanceCalculator() {
           const key = `result-${index}`
           return (
             <tr key={key}>
-              <td>
-                {value.snapping}
-              </td>
-              <td>
-                {value.distanceNeed}
-              </td>
+              <td>{value.snapping}</td>
+              <td>{value.distanceNeed}</td>
             </tr>
           )
         })}
@@ -106,10 +107,10 @@ interface SnappingResult {
 }
 
 enum Snapping {
-  WHITE_TICK = "1/1 Snap",
-  RED_TICK = "1/2 Snap",
-  PURPLE_TICK = "1/3 Snap",
-  BLUE_TICK = "1/4 Snap",
-  DARK_PURPLE_TICK = "1/6 Snap",
-  YELLOW_TICK = "1/8 Snap"
+  WHITE_TICK = '1/1 Snap',
+  RED_TICK = '1/2 Snap',
+  PURPLE_TICK = '1/3 Snap',
+  BLUE_TICK = '1/4 Snap',
+  DARK_PURPLE_TICK = '1/6 Snap',
+  YELLOW_TICK = '1/8 Snap'
 }

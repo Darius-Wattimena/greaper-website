@@ -17,7 +17,7 @@ export default function Nav() {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li className="nav__item">
-                <NavLink to="/">Guides</NavLink>
+                <NavLink to="/guides">Guides</NavLink>
               </li>
               <li className="nav__item">
                 <NavLink to="/tools">Tools</NavLink>

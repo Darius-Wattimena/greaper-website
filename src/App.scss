@@ -1,7 +1,8 @@
 @import 'Variables';
 
 * {
-  margin: unset
+  margin: unset;
+  color: $text-color;
 }
 
 html,
@@ -34,11 +35,32 @@ body {
   .page__breadcrumb {
     background-color: $secondary-color;
     padding: $padding-small $padding-large;
-    color: $text-color-light;
+
+    .page__breadcrumb-item {
+      &:not(:last-child) {
+        text-decoration: underline;
+      }
+
+      &:not(:first-child) {
+        &::before {
+          content: ' / ';
+        }
+      }
+    }
+
+    * {
+      color: $text-color-light;
+    }
   }
 
   .page__container {
     background-color: $background-color-container;
+    padding: $padding-small $padding-large;
+
+    a,
+    p {
+      color: $text-color;
+    }
   }
 }
 
@@ -47,12 +69,9 @@ a {
   color: $text-color-light;
 }
 
-ul {
-  list-style-type: none;
-}
-
 table {
-  td, th {
+  td,
+  th {
     border: 1px solid $border-color;
     padding: $padding;
   }
@@ -68,7 +87,7 @@ table {
   tr {
     background-color: $background-color-table-striped;
 
-    &:nth-child(even){
+    &:nth-child(even) {
       background-color: $background-color-table;
     }
   }

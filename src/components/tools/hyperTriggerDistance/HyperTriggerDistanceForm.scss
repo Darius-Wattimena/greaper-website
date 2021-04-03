@@ -1,6 +1,7 @@
-@import "../../../Variables";
+@import '../../../Variables';
 
-input[type=number], input[type=text] {
+input[type='number'],
+input[type='text'] {
   width: 100%;
   padding: $padding;
   border: 1px solid #ccc;
