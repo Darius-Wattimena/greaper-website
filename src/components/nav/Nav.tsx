@@ -20,13 +20,20 @@ export default function Nav() {
                 <NavLink to="/">Guides</NavLink>
               </li>
               <li className="nav__item">
-                <NavLink to="/">Tools</NavLink>
+                <NavLink to="/tools">Tools</NavLink>
               </li>
             </ul>
           </nav>
         </div>
         <div className="site-header__end">
-          <a href="#">Sign in</a>
+          <ul className="nav__wrapper">
+            <li className="nav__item">
+              <a href="https://bnplanner.greaper.net">BN Planner</a>
+            </li>
+            <li className="nav__item">
+              <a href="https://osu.ppy.sh/wiki/en/Ranking_Criteria/osu!catch">osu!catch RC</a>
+            </li>
+          </ul>
         </div>
       </div>
     </header>

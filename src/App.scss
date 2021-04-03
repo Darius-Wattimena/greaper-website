@@ -1,5 +1,9 @@
 @import 'Variables';
 
+* {
+  margin: unset
+}
+
 html,
 body {
   height: 100%;
@@ -17,11 +21,24 @@ body {
   padding: $padding-large;
 }
 
-.page__wrapper {
+.page {
   margin-top: $padding;
-  background-color: $background-color-container;
+
+  .page__header {
+    background-color: $primary-color;
+    color: $text-color-light;
+    padding: $padding-small $padding-large;
+    margin: unset;
+  }
+
+  .page__breadcrumb {
+    background-color: $secondary-color;
+    padding: $padding-small $padding-large;
+    color: $text-color-light;
+  }
 
   .page__container {
+    background-color: $background-color-container;
   }
 }
 
@@ -32,4 +49,27 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+table {
+  td, th {
+    border: 1px solid $border-color;
+    padding: $padding;
+  }
+
+  th {
+    padding-top: $padding;
+    padding-bottom: $padding;
+    text-align: left;
+    background-color: $primary-color;
+    color: $text-color-light;
+  }
+
+  tr {
+    background-color: $background-color-table-striped;
+
+    &:nth-child(even){
+      background-color: $background-color-table;
+    }
+  }
 }
