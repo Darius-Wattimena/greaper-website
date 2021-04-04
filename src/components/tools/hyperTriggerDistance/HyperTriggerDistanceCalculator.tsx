@@ -83,23 +83,23 @@ export default function HyperTriggerDistanceCalculator() {
         <div className="row">
           <table className="col-12">
             <thead>
-            <tr>
-              <th>Snap</th>
-              <th>Milliseconds (rounded)</th>
-              <th>Trigger distance (in osu pixels)</th>
-            </tr>
+              <tr>
+                <th>Snap</th>
+                <th>Milliseconds (rounded)</th>
+                <th>Trigger distance (in osu pixels)</th>
+              </tr>
             </thead>
             <tbody>
-            {result.map((value, index) => {
-              const key = `result-${index}`
-              return (
-                <tr key={key}>
-                  <td>{value.snapping}</td>
-                  <td>{Math.round(value.msSnapping)}</td>
-                  <td>{value.distanceNeed}</td>
-                </tr>
-              )
-            })}
+              {result.map((value, index) => {
+                const key = `result-${index}`
+                return (
+                  <tr key={key}>
+                    <td>{value.snapping}</td>
+                    <td>{Math.round(value.msSnapping)}</td>
+                    <td>{value.distanceNeed}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>

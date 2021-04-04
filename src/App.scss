@@ -72,7 +72,8 @@ a {
 table {
   border-spacing: unset;
 
-  td, th {
+  td,
+  th {
     border: 1px solid $border-color;
     padding: $padding;
     text-align: center;
