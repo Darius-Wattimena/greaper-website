@@ -1,0 +1,9 @@
+@import "../../Variables";
+
+.page__markdown {
+  a {
+    font-weight: bold;
+    color: $text-color;
+    text-decoration: underline;
+  }
+}

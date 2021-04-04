@@ -15,5 +15,5 @@ export default function Markdown({ markdownFile }: MarkdownProps) {
       setSource(text)
     })
 
-  return <ReactMarkdown>{source}</ReactMarkdown>
+  return <ReactMarkdown className="page__markdown">{source}</ReactMarkdown>
 }

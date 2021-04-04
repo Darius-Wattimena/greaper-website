@@ -1,7 +1,7 @@
 @import 'Variables';
 
 * {
-  margin: unset;
+  //margin: unset;
   color: $text-color;
 }
 
@@ -70,25 +70,26 @@ a {
 }
 
 table {
-  td,
-  th {
+  border-spacing: unset;
+
+  td, th {
     border: 1px solid $border-color;
     padding: $padding;
+    text-align: center;
   }
 
   th {
     padding-top: $padding;
     padding-bottom: $padding;
-    text-align: left;
     background-color: $primary-color;
     color: $text-color-light;
   }
 
   tr {
-    background-color: $background-color-table-striped;
+    background-color: $background-color-table;
 
     &:nth-child(even) {
-      background-color: $background-color-table;
+      background-color: $background-color-table-striped;
     }
   }
 }

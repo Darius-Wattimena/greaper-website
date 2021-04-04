@@ -16,6 +16,9 @@ export default function HyperTriggerDistanceForm({
 }: HyperTriggerDistanceFormProps) {
   return (
     <form className="row">
+      <div className="col-12 note-col">
+        <p className="note">NOTE: decimal numbers work for both BPM and Circle Size (e.g. 4,5)</p>
+      </div>
       <label htmlFor="bpm" className="col-12">
         BPM
         <input

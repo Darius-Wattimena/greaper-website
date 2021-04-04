@@ -38,26 +38,32 @@ export default function HyperTriggerDistanceCalculator() {
     return [
       {
         snapping: Snapping.WHITE_TICK,
+        msSnapping: snaps.whiteTick,
         distanceNeed: getTriggerDistance(snaps.whiteTick, dashRange)
       },
       {
         snapping: Snapping.RED_TICK,
+        msSnapping: snaps.redTick,
         distanceNeed: getTriggerDistance(snaps.redTick, dashRange)
       },
       {
         snapping: Snapping.PURPLE_TICK,
+        msSnapping: snaps.purpleTick,
         distanceNeed: getTriggerDistance(snaps.purpleTick, dashRange)
       },
       {
         snapping: Snapping.BLUE_TICK,
+        msSnapping: snaps.blueTick,
         distanceNeed: getTriggerDistance(snaps.blueTick, dashRange)
       },
       {
         snapping: Snapping.DARK_PURPLE_TICK,
+        msSnapping: snaps.darkPurpleTick,
         distanceNeed: getTriggerDistance(snaps.darkPurpleTick, dashRange)
       },
       {
         snapping: Snapping.YELLOW_TICK,
+        msSnapping: snaps.yellowTick,
         distanceNeed: getTriggerDistance(snaps.yellowTick, dashRange)
       }
     ]
@@ -73,21 +79,31 @@ export default function HyperTriggerDistanceCalculator() {
           setCircleSize={setCircleSize}
         />
       </div>
-      <table className="col-6">
-        <tr>
-          <th>Snap (of measure)</th>
-          <th>Trigger distance (in osu pixels)</th>
-        </tr>
-        {result.map((value, index) => {
-          const key = `result-${index}`
-          return (
-            <tr key={key}>
-              <td>{value.snapping}</td>
-              <td>{value.distanceNeed}</td>
+      <div className="col-6">
+        <div className="row">
+          <table className="col-12">
+            <thead>
+            <tr>
+              <th>Snap</th>
+              <th>Milliseconds (rounded)</th>
+              <th>Trigger distance (in osu pixels)</th>
             </tr>
-          )
-        })}
-      </table>
+            </thead>
+            <tbody>
+            {result.map((value, index) => {
+              const key = `result-${index}`
+              return (
+                <tr key={key}>
+                  <td>{value.snapping}</td>
+                  <td>{Math.round(value.msSnapping)}</td>
+                  <td>{value.distanceNeed}</td>
+                </tr>
+              )
+            })}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   )
 }
@@ -103,14 +119,15 @@ interface MillisecondSnappingReference {
 
 interface SnappingResult {
   snapping: Snapping
+  msSnapping: number
   distanceNeed: number
 }
 
 enum Snapping {
-  WHITE_TICK = '1/1 Snap',
-  RED_TICK = '1/2 Snap',
-  PURPLE_TICK = '1/3 Snap',
-  BLUE_TICK = '1/4 Snap',
-  DARK_PURPLE_TICK = '1/6 Snap',
-  YELLOW_TICK = '1/8 Snap'
+  WHITE_TICK = '1/1',
+  RED_TICK = '1/2',
+  PURPLE_TICK = '1/3',
+  BLUE_TICK = '1/4',
+  DARK_PURPLE_TICK = '1/6',
+  YELLOW_TICK = '1/8'
 }
