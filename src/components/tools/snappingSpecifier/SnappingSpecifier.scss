@@ -1,0 +1,13 @@
+@import '../../../Variables';
+
+.snap-type__disallowed {
+  background-color: $red-color;
+}
+
+.snap-type__higher-snapped {
+  background-color: $orange-color;
+}
+
+.snap-type__basic-snapped {
+  background-color: $green-color;
+}

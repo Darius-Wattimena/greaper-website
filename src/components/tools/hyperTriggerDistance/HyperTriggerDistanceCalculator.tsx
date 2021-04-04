@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import HyperTriggerDistanceForm from './HyperTriggerDistanceForm'
+import { MillisecondSnappingReference, Snapping } from '../../../Types'
+import { calculateSnaps } from '../../../utils/MilliSecondsUtil'
 
 export default function HyperTriggerDistanceCalculator() {
   const [circleSize, setCircleSize] = useState(4.0)
@@ -8,27 +10,9 @@ export default function HyperTriggerDistanceCalculator() {
   const [result, setResult] = useState<SnappingResult[]>([])
 
   useEffect(() => {
-    const snaps = calculateSnaps()
+    const snaps = calculateSnaps(bpm)
     setResult(calculateTriggerDistances(snaps))
   }, [circleSize, bpm, sliderVelocity])
-
-  function calculateSnaps(): MillisecondSnappingReference {
-    const oneMeasureMs = 60000 / bpm
-
-    return {
-      whiteTick: oneMeasureMs, // 1/1 snapping
-      redTick: oneMeasureMs / 2, // 1/2 snapping
-      purpleTick: oneMeasureMs / 3, // 1/3 snapping
-      blueTick: oneMeasureMs / 4, // 1/4 snapping
-      darkPurpleTick: oneMeasureMs / 6, // 1/6 snapping
-      yellowTick: oneMeasureMs / 8, // 1/8 snapping
-      oneFive: oneMeasureMs / 5, // 1/5 snapping
-      oneSeven: oneMeasureMs / 7, // 1/7 snapping
-      oneNine: oneMeasureMs / 9, // 1/9 snapping
-      oneTwelve: oneMeasureMs / 12, // 1/12 snapping
-      oneSixteen: oneMeasureMs / 16 // 1/16 snapping
-    }
-  }
 
   function getTriggerDistance(ms: number, dashRange: number): number {
     const timeToNext = ms - 1000 / 60 / 4
@@ -130,37 +114,9 @@ export default function HyperTriggerDistanceCalculator() {
   )
 }
 
-interface MillisecondSnappingReference {
-  whiteTick: number
-  redTick: number
-  purpleTick: number
-  blueTick: number
-  darkPurpleTick: number
-  yellowTick: number
-  oneFive: number
-  oneSeven: number
-  oneNine: number
-  oneTwelve: number
-  oneSixteen: number
-}
-
 interface SnappingResult {
   snapping: Snapping
   msSnapping: number
   xDistance: number
   distanceNeed: number
-}
-
-enum Snapping {
-  WHITE_TICK = '1/1',
-  RED_TICK = '1/2',
-  PURPLE_TICK = '1/3',
-  BLUE_TICK = '1/4',
-  DARK_PURPLE_TICK = '1/6',
-  YELLOW_TICK = '1/8',
-  ONE_FIVE = '1/5',
-  ONE_SEVEN = '1/7',
-  ONE_NINE = '1/9',
-  ONE_TWELVE = '1/12',
-  ONE_SIXTEEN = '1/16'
 }

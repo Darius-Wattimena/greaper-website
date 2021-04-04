@@ -7,10 +7,10 @@ None of the guides are currently done, but I have the following planned:
 - How to set up a pattern
 - Commonly used patterning
 
-Besides this I also intend to make tooling that can help mappers, so far only a [a handful of tools](/tools) are available for use. Those are:
+Besides this I also intend to make tooling that can help mappers, so far only a [handful of tools](/tools) are available for use. Those are:
 
 - Hyperdash Trigger Distance Calculator
 - Ideal Slider Velocity Calculator
-- Snapping Category Specifier (for basic-snapped / higher-snapped)
+- Snapping Specifier (for unrankable / basic-snapped / higher-snapped)
 
 If other tooling is desired then feel free to contact me via discord (Greaper#0001).

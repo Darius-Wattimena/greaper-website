@@ -1,6 +1,7 @@
 import React from 'react'
 import HyperTriggerDistanceCalculator from '../../components/tools/hyperTriggerDistance/HyperTriggerDistanceCalculator'
-import SliderVelocityCalculator from "../../components/tools/svFinder/SliderVelocityCalculator";
+import SliderVelocityCalculator from '../../components/tools/svFinder/SliderVelocityCalculator'
+import SnappingSpecifier from '../../components/tools/snappingSpecifier/SnappingSpecifier'
 
 export default function Tools() {
   return (
@@ -11,8 +12,11 @@ export default function Tools() {
           <h2 className="col-12">Hyperdash Trigger Distance Calculator</h2>
           <HyperTriggerDistanceCalculator />
           <hr />
-          <h2 className="col-12">Ideal Base SV Calculator</h2>
+          <h2 className="col-12">Ideal Slider Velocity Calculator</h2>
           <SliderVelocityCalculator />
+          <hr />
+          <h2 className="col-12">Snapping Specifier</h2>
+          <SnappingSpecifier />
         </div>
       </div>
     </div>

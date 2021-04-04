@@ -5,16 +5,17 @@ interface SliderVelocityFormProps {
   setBpm: React.Dispatch<React.SetStateAction<number>>
 }
 
-export default function SliderVelocityForm({ bpm, setBpm }: SliderVelocityFormProps) {
+export default function SnappingSpecifierForm({ bpm, setBpm }: SliderVelocityFormProps) {
   return (
     <form className="row">
       <div className="col-12 note-col">
         <p className="note">
           <strong className="fake-bold">
-            While the given result is provided as the "ideal SV" please keep in mind to test
-            yourself as well.
+            Note this does not take into account unsnapped objects.
           </strong>{' '}
-          The calculated SVs are based of the catchers speed combined with my personal preference.
+          For example at 240 bpm a 1/2 dash is exactly 125 ms, when one of the two objects is
+          unsnapped for 1 ms it can happen that the time between the two objects is instead 124 ms
+          (which is unrankable).
         </p>
       </div>
       <label htmlFor="bpm" className="col-12">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SliderVelocityForm from './SliderVelocityForm'
+import { Difficulty } from '../../../Types'
 
 export default function SliderVelocityCalculator() {
   const [bpm, setBpm] = useState(180.0)
@@ -57,13 +58,4 @@ export default function SliderVelocityCalculator() {
 interface SliderVelocityResult {
   diff: Difficulty
   sv: number
-}
-
-enum Difficulty {
-  CUP = 'Cup',
-  SALAD = 'Salad',
-  PLATTER = 'Platter',
-  RAIN = 'Rain',
-  OVERDOSE = 'Overdose',
-  DELUGE = 'Deluge'
 }
