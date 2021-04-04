@@ -185,121 +185,121 @@ export default function SnappingSpecifier() {
       <div className="col-8">
         <table>
           <thead>
-          <tr>
-            <th>Difficulty</th>
-            <th>Basic-snapped dash</th>
-            <th>Higher-snapped dash</th>
-            <th>Basic-snapped hyperdash</th>
-            <th>Higher-snapped hyperdash</th>
-          </tr>
+            <tr>
+              <th>Difficulty</th>
+              <th>Basic-snapped dash</th>
+              <th>Higher-snapped dash</th>
+              <th>Basic-snapped hyperdash</th>
+              <th>Higher-snapped hyperdash</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <th>{Difficulty.CUP}</th>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <th>{Difficulty.SALAD}</th>
-            <td>250 ms or higher</td>
-            <td>125-249 ms</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <th>{Difficulty.PLATTER}</th>
-            <td>125 ms or higher</td>
-            <td>62-124 ms</td>
-            <td>250 ms or higher</td>
-            <td>125-249 ms</td>
-          </tr>
-          <tr>
-            <th>{Difficulty.RAIN}</th>
-            <td>125 ms or higher</td>
-            <td>62-124 ms</td>
-            <td>125 ms or higher</td>
-            <td>62-124 ms</td>
-          </tr>
-          <tr>
-            <th>{Difficulty.OVERDOSE}</th>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
+            <tr>
+              <th>{Difficulty.CUP}</th>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th>{Difficulty.SALAD}</th>
+              <td>250 ms or higher</td>
+              <td>125-249 ms</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th>{Difficulty.PLATTER}</th>
+              <td>125 ms or higher</td>
+              <td>62-124 ms</td>
+              <td>250 ms or higher</td>
+              <td>125-249 ms</td>
+            </tr>
+            <tr>
+              <th>{Difficulty.RAIN}</th>
+              <td>125 ms or higher</td>
+              <td>62-124 ms</td>
+              <td>125 ms or higher</td>
+              <td>62-124 ms</td>
+            </tr>
+            <tr>
+              <th>{Difficulty.OVERDOSE}</th>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div className="col-12">
         <table>
           <thead>
-          <tr>
-            <th rowSpan={2}>Difficulty</th>
-            <th colSpan={6}>Dash Snaps</th>
-            <th colSpan={6}>Hyperdash Snaps</th>
-          </tr>
-          <tr>
-            <th>1/1</th>
-            <th>1/2</th>
-            <th>1/3</th>
-            <th>1/4</th>
-            <th>1/6</th>
-            <th>1/8</th>
-            <th>1/1</th>
-            <th>1/2</th>
-            <th>1/3</th>
-            <th>1/4</th>
-            <th>1/6</th>
-            <th>1/8</th>
-          </tr>
+            <tr>
+              <th rowSpan={2}>Difficulty</th>
+              <th colSpan={6}>Dash Snaps</th>
+              <th colSpan={6}>Hyperdash Snaps</th>
+            </tr>
+            <tr>
+              <th>1/1</th>
+              <th>1/2</th>
+              <th>1/3</th>
+              <th>1/4</th>
+              <th>1/6</th>
+              <th>1/8</th>
+              <th>1/1</th>
+              <th>1/2</th>
+              <th>1/3</th>
+              <th>1/4</th>
+              <th>1/6</th>
+              <th>1/8</th>
+            </tr>
           </thead>
           <tbody>
-          {result.map((value, index) => {
-            const key = `result-${index}`
-            return (
-              <tr key={key}>
-                <th>{value.diff}</th>
-                <td className={getClassNameBasedOfSnapType(value.dashSnaps[0])}>
-                  {value.dashSnaps[0]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.dashSnaps[1])}>
-                  {value.dashSnaps[1]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.dashSnaps[2])}>
-                  {value.dashSnaps[2]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.dashSnaps[3])}>
-                  {value.dashSnaps[3]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.dashSnaps[4])}>
-                  {value.dashSnaps[4]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.dashSnaps[5])}>
-                  {value.dashSnaps[5]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[0])}>
-                  {value.hyperdashSnaps[0]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[1])}>
-                  {value.hyperdashSnaps[1]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[2])}>
-                  {value.hyperdashSnaps[2]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[3])}>
-                  {value.hyperdashSnaps[3]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[4])}>
-                  {value.hyperdashSnaps[4]}
-                </td>
-                <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[5])}>
-                  {value.hyperdashSnaps[5]}
-                </td>
-              </tr>
-            )
-          })}
+            {result.map((value, index) => {
+              const key = `result-${index}`
+              return (
+                <tr key={key}>
+                  <th>{value.diff}</th>
+                  <td className={getClassNameBasedOfSnapType(value.dashSnaps[0])}>
+                    {value.dashSnaps[0]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.dashSnaps[1])}>
+                    {value.dashSnaps[1]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.dashSnaps[2])}>
+                    {value.dashSnaps[2]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.dashSnaps[3])}>
+                    {value.dashSnaps[3]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.dashSnaps[4])}>
+                    {value.dashSnaps[4]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.dashSnaps[5])}>
+                    {value.dashSnaps[5]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[0])}>
+                    {value.hyperdashSnaps[0]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[1])}>
+                    {value.hyperdashSnaps[1]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[2])}>
+                    {value.hyperdashSnaps[2]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[3])}>
+                    {value.hyperdashSnaps[3]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[4])}>
+                    {value.hyperdashSnaps[4]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[5])}>
+                    {value.hyperdashSnaps[5]}
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>

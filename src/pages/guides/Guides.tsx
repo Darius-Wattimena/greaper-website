@@ -1,6 +1,6 @@
 import React from 'react'
-import Markdown from "../../components/markdown/Markdown";
-import md from "./Guides.md"
+import Markdown from '../../components/markdown/Markdown'
+import md from './Guides.md'
 
 export default function Guides() {
   return (

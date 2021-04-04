@@ -31,21 +31,21 @@ export default function SliderVelocityCalculator() {
       <div className="col-6">
         <table>
           <thead>
-          <tr>
-            <th>Difficulty</th>
-            <th>Ideal Base SV</th>
-          </tr>
+            <tr>
+              <th>Difficulty</th>
+              <th>Ideal Base SV</th>
+            </tr>
           </thead>
           <tbody>
-          {result.map((value, index) => {
-            const key = `result-${index}`
-            return (
-              <tr key={key}>
-                <th>{value.diff}</th>
-                <td>{Math.ceil(value.sv * 100) / 100}</td>
-              </tr>
-            )
-          })}
+            {result.map((value, index) => {
+              const key = `result-${index}`
+              return (
+                <tr key={key}>
+                  <th>{value.diff}</th>
+                  <td>{Math.ceil(value.sv * 100) / 100}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>

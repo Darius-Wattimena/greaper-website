@@ -10,9 +10,7 @@ export default function SnappingSpecifierForm({ bpm, setBpm }: SliderVelocityFor
     <form className="row">
       <div className="col-12 note-col">
         <p className="note">
-          <strong className="fake-bold">
-            Note this does not take into account unsnapped objects.
-          </strong>{' '}
+          <strong className="fake-bold">This does not take into account unsnapped objects.</strong>{' '}
           For example at 240 bpm a 1/2 dash is exactly 125 ms, when one of the two objects is
           unsnapped for 1 ms it can happen that the time between the two objects is instead 124 ms
           (which is unrankable).

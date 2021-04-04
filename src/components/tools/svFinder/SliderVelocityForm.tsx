@@ -11,7 +11,7 @@ export default function SliderVelocityForm({ bpm, setBpm }: SliderVelocityFormPr
       <div className="col-12 note-col">
         <p className="note">
           <strong className="fake-bold">
-            While the given result is provided as the "ideal SV" please keep in mind to test
+            While the given result is provided as the "Ideal SV" please keep in mind to test
             yourself as well.
           </strong>{' '}
           The calculated SVs are based of the catchers speed combined with my personal preference.
