@@ -1,5 +1,4 @@
 import React from 'react'
-import './HyperTriggerDistanceForm.scss'
 
 interface HyperTriggerDistanceFormProps {
   bpm: number
