@@ -15,5 +15,11 @@ export default function Markdown({ markdownFile }: MarkdownProps) {
       setSource(text)
     })
 
-  return <ReactMarkdown className="page__markdown">{source}</ReactMarkdown>
+  return (
+    <div className="row">
+      <div className="col-12">
+        <ReactMarkdown className="page__markdown">{source}</ReactMarkdown>
+      </div>
+    </div>
+  )
 }

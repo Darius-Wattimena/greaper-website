@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import Markdown from "../../components/markdown/Markdown";
+import md from "./Guides.md"
 
 export default function Guides() {
   return (
@@ -10,23 +11,7 @@ export default function Guides() {
       </div>
       <div className="page__wrapper">
         <div className="page__container">
-          <div>
-            <h2>Available Guides:</h2>
-            <ul>
-              <li>
-                <NavLink to="/guides/rhythm">Rhythm</NavLink>
-              </li>
-              <li>
-                <NavLink to="/guides/flow">Flow</NavLink>
-              </li>
-              <li>
-                <NavLink to="/guides/patterns">Patterns</NavLink>
-              </li>
-              <li>
-                <NavLink to="/guides/common-patterning">Common Patterning</NavLink>
-              </li>
-            </ul>
-          </div>
+          <Markdown markdownFile={md} />
         </div>
       </div>
     </div>

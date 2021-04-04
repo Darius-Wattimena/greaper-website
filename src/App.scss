@@ -12,6 +12,7 @@ body {
 
 body {
   background-color: $background-color;
+  overflow: scroll;
 }
 
 .wrapper {
@@ -99,6 +100,8 @@ a {
 
 table {
   border-spacing: unset;
+  table-layout: fixed;
+  width: 100%;
 
   td,
   th {

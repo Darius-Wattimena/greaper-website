@@ -29,27 +29,25 @@ export default function SliderVelocityCalculator() {
         <SliderVelocityForm bpm={bpm} setBpm={setBpm} />
       </div>
       <div className="col-6">
-        <div className="row">
-          <table className="col-12">
-            <thead>
-              <tr>
-                <th>Difficulty</th>
-                <th>Ideal Base SV</th>
+        <table>
+          <thead>
+          <tr>
+            <th>Difficulty</th>
+            <th>Ideal Base SV</th>
+          </tr>
+          </thead>
+          <tbody>
+          {result.map((value, index) => {
+            const key = `result-${index}`
+            return (
+              <tr key={key}>
+                <th>{value.diff}</th>
+                <td>{Math.ceil(value.sv * 100) / 100}</td>
               </tr>
-            </thead>
-            <tbody>
-              {result.map((value, index) => {
-                const key = `result-${index}`
-                return (
-                  <tr key={key}>
-                    <th>{value.diff}</th>
-                    <td>{Math.ceil(value.sv * 100) / 100}</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+            )
+          })}
+          </tbody>
+        </table>
       </div>
     </div>
   )

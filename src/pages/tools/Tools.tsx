@@ -9,14 +9,20 @@ export default function Tools() {
       <h1 className="page__header">Tools</h1>
       <div className="page__wrapper">
         <div className="page__container">
-          <h2 className="col-12">Hyperdash Trigger Distance Calculator</h2>
-          <HyperTriggerDistanceCalculator />
+          <div className="row">
+            <h2 className="col-12">Hyperdash Trigger Distance Calculator</h2>
+            <HyperTriggerDistanceCalculator />
+          </div>
           <hr />
-          <h2 className="col-12">Ideal Slider Velocity Calculator</h2>
-          <SliderVelocityCalculator />
+          <div className="row">
+            <h2 className="col-12">Ideal Slider Velocity Calculator</h2>
+            <SliderVelocityCalculator />
+          </div>
           <hr />
-          <h2 className="col-12">Snapping Specifier</h2>
-          <SnappingSpecifier />
+          <div className="row">
+            <h2 className="col-12">Snapping Specifier</h2>
+            <SnappingSpecifier />
+          </div>
         </div>
       </div>
     </div>

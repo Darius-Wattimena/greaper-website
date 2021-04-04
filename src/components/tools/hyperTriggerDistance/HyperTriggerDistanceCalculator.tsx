@@ -81,34 +81,32 @@ export default function HyperTriggerDistanceCalculator() {
         />
       </div>
       <div className="col-6">
-        <div className="row">
-          <table className="col-12">
-            <thead>
-              <tr>
-                <th rowSpan={2}>Snap</th>
-                <th rowSpan={2}>Milliseconds</th>
-                <th colSpan={2}>Trigger distance</th>
+        <table>
+          <thead>
+          <tr>
+            <th rowSpan={2}>Snap</th>
+            <th rowSpan={2}>Milliseconds</th>
+            <th colSpan={2}>Trigger distance</th>
+          </tr>
+          <tr>
+            <th>Osu Pixels</th>
+            <th>X Distance</th>
+          </tr>
+          </thead>
+          <tbody>
+          {result.map((value, index) => {
+            const key = `result-${index}`
+            return (
+              <tr key={key}>
+                <td>{value.snapping}</td>
+                <td>{Math.round(value.msSnapping)}</td>
+                <td>{Math.floor(value.distanceNeed)}</td>
+                <td>{Math.ceil(value.xDistance * 100) / 100}</td>
               </tr>
-              <tr>
-                <th>Osu Pixels</th>
-                <th>X Distance</th>
-              </tr>
-            </thead>
-            <tbody>
-              {result.map((value, index) => {
-                const key = `result-${index}`
-                return (
-                  <tr key={key}>
-                    <td>{value.snapping}</td>
-                    <td>{Math.round(value.msSnapping)}</td>
-                    <td>{Math.floor(value.distanceNeed)}</td>
-                    <td>{Math.ceil(value.xDistance * 100) / 100}</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+            )
+          })}
+          </tbody>
+        </table>
       </div>
     </div>
   )
