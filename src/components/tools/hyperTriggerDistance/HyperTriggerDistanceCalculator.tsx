@@ -21,7 +21,12 @@ export default function HyperTriggerDistanceCalculator() {
       purpleTick: oneMeasureMs / 3, // 1/3 snapping
       blueTick: oneMeasureMs / 4, // 1/4 snapping
       darkPurpleTick: oneMeasureMs / 6, // 1/6 snapping
-      yellowTick: oneMeasureMs / 8 // 1/8 snapping
+      yellowTick: oneMeasureMs / 8, // 1/8 snapping
+      oneFive: oneMeasureMs / 5, // 1/5 snapping
+      oneSeven: oneMeasureMs / 7, // 1/7 snapping
+      oneNine: oneMeasureMs / 9, // 1/9 snapping
+      oneTwelve: oneMeasureMs / 12, // 1/12 snapping
+      oneSixteen: oneMeasureMs / 16, // 1/16 snapping
     }
   }
 
@@ -30,55 +35,47 @@ export default function HyperTriggerDistanceCalculator() {
     return timeToNext + dashRange
   }
 
+  function getSnappingResult(snapping: Snapping, snap: number, dashRange: number, xDistanceMultiplier: number): SnappingResult {
+    const tickDistance = getTriggerDistance(snap, dashRange)
+    const calculatedXDistance = tickDistance / (sliderVelocity * 100) * xDistanceMultiplier
+    let osuRoundedXDistance;
+
+    if (snap < 50) {
+      osuRoundedXDistance = calculatedXDistance * 1.02;
+    } else if (snap < 100) {
+      osuRoundedXDistance = calculatedXDistance * 1.01;
+    } else if (snap < 200) {
+      osuRoundedXDistance = calculatedXDistance * 1.005;
+    } else {
+      osuRoundedXDistance = calculatedXDistance;
+    }
+
+    return {
+      snapping,
+      msSnapping: snap,
+      xDistance: osuRoundedXDistance,
+      distanceNeed: tickDistance
+    }
+  }
+
   function calculateTriggerDistances(snaps: MillisecondSnappingReference): SnappingResult[] {
     const catchDifficulty = (circleSize - 5.0) / 5.0
     const fruitWidth = (64.0 * (1.0 - 0.699999988079071 * catchDifficulty)) / 128.0
     const catcherWidth = 305.0 * fruitWidth * 0.7
     const dashRange = catcherWidth / 2.0
-    const whiteTickDistance = getTriggerDistance(snaps.whiteTick, dashRange)
-    const redTickDistance = getTriggerDistance(snaps.redTick, dashRange)
-    const purpleTickDistance = getTriggerDistance(snaps.purpleTick, dashRange)
-    const blueTickDistance = getTriggerDistance(snaps.blueTick, dashRange)
-    const darkPurpleTickDistance = getTriggerDistance(snaps.darkPurpleTick, dashRange)
-    const yellowTickTickDistance = getTriggerDistance(snaps.yellowTick, dashRange)
 
     return [
-      {
-        snapping: Snapping.WHITE_TICK,
-        msSnapping: snaps.whiteTick,
-        xDistance: whiteTickDistance / (sliderVelocity * 100),
-        distanceNeed: whiteTickDistance
-      },
-      {
-        snapping: Snapping.RED_TICK,
-        msSnapping: snaps.redTick,
-        xDistance: redTickDistance / (sliderVelocity * 100) * 2,
-        distanceNeed: redTickDistance
-      },
-      {
-        snapping: Snapping.PURPLE_TICK,
-        msSnapping: snaps.purpleTick,
-        xDistance: purpleTickDistance / (sliderVelocity * 100) * 3,
-        distanceNeed: purpleTickDistance
-      },
-      {
-        snapping: Snapping.BLUE_TICK,
-        msSnapping: snaps.blueTick,
-        xDistance: blueTickDistance / (sliderVelocity * 100) * 4,
-        distanceNeed: blueTickDistance
-      },
-      {
-        snapping: Snapping.DARK_PURPLE_TICK,
-        msSnapping: snaps.darkPurpleTick,
-        xDistance: darkPurpleTickDistance / (sliderVelocity * 100) * 6,
-        distanceNeed: darkPurpleTickDistance
-      },
-      {
-        snapping: Snapping.YELLOW_TICK,
-        msSnapping: snaps.yellowTick,
-        xDistance: yellowTickTickDistance / (sliderVelocity * 100) * 8,
-        distanceNeed: yellowTickTickDistance
-      }
+      getSnappingResult(Snapping.WHITE_TICK, snaps.whiteTick, dashRange, 1),
+      getSnappingResult(Snapping.RED_TICK, snaps.redTick, dashRange, 2),
+      getSnappingResult(Snapping.PURPLE_TICK, snaps.purpleTick, dashRange, 3),
+      getSnappingResult(Snapping.BLUE_TICK, snaps.blueTick, dashRange, 4),
+      getSnappingResult(Snapping.ONE_FIVE, snaps.oneFive, dashRange, 5),
+      getSnappingResult(Snapping.DARK_PURPLE_TICK, snaps.darkPurpleTick, dashRange, 6),
+      getSnappingResult(Snapping.ONE_SEVEN, snaps.oneSeven, dashRange, 7),
+      getSnappingResult(Snapping.YELLOW_TICK, snaps.yellowTick, dashRange, 8),
+      getSnappingResult(Snapping.ONE_NINE, snaps.oneNine, dashRange, 9),
+      getSnappingResult(Snapping.ONE_TWELVE, snaps.oneTwelve, dashRange, 12),
+      getSnappingResult(Snapping.ONE_SIXTEEN, snaps.oneSixteen, dashRange, 16)
     ]
   }
 
@@ -105,7 +102,7 @@ export default function HyperTriggerDistanceCalculator() {
               </tr>
               <tr>
                 <th>Osu Pixels</th>
-                <th>X Value</th>
+                <th>X Distance</th>
               </tr>
             </thead>
             <tbody>
@@ -115,7 +112,7 @@ export default function HyperTriggerDistanceCalculator() {
                   <tr key={key}>
                     <td>{value.snapping}</td>
                     <td>{Math.round(value.msSnapping)}</td>
-                    <td>{Math.ceil(value.distanceNeed)}</td>
+                    <td>{Math.floor(value.distanceNeed)}</td>
                     <td>{Math.ceil(value.xDistance * 100) / 100}</td>
                   </tr>
                 )
@@ -135,6 +132,11 @@ interface MillisecondSnappingReference {
   blueTick: number
   darkPurpleTick: number
   yellowTick: number
+  oneFive: number
+  oneSeven: number
+  oneNine: number
+  oneTwelve: number
+  oneSixteen: number
 }
 
 interface SnappingResult {
@@ -150,5 +152,10 @@ enum Snapping {
   PURPLE_TICK = '1/3',
   BLUE_TICK = '1/4',
   DARK_PURPLE_TICK = '1/6',
-  YELLOW_TICK = '1/8'
+  YELLOW_TICK = '1/8',
+  ONE_FIVE = "1/5",
+  ONE_SEVEN = "1/7",
+  ONE_NINE = "1/9",
+  ONE_TWELVE = "1/12",
+  ONE_SIXTEEN = "1/16"
 }

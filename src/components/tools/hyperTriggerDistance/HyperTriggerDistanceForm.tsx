@@ -21,7 +21,13 @@ export default function HyperTriggerDistanceForm({
   return (
     <form className="row">
       <div className="col-12 note-col">
-        <p className="note">NOTE: decimal numbers work for all fields (e.g. 4,5)</p>
+        <p className="note">
+          <ul>
+            <li><strong className="fake-bold">Decimal numbers work for all fields.</strong> For example 4,5 for circle size.</li>
+            <li><strong className="fake-bold">Osu Pixels can be 1 pixel off.</strong> The current version of osu stable seems to cast to an integer with hyperdash generation but calculations here are done using ms values, not based of snapping like is done in the editor.</li>
+            <li><strong className="fake-bold">X Distance is an estimate.</strong> The current version of osu stable does some strange roundings, the purpose of this value is to give you somewhat of an idea what value to use for your hyperdashes.</li>
+          </ul>
+        </p>
       </div>
       <label htmlFor="bpm" className="col-12">
         BPM
@@ -42,6 +48,7 @@ export default function HyperTriggerDistanceForm({
           onChange={event => setCircleSize(Number(event.target.value))}
           min={0}
           max={10}
+          step={0.1}
         />
       </label>
       <label htmlFor="sv" className="col-12">
@@ -53,6 +60,7 @@ export default function HyperTriggerDistanceForm({
           onChange={event => setSliderVelocity(Number(event.target.value))}
           min={0.4}
           max={3.6}
+          step={0.1}
         />
       </label>
     </form>

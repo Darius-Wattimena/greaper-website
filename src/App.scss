@@ -57,6 +57,11 @@ body {
     background-color: $background-color-container;
     padding: $padding-small $padding-large;
 
+    *.fake-bold {
+      font-weight:normal;
+      color: darken($text-color, 50%)
+    }
+
     a,
     p {
       color: $text-color;
