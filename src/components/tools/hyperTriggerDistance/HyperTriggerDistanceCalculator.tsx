@@ -26,7 +26,7 @@ export default function HyperTriggerDistanceCalculator() {
       oneSeven: oneMeasureMs / 7, // 1/7 snapping
       oneNine: oneMeasureMs / 9, // 1/9 snapping
       oneTwelve: oneMeasureMs / 12, // 1/12 snapping
-      oneSixteen: oneMeasureMs / 16, // 1/16 snapping
+      oneSixteen: oneMeasureMs / 16 // 1/16 snapping
     }
   }
 
@@ -35,19 +35,24 @@ export default function HyperTriggerDistanceCalculator() {
     return timeToNext + dashRange
   }
 
-  function getSnappingResult(snapping: Snapping, snap: number, dashRange: number, xDistanceMultiplier: number): SnappingResult {
+  function getSnappingResult(
+    snapping: Snapping,
+    snap: number,
+    dashRange: number,
+    xDistanceMultiplier: number
+  ): SnappingResult {
     const tickDistance = getTriggerDistance(snap, dashRange)
-    const calculatedXDistance = tickDistance / (sliderVelocity * 100) * xDistanceMultiplier
-    let osuRoundedXDistance;
+    const calculatedXDistance = (tickDistance / (sliderVelocity * 100)) * xDistanceMultiplier
+    let osuRoundedXDistance
 
     if (snap < 50) {
-      osuRoundedXDistance = calculatedXDistance * 1.02;
+      osuRoundedXDistance = calculatedXDistance * 1.02
     } else if (snap < 100) {
-      osuRoundedXDistance = calculatedXDistance * 1.01;
+      osuRoundedXDistance = calculatedXDistance * 1.01
     } else if (snap < 200) {
-      osuRoundedXDistance = calculatedXDistance * 1.005;
+      osuRoundedXDistance = calculatedXDistance * 1.005
     } else {
-      osuRoundedXDistance = calculatedXDistance;
+      osuRoundedXDistance = calculatedXDistance
     }
 
     return {
@@ -153,9 +158,9 @@ enum Snapping {
   BLUE_TICK = '1/4',
   DARK_PURPLE_TICK = '1/6',
   YELLOW_TICK = '1/8',
-  ONE_FIVE = "1/5",
-  ONE_SEVEN = "1/7",
-  ONE_NINE = "1/9",
-  ONE_TWELVE = "1/12",
-  ONE_SIXTEEN = "1/16"
+  ONE_FIVE = '1/5',
+  ONE_SEVEN = '1/7',
+  ONE_NINE = '1/9',
+  ONE_TWELVE = '1/12',
+  ONE_SIXTEEN = '1/16'
 }
