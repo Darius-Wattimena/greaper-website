@@ -1,4 +1,5 @@
 import React from 'react'
+import NumberInput from '../../form/NumberInput'
 
 interface SliderVelocityFormProps {
   bpm: number
@@ -17,16 +18,14 @@ export default function SliderVelocityForm({ bpm, setBpm }: SliderVelocityFormPr
           The calculated SVs are based of the catchers speed combined with my personal preference.
         </p>
       </div>
-      <label htmlFor="bpm" className="col-12">
-        BPM
-        <input
-          id="bpm"
-          type="number"
-          value={bpm}
-          onChange={event => setBpm(Number(event.target.value))}
-          min={1}
-        />
-      </label>
+      <NumberInput
+        id="bpm"
+        initialValue={bpm.toString()}
+        label="BPM (between 1 and 600)"
+        numberSetter={setBpm}
+        min={1}
+        max={600}
+      />
     </form>
   )
 }

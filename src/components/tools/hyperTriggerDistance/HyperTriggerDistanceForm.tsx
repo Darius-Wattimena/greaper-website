@@ -1,4 +1,5 @@
 import React from 'react'
+import NumberInput from '../../form/NumberInput'
 
 interface HyperTriggerDistanceFormProps {
   bpm: number
@@ -24,7 +25,7 @@ export default function HyperTriggerDistanceForm({
           <ul>
             <li>
               <strong className="fake-bold">Decimal numbers work for all fields.</strong> For
-              example 4,5 for circle size.
+              example 4.5 for circle size.
             </li>
             <li>
               <strong className="fake-bold">Osu Pixels can be 1 pixel off.</strong> The current
@@ -40,40 +41,30 @@ export default function HyperTriggerDistanceForm({
           </ul>
         </p>
       </div>
-      <label htmlFor="bpm" className="col-12">
-        BPM
-        <input
-          id="bpm"
-          type="number"
-          value={bpm}
-          onChange={event => setBpm(Number(event.target.value))}
-          min={1}
-        />
-      </label>
-      <label htmlFor="cs" className="col-12">
-        Circle Size
-        <input
-          id="cs"
-          type="number"
-          value={circleSize}
-          onChange={event => setCircleSize(Number(event.target.value))}
-          min={0}
-          max={10}
-          step={0.1}
-        />
-      </label>
-      <label htmlFor="sv" className="col-12">
-        Slider Velocity
-        <input
-          id="sv"
-          type="number"
-          value={sliderVelocity}
-          onChange={event => setSliderVelocity(Number(event.target.value))}
-          min={0.4}
-          max={3.6}
-          step={0.1}
-        />
-      </label>
+      <NumberInput
+        id="bpm"
+        label="BPM (between 1 and 600)"
+        initialValue={bpm.toString()}
+        numberSetter={setBpm}
+        min={1}
+        max={600}
+      />
+      <NumberInput
+        id="cs"
+        label="Circle Size (between 0 and 10)"
+        initialValue={circleSize.toString()}
+        numberSetter={setCircleSize}
+        min={null}
+        max={10}
+      />
+      <NumberInput
+        id="sv"
+        label="Slider Velocity (between 0.4 and 3.6)"
+        initialValue={sliderVelocity.toString()}
+        numberSetter={setSliderVelocity}
+        min={0.4}
+        max={3.6}
+      />
     </form>
   )
 }

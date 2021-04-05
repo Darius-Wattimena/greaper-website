@@ -8,7 +8,9 @@ export default function Nav() {
     <header className="site-header">
       <div className="wrapper site-header__wrapper">
         <div className="site-header__start">
-          <img src={logo} alt="Greaper" className="brand" />
+          <a href="https://osu.ppy.sh/users/2369776">
+            <img src={logo} alt="Greaper" className="brand" />
+          </a>
         </div>
         <div className="site-header__middle">
           <nav className="nav">

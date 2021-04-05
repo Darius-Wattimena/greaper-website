@@ -1,4 +1,5 @@
 import React from 'react'
+import NumberInput from '../../form/NumberInput'
 
 interface SliderVelocityFormProps {
   bpm: number
@@ -10,22 +11,20 @@ export default function SnappingSpecifierForm({ bpm, setBpm }: SliderVelocityFor
     <form className="row">
       <div className="col-12 note-col">
         <p className="note">
-          <strong className="fake-bold">This does not take into account unsnapped objects.</strong>{' '}
-          For example at 240 bpm a 1/2 dash is exactly 125 ms, when one of the two objects is
-          unsnapped for 1 ms it can happen that the time between the two objects is instead 124 ms
-          (which is unrankable).
+          <strong className="fake-bold">This does not take unsnapped objects into account.</strong>{' '}
+          For example, at 240 BPM a 1/2 dash is exactly 125 ms. When one of the two objects is
+          unsnapped for 1 ms the time between the two objects may be 124 ms instead (which is
+          unrankable).
         </p>
       </div>
-      <label htmlFor="bpm" className="col-12">
-        BPM
-        <input
-          id="bpm"
-          type="number"
-          value={bpm}
-          onChange={event => setBpm(Number(event.target.value))}
-          min={1}
-        />
-      </label>
+      <NumberInput
+        id="bpm"
+        initialValue={bpm.toString()}
+        label="BPM (between 1 and 600)"
+        numberSetter={setBpm}
+        min={1}
+        max={600}
+      />
     </form>
   )
 }
