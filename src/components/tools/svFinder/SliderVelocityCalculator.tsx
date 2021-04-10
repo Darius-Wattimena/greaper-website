@@ -11,12 +11,12 @@ export default function SliderVelocityCalculator() {
   }, [bpm])
 
   function calculateIdealSliderVelocity(): SliderVelocityResult[] {
-    const rainSV = 320 / bpm
+    const rainSV = 300 / bpm
 
     return [
-      { diff: Difficulty.CUP, sv: rainSV * 0.7 },
-      { diff: Difficulty.SALAD, sv: rainSV * 0.8 },
-      { diff: Difficulty.PLATTER, sv: rainSV * 0.9 },
+      { diff: Difficulty.CUP, sv: rainSV * 0.72 },
+      { diff: Difficulty.SALAD, sv: rainSV * 0.78 },
+      { diff: Difficulty.PLATTER, sv: rainSV * 0.85 },
       { diff: Difficulty.RAIN, sv: rainSV },
       { diff: Difficulty.OVERDOSE, sv: rainSV * 1.1 },
       { diff: Difficulty.DELUGE, sv: rainSV * 1.2 }
