@@ -1,36 +1,57 @@
-﻿# Flow; Definiton and Examples.
+﻿# Flow; Definition and Examples.
 
-### What is Flow?
-Probably one of the most ambiguous terms in mapping, Flow can be described as the **effect a pattern has on playability and expression.** In osu!catch, **Flow is the direct connection of movement with the song itself, as well as the patterns used.** It's the way the catcher moves through a pattern, how the pattern itself plays and its overall strain/difficulty comparatively to how intense the song's pace is.
+## What is Flow?
 
-In general, flow has been somewhat connected, *informally*, with how a pattern "feels" while playing. However this feeling is a really ambiguous term to use, which is the reason why this term has also been ambiguous. One way to explain how to explain the "feeling" of a pattern is to break down its objects and see how it moves between them.
+Probably one of the most ambiguous terms in mapping, Flow can be described as the effect a pattern has on playability and expression. In osu!catch, flow is the direct connection of movement with the song itself, as well as the patterns used. It's the way the catcher moves through a pattern, how the pattern itself plays and its overall strain/difficulty comparatively to how intense the song's pace is.
 
-**Movement is one of the more important forms of emphasis in osu!catch.** For example, moving too little towards a strong sound or moving too much, or in a strainful way while the pace of the song is calmer might give a negative effect on the pattern. Through playtesting, someone might get this exact "feeling", thinking that they didnt "feel" a good connection of the pattern with the song itself. 
+In general, the term flow is somewhat connected with how a pattern "feels" while playing. One way to explain the feeling of a pattern is to break down its objects and see how it moves between them.
 
-Consequently, even though it's a bit more subjective, is a process which should be undertaken when creating a beatmap. Playtesting is a vital part of osu!catch mapping for reasons such as this one.
+**Movement is key.** osu!catch has only an x-axis, because of this we can only emphasise a sound with movement. For example, moving too little towards a strong sound would give a negative effect on both the pattern and the player playing it. Because movement is key, playtesting your map is vital to ensure that your provided emphasis is correct.
 
-### Types of Flow
-While there isnt a specfic amount of *types* , every pattern can be broken down into these categories of transitions, so flow can be directly correlated with all of them.
-#### Antiflow
-Antiflow is a transition between two objects in which, you have to change directions on the destination object in order to follow the pattern.
+## Types of Flow
 
+In catch there are three different type of flow:
 
+- **Flow**
+- **Antiflow**
+- **Standstill**
+
+This doesn't mean that you can label every slider as a certain type of flow. For example, a circular slider can have flow, antiflow and a tiny bit of standstill in them at the same time, thus making it an exception. Although we will go more in-depth with this per type of flow, giving definitions and providing multiple examples for each of them.
+
+### Flow
+
+Flow is a movement between two objects in which everything can be caught without having to press a new direction key.
+
+TODO: normal flow walk screenshot
+
+This is the most basic example of flow, here we came from a left movement going towards the same direction for the next one, making us not change any of our inputs.
+
+TODO: normal flow with dash screenshot
+
+This is also an example of flow, while the distance between the two objects are not walkable and making the player to press the dash key, no change in the movement key is needed making it flow.
+
+TODO: replace screenshot with one which is consistent with the other flow screenshots
+
+![](https://i.imgur.com/5qfCSfT.png)
+
+As last an example with a hyperdash, while we now have a hyper generated on our object the flow is still the same as with the other examples since no change in movement key is needed.
+
+### Antiflow
+
+Antiflow is a movement between two objects in which a new direction key needs to be pressed to catch the next object. For example, if you currently hold the left movement key, then having to switch to the right movement key to catch the next object is anti-flow.
 
 ![](https://i.imgur.com/JXgV3AX.png)
-This is an example of antiflow, the catcher has to direction change after catching the sliderhead, otherwise the player will miss. It requires more key inputs *( you have to change directions )* to not miss and follow the flow *( the movement needed )*'
 
-#### Normal / Comfortable Flow 
-Cotrasting antiflow, normal flow is a transition between two objects in which there is no direction change after, resulting in a generally easier movement, since there isnt any extra key input. 
+This is an example of antiflow, the catcher has to direction change after catching the sliderhead, otherwise, the player will miss. It requires more key inputs *(you have to change directions)* to not miss and follow the flow *(the movement needed)*.
 
-![enter image description here](https://i.imgur.com/5qfCSfT.png)
+### Standstill
 
-#### Standstilling / Vertical Flow
-Another form of flow is vertical flow, where the point of arrival is a completely vertical slider set of circles. To catch perfectly, there needs to be an extra keystroke in the other direction to stop the catcher, but there is no followup movement. This creates a standstill, a moment where the catcher doesnt move at all. 
+Standstill is a term for vertical flow. This last type of flow is rather different from the others already covered. Here no movement is needed to catch the next object, making the catcher to stand still.
 
-![enter image description here](https://i.imgur.com/FmdZobh.png)
-#### Flowbreaks
-Vertical flow or Antiflow can Create an effect called a "flowbreak" , a case where the usual normal flow used in the previous patterns is stopped by the usage of antiflow/vertical flow. It is a nice tool to use when you want to create contrast between patterns.
+![](https://i.imgur.com/FmdZobh.png)
 
-A nice rule of thumb for beginners is to attempt to create patterns that move according to the song, so they represent it well ( More on that in the patterning chapter ) . To conclude, flow is created by using these type of direction changes/movements to actively map in a way that matches the songs pace/strength as well as moving accordingly. 
+### Flowbreak
 
-(idk if missed anything) 
+Once antiflow or a standstill is provided an effect is created which is called a flowbreak. Providing a flowbreak is a way of creating contrast between patterns. For example, only providing flow in your map would become quite boring and is rather easy to play.
+
+To conclude, flow is created by using the three types of flow changes to actively map in a way that matches the pace and strength of the song as well as moving accordingly.
