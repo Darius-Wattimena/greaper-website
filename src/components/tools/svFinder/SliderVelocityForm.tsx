@@ -8,7 +8,7 @@ interface SliderVelocityFormProps {
 
 export default function SliderVelocityForm({ bpm, setBpm }: SliderVelocityFormProps) {
   return (
-    <form className="row">
+    <div className="row">
       <div className="col-12 note-col">
         <p className="note">
           <strong className="fake-bold">
@@ -26,6 +26,6 @@ export default function SliderVelocityForm({ bpm, setBpm }: SliderVelocityFormPr
         min={1}
         max={600}
       />
-    </form>
+    </div>
   )
 }

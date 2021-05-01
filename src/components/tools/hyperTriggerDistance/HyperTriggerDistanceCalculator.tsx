@@ -7,12 +7,13 @@ export default function HyperTriggerDistanceCalculator() {
   const [circleSize, setCircleSize] = useState(4.0)
   const [bpm, setBpm] = useState(180.0)
   const [sliderVelocity, setSliderVelocity] = useState(1.0)
+  const [sliderVelocityMultiplier, setSliderVelocityMultiplier] = useState(1.0)
   const [result, setResult] = useState<SnappingResult[]>([])
 
   useEffect(() => {
     const snaps = calculateSnaps(bpm)
     setResult(calculateTriggerDistances(snaps))
-  }, [circleSize, bpm, sliderVelocity])
+  }, [circleSize, bpm, sliderVelocity, sliderVelocityMultiplier])
 
   function getTriggerDistance(ms: number, dashRange: number): number {
     const timeToNext = ms - 1000 / 60 / 4
@@ -26,7 +27,8 @@ export default function HyperTriggerDistanceCalculator() {
     xDistanceMultiplier: number
   ): SnappingResult {
     const tickDistance = getTriggerDistance(snap, dashRange)
-    const calculatedXDistance = (tickDistance / (sliderVelocity * 100)) * xDistanceMultiplier
+    const calculatedXDistance =
+      (tickDistance / (sliderVelocity * sliderVelocityMultiplier * 100)) * xDistanceMultiplier
     let osuRoundedXDistance
 
     if (snap < 50) {
@@ -78,6 +80,8 @@ export default function HyperTriggerDistanceCalculator() {
           setCircleSize={setCircleSize}
           sliderVelocity={sliderVelocity}
           setSliderVelocity={setSliderVelocity}
+          sliderVelocityMultiplier={sliderVelocityMultiplier}
+          setSliderVelocityMultiplier={setSliderVelocityMultiplier}
         />
       </div>
       <div className="col-6">

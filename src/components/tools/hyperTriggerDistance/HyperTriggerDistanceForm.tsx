@@ -8,6 +8,8 @@ interface HyperTriggerDistanceFormProps {
   setCircleSize: React.Dispatch<React.SetStateAction<number>>
   sliderVelocity: number
   setSliderVelocity: React.Dispatch<React.SetStateAction<number>>
+  sliderVelocityMultiplier: number
+  setSliderVelocityMultiplier: React.Dispatch<React.SetStateAction<number>>
 }
 
 export default function HyperTriggerDistanceForm({
@@ -16,7 +18,9 @@ export default function HyperTriggerDistanceForm({
   circleSize,
   setCircleSize,
   sliderVelocity,
-  setSliderVelocity
+  setSliderVelocity,
+  sliderVelocityMultiplier,
+  setSliderVelocityMultiplier
 }: HyperTriggerDistanceFormProps) {
   return (
     <form className="row">
@@ -64,6 +68,14 @@ export default function HyperTriggerDistanceForm({
         numberSetter={setSliderVelocity}
         min={0.4}
         max={3.6}
+      />
+      <NumberInput
+        id="svm"
+        label="Slider Velocity Multiplier (between 0.1 and 4.0)"
+        initialValue={sliderVelocityMultiplier.toString()}
+        numberSetter={setSliderVelocityMultiplier}
+        min={0.1}
+        max={4.0}
       />
     </form>
   )

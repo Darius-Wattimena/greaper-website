@@ -8,7 +8,7 @@ interface SliderVelocityFormProps {
 
 export default function SnappingSpecifierForm({ bpm, setBpm }: SliderVelocityFormProps) {
   return (
-    <form className="row">
+    <div className="row">
       <div className="col-12 note-col">
         <p className="note">
           <strong className="fake-bold">This does not take unsnapped objects into account.</strong>{' '}
@@ -25,6 +25,6 @@ export default function SnappingSpecifierForm({ bpm, setBpm }: SliderVelocityFor
         min={1}
         max={600}
       />
-    </form>
+    </div>
   )
 }
