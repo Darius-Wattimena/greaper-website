@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { hasMultipleDots, isNumber } from '../../utils/FormUtil'
+import { isNumber } from '../../utils/FormUtil'
 
 interface NumberInputProps {
   id: string
@@ -25,12 +25,7 @@ export default function NumberInput({
     const input = event.target.value
     const parsedInput = Number(input)
     setFormValue(input)
-    if (
-      isNumber(input) &&
-      !hasMultipleDots(input) &&
-      isMinValue(parsedInput) &&
-      isMaxValue(parsedInput)
-    ) {
+    if (isNumber(input) && isMinValue(parsedInput) && isMaxValue(parsedInput)) {
       if (hasInvalidInput) {
         setHasInvalidInput(false)
       }

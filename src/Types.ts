@@ -40,4 +40,5 @@ export interface MillisecondSnappingReference {
   oneNine: number
   oneTwelve: number
   oneSixteen: number
+  custom: number
 }
