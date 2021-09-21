@@ -2,16 +2,26 @@ import React, { useEffect, useState } from 'react'
 import SliderVelocityForm from './SliderVelocityForm'
 import { Difficulty } from '../../../Types'
 
-export default function SliderVelocityCalculator() {
-  const [bpm, setBpm] = useState(180.0)
+interface SliderVelocityCalculatorProps {
+  bpm: number
+}
+
+export default function SliderVelocityCalculator({ bpm }: SliderVelocityCalculatorProps) {
   const [result, setResult] = useState<SliderVelocityResult[]>([])
+  const [ascendance, setAscendance] = useState<boolean>(false)
 
   useEffect(() => {
     setResult(calculateIdealSliderVelocity())
-  }, [bpm])
+  }, [bpm, ascendance])
 
   function calculateIdealSliderVelocity(): SliderVelocityResult[] {
-    const rainSV = 300 / bpm
+    let rainSV
+
+    if (ascendance) {
+      rainSV = 330 / bpm
+    } else {
+      rainSV = 300 / bpm
+    }
 
     return [
       { diff: Difficulty.CUP, sv: rainSV * 0.72 },
@@ -26,7 +36,7 @@ export default function SliderVelocityCalculator() {
   return (
     <div className="row">
       <div className="col-6">
-        <SliderVelocityForm bpm={bpm} setBpm={setBpm} />
+        <SliderVelocityForm ascendance={ascendance} setAscendance={setAscendance} />
       </div>
       <div className="col-6">
         <table>

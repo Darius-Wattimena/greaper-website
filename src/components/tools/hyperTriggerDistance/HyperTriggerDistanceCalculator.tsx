@@ -3,9 +3,14 @@ import HyperTriggerDistanceForm from './HyperTriggerDistanceForm'
 import { MillisecondSnappingReference, Snapping } from '../../../Types'
 import { calculateSnaps } from '../../../utils/MilliSecondsUtil'
 
-export default function HyperTriggerDistanceCalculator() {
+interface HyperTriggerDistanceCalculatorProps {
+  bpm: number
+}
+
+export default function HyperTriggerDistanceCalculator({
+  bpm
+}: HyperTriggerDistanceCalculatorProps) {
   const [circleSize, setCircleSize] = useState(4.0)
-  const [bpm, setBpm] = useState(180.0)
   const [sliderVelocity, setSliderVelocity] = useState(1.0)
   const [sliderVelocityMultiplier, setSliderVelocityMultiplier] = useState(1.0)
   const [result, setResult] = useState<SnappingResult[]>([])
@@ -74,8 +79,6 @@ export default function HyperTriggerDistanceCalculator() {
     <div className="row">
       <div className="col-6">
         <HyperTriggerDistanceForm
-          bpm={bpm}
-          setBpm={setBpm}
           circleSize={circleSize}
           setCircleSize={setCircleSize}
           sliderVelocity={sliderVelocity}

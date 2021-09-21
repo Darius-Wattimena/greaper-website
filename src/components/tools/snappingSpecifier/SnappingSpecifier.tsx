@@ -1,70 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import SnappingSpecifierForm from './SnappingSpecifierForm'
 import { Difficulty, MillisecondSnappingReference, SnapType } from '../../../Types'
-import { calculateSnaps } from '../../../utils/MilliSecondsUtil'
+import { calculateSnaps, GetSnapType } from '../../../utils/MilliSecondsUtil'
 import './SnappingSpecifier.scss'
 
-export default function SnappingSpecifier() {
-  const [bpm, setBpm] = useState(180.0)
-  const [customNumerator, setCustomNumerator] = useState(1)
-  const [customDenominator, setCustomDenominator] = useState(1)
+interface SnappingSpecifierProps {
+  bpm: number
+}
+
+export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
   const [result, setResult] = useState<SnappingResult[]>([])
 
   useEffect(() => {
-    const snaps = calculateSnaps(bpm, customNumerator, customDenominator)
+    const snaps = calculateSnaps(bpm)
     setResult(specifySnappingCategories(snaps))
-  }, [bpm, customNumerator, customDenominator])
-
-  function GetSnapType(diff: Difficulty, snap: number, isHyperdash: boolean): SnapType {
-    const flooredSnap = Math.floor(snap)
-
-    switch (diff) {
-      case Difficulty.CUP:
-        return SnapType.DISALLOWED
-      case Difficulty.SALAD:
-        if (isHyperdash) {
-          return SnapType.DISALLOWED
-        }
-        if (flooredSnap < 125) {
-          return SnapType.DISALLOWED
-        }
-        if (flooredSnap < 250) {
-          return SnapType.HIGHER_SNAPPED
-        }
-
-        return SnapType.BASIC_SNAPPED
-      case Difficulty.PLATTER:
-        if (isHyperdash) {
-          if (flooredSnap < 125) {
-            return SnapType.DISALLOWED
-          }
-          if (flooredSnap < 250) {
-            return SnapType.HIGHER_SNAPPED
-          }
-
-          return SnapType.BASIC_SNAPPED
-        }
-
-        if (flooredSnap < 62) {
-          return SnapType.DISALLOWED
-        }
-        if (flooredSnap < 125) {
-          return SnapType.HIGHER_SNAPPED
-        }
-        return SnapType.BASIC_SNAPPED
-      case Difficulty.RAIN:
-        if (flooredSnap < 62) {
-          return SnapType.DISALLOWED
-        }
-        if (flooredSnap < 125) {
-          return SnapType.HIGHER_SNAPPED
-        }
-
-        return SnapType.BASIC_SNAPPED
-      default:
-        return SnapType.NONE
-    }
-  }
+  }, [bpm])
 
   function specifySnappingCategories(snaps: MillisecondSnappingReference): SnappingResult[] {
     return [
@@ -76,7 +26,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.CUP, snaps.purpleTick, false),
           GetSnapType(Difficulty.CUP, snaps.blueTick, false),
           GetSnapType(Difficulty.CUP, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.CUP, snaps.custom, false)
+          GetSnapType(Difficulty.CUP, snaps.yellowTick, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.CUP, snaps.whiteTick, true),
@@ -84,7 +34,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.CUP, snaps.purpleTick, true),
           GetSnapType(Difficulty.CUP, snaps.blueTick, true),
           GetSnapType(Difficulty.CUP, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.CUP, snaps.custom, true)
+          GetSnapType(Difficulty.CUP, snaps.yellowTick, true)
         ]
       },
       {
@@ -95,7 +45,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.SALAD, snaps.purpleTick, false),
           GetSnapType(Difficulty.SALAD, snaps.blueTick, false),
           GetSnapType(Difficulty.SALAD, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.SALAD, snaps.custom, false)
+          GetSnapType(Difficulty.SALAD, snaps.yellowTick, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.SALAD, snaps.whiteTick, true),
@@ -103,7 +53,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.SALAD, snaps.purpleTick, true),
           GetSnapType(Difficulty.SALAD, snaps.blueTick, true),
           GetSnapType(Difficulty.SALAD, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.SALAD, snaps.custom, true)
+          GetSnapType(Difficulty.SALAD, snaps.yellowTick, true)
         ]
       },
       {
@@ -114,7 +64,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.PLATTER, snaps.purpleTick, false),
           GetSnapType(Difficulty.PLATTER, snaps.blueTick, false),
           GetSnapType(Difficulty.PLATTER, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.PLATTER, snaps.custom, false)
+          GetSnapType(Difficulty.PLATTER, snaps.yellowTick, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.PLATTER, snaps.whiteTick, true),
@@ -122,7 +72,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.PLATTER, snaps.purpleTick, true),
           GetSnapType(Difficulty.PLATTER, snaps.blueTick, true),
           GetSnapType(Difficulty.PLATTER, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.PLATTER, snaps.custom, true)
+          GetSnapType(Difficulty.PLATTER, snaps.yellowTick, true)
         ]
       },
       {
@@ -133,7 +83,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.RAIN, snaps.purpleTick, false),
           GetSnapType(Difficulty.RAIN, snaps.blueTick, false),
           GetSnapType(Difficulty.RAIN, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.RAIN, snaps.custom, false)
+          GetSnapType(Difficulty.RAIN, snaps.yellowTick, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.RAIN, snaps.whiteTick, true),
@@ -141,7 +91,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.RAIN, snaps.purpleTick, true),
           GetSnapType(Difficulty.RAIN, snaps.blueTick, true),
           GetSnapType(Difficulty.RAIN, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.RAIN, snaps.custom, true)
+          GetSnapType(Difficulty.RAIN, snaps.yellowTick, true)
         ]
       },
       {
@@ -152,7 +102,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.OVERDOSE, snaps.purpleTick, false),
           GetSnapType(Difficulty.OVERDOSE, snaps.blueTick, false),
           GetSnapType(Difficulty.OVERDOSE, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.OVERDOSE, snaps.custom, false)
+          GetSnapType(Difficulty.OVERDOSE, snaps.yellowTick, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.OVERDOSE, snaps.whiteTick, true),
@@ -160,7 +110,7 @@ export default function SnappingSpecifier() {
           GetSnapType(Difficulty.OVERDOSE, snaps.purpleTick, true),
           GetSnapType(Difficulty.OVERDOSE, snaps.blueTick, true),
           GetSnapType(Difficulty.OVERDOSE, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.OVERDOSE, snaps.custom, true)
+          GetSnapType(Difficulty.OVERDOSE, snaps.yellowTick, true)
         ]
       }
     ]
@@ -182,14 +132,7 @@ export default function SnappingSpecifier() {
   return (
     <div className="row">
       <div className="col-4">
-        <SnappingSpecifierForm
-          bpm={bpm}
-          setBpm={setBpm}
-          customNumerator={customNumerator}
-          setCustomNumerator={setCustomNumerator}
-          customDenominator={customDenominator}
-          setCustomDenominator={setCustomDenominator}
-        />
+        <SnappingSpecifierForm />
       </div>
       <div className="col-8">
         <table>
@@ -255,13 +198,13 @@ export default function SnappingSpecifier() {
               <th>1/3</th>
               <th>1/4</th>
               <th>1/6</th>
-              <th>{customNumerator.toString().concat('/').concat(customDenominator.toString())}</th>
+              <th>1/8</th>
               <th>1/1</th>
               <th>1/2</th>
               <th>1/3</th>
               <th>1/4</th>
               <th>1/6</th>
-              <th>{customNumerator.toString().concat('/').concat(customDenominator.toString())}</th>
+              <th>1/8</th>
             </tr>
           </thead>
           <tbody>

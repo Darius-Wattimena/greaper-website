@@ -98,6 +98,34 @@ input[type='text'] {
   }
 }
 
+.checkbox-input {
+  display: flex;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: $primary-color;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: content-box;
+  width: 1.3em;
+  height: 1.3em;
+  border-width: 0;
+  transition: all 0.2s linear;
+  margin: $padding-small;
+}
+
+input[type='checkbox']:checked {
+  background-color: $green-color;
+}
+
+input[type='checkbox']:focus {
+  outline: 0 none;
+  box-shadow: none;
+}
+
 a {
   text-decoration: none;
   color: $text-color-light;

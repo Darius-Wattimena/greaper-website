@@ -1,12 +1,12 @@
 import React from 'react'
-import NumberInput from '../../form/NumberInput'
+import CheckboxInput from '../../form/CheckboxInput'
 
 interface SliderVelocityFormProps {
-  bpm: number
-  setBpm: React.Dispatch<React.SetStateAction<number>>
+  ascendance: boolean
+  setAscendance: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function SliderVelocityForm({ bpm, setBpm }: SliderVelocityFormProps) {
+export default function SliderVelocityForm({ ascendance, setAscendance }: SliderVelocityFormProps) {
   return (
     <div className="row">
       <div className="col-12 note-col">
@@ -18,14 +18,21 @@ export default function SliderVelocityForm({ bpm, setBpm }: SliderVelocityFormPr
           The calculated SVs are based of the catchers speed combined with my personal preference.
         </p>
       </div>
-      <NumberInput
-        id="bpm"
-        initialValue={bpm.toString()}
-        label="BPM (between 1 and 600)"
-        numberSetter={setBpm}
-        min={1}
-        max={600}
-      />
+      <div className="col-12">
+        <CheckboxInput
+          id="ascendance"
+          label="Ascendance multiplier"
+          initialValue={ascendance}
+          booleanSetter={setAscendance}
+        />
+        <p>
+          <strong className="fake-bold">
+            Makes your sliders 10% faster resulting in making them unable to walk without having to tap dash when
+            placed horizontal.
+          </strong>{' '}
+          Only use this option when you know what you are doing.
+        </p>
+      </div>
     </div>
   )
 }

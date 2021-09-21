@@ -59,29 +59,37 @@ export default function SnappingInput({
   }
 
   return (
-    <label htmlFor={id} className="col-12">
-      {label}
+    <>
+      <label htmlFor={id}>
+        <div className="col-12">{label}</div>
+      </label>
       <div>
-        <input
-          id={id}
-          type="text"
-          value={numeratorFormValue}
-          className={numeratorHasInvalidInput ? 'form-input__error' : ''}
-          onChange={event => {
-            onNumeratorChange(event)
-          }}
-        />
-        /
-        <input
-          id={id}
-          type="text"
-          value={denominatorFormValue}
-          className={denominatorHasInvalidInput ? 'form-input__error' : ''}
-          onChange={event => {
-            onDenominatorChange(event)
-          }}
-        />
+        <div className="col-5">
+          <input
+            id={id}
+            type="text"
+            value={numeratorFormValue}
+            className={numeratorHasInvalidInput ? 'form-input__error' : ''}
+            onChange={event => {
+              onNumeratorChange(event)
+            }}
+          />
+        </div>
+        <div className="col-2" style={{ textAlign: 'center' }}>
+          /
+        </div>
+        <div className="col-5">
+          <input
+            id={id}
+            type="text"
+            value={denominatorFormValue}
+            className={denominatorHasInvalidInput ? 'form-input__error' : ''}
+            onChange={event => {
+              onDenominatorChange(event)
+            }}
+          />
+        </div>
       </div>
-    </label>
+    </>
   )
 }

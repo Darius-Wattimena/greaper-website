@@ -2,8 +2,6 @@ import React from 'react'
 import NumberInput from '../../form/NumberInput'
 
 interface HyperTriggerDistanceFormProps {
-  bpm: number
-  setBpm: React.Dispatch<React.SetStateAction<number>>
   circleSize: number
   setCircleSize: React.Dispatch<React.SetStateAction<number>>
   sliderVelocity: number
@@ -13,8 +11,6 @@ interface HyperTriggerDistanceFormProps {
 }
 
 export default function HyperTriggerDistanceForm({
-  bpm,
-  setBpm,
   circleSize,
   setCircleSize,
   sliderVelocity,
@@ -45,14 +41,6 @@ export default function HyperTriggerDistanceForm({
           </ul>
         </p>
       </div>
-      <NumberInput
-        id="bpm"
-        label="BPM (between 1 and 600)"
-        initialValue={bpm.toString()}
-        numberSetter={setBpm}
-        min={1}
-        max={600}
-      />
       <NumberInput
         id="cs"
         label="Circle Size (between 0 and 10)"
