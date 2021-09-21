@@ -1,12 +1,24 @@
 import React from 'react'
 import NumberInput from '../../form/NumberInput'
+import SnappingInput from '../../form/SnappingInput'
 
 interface SliderVelocityFormProps {
   bpm: number
   setBpm: React.Dispatch<React.SetStateAction<number>>
+  customNumerator: number
+  setCustomNumerator: React.Dispatch<React.SetStateAction<number>>
+  customDenominator: number
+  setCustomDenominator: React.Dispatch<React.SetStateAction<number>>
 }
 
-export default function SnappingSpecifierForm({ bpm, setBpm }: SliderVelocityFormProps) {
+export default function SnappingSpecifierForm({
+  bpm,
+  setBpm,
+  customNumerator,
+  setCustomNumerator,
+  customDenominator,
+  setCustomDenominator
+}: SliderVelocityFormProps) {
   return (
     <div className="row">
       <div className="col-12 note-col">
@@ -19,11 +31,20 @@ export default function SnappingSpecifierForm({ bpm, setBpm }: SliderVelocityFor
       </div>
       <NumberInput
         id="bpm"
-        initialValue={bpm.toString()}
         label="BPM (between 1 and 600)"
+        initialValue={bpm.toString()}
         numberSetter={setBpm}
         min={1}
         max={600}
+      />
+      {/* TODO FIX UI */}
+      <SnappingInput
+        id="bpm"
+        label="Custom snapping"
+        initialNumeratorValue={customNumerator.toString()}
+        numeratorSetter={setCustomNumerator}
+        initialDenominatorValue={customDenominator.toString()}
+        denominatorSetter={setCustomDenominator}
       />
     </div>
   )
