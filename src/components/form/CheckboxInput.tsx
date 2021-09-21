@@ -15,10 +15,12 @@ export default function CheckboxInput({
   booleanSetter
 }: CheckboxInputProps) {
   return (
-    <label htmlFor={id} className="checkbox-input">
-      <div className="label-text">
-        {label}
-      </div>
+    <div className="checkbox-input">
+      <label htmlFor={id}>
+        <div className="label-text">
+          {label}
+        </div>
+      </label>
       <input
         id={id}
         type="checkbox"
@@ -27,6 +29,6 @@ export default function CheckboxInput({
           booleanSetter(event.target.checked)
         }}
       />
-    </label>
+    </div>
   )
 }
