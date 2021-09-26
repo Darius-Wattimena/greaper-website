@@ -27,7 +27,7 @@ export default function SliderVelocityForm({ ascendance, setAscendance }: Slider
         />
         <p>
           <strong className="fake-bold">
-            Makes your sliders 10% faster resulting in making them unable to walk without having to tap dash when
+            This multiplier makes your sliders a lot faster resulting in sliders being unable to be walk when
             placed horizontal.
           </strong>{' '}
           Only use this option when you know what you are doing.
