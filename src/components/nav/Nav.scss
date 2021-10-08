@@ -1,8 +1,8 @@
 @import '../../Variables';
 
 .brand {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -23,41 +23,35 @@
   }
 }
 
+.navbar__item-active {
+  background-color: $secondary-color;
+}
+
 .site-header__wrapper {
-}
-.site-header__wrapper > * {
-  flex: 1;
-}
-.site-header__start {
-  text-align: center;
+  nav ul {
+    margin: 0;
+  }
 }
 
 .site-header__middle {
-  order: -1;
-}
-
-.site-header__end {
-  display: flex;
-  justify-content: flex-end;
+  text-align: center;
 }
 
 .nav__wrapper {
   display: flex;
   padding-inline-start: unset;
+  font-size: 1.2em;
 }
 
-.nav__item:not(:last-child) {
-  margin-right: 1.5rem;
-}
+.nav__item {
+  a {
+    display: block;
+    padding: 1.5rem 1rem;
 
-.nav__item a {
-  display: block;
-  padding: 1.5rem 1rem;
-}
-
-.nav__item a {
-  padding-left: 0;
-  padding-right: 0;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
 }
 
 .nav__toggle {

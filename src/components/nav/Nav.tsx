@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../../greaper.png'
 import './Nav.scss'
@@ -8,34 +8,40 @@ export default function Nav() {
     <header className="site-header">
       <div className="wrapper site-header__wrapper">
         <div className="site-header__start">
-          <a href="https://osu.ppy.sh/users/2369776">
-            <img src={logo} alt="Greaper" className="brand" />
-          </a>
-        </div>
-        <div className="site-header__middle">
           <nav className="nav">
             <ul className="nav__wrapper">
               <li className="nav__item">
-                <NavLink to="/">Home</NavLink>
+                <NavLink exact to="/" activeClassName="navbar__item-active">
+                  Home
+                </NavLink>
               </li>
+              {/* <li className="nav__item">
+                <NavLink to="/guides" activeClassName="navbar__item-active">Guides</NavLink>
+              </li> */}
               <li className="nav__item">
-                <NavLink to="/guides">Guides</NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink to="/tools">Tools</NavLink>
+                <NavLink to="/tools" activeClassName="navbar__item-active">
+                  Tools
+                </NavLink>
               </li>
             </ul>
           </nav>
         </div>
+        <div className="site-header__middle">
+          <a href="https://osu.ppy.sh/users/2369776">
+            <img src={logo} alt="Greaper" className="brand" />
+          </a>
+        </div>
         <div className="site-header__end">
-          <ul className="nav__wrapper">
-            <li className="nav__item">
-              <a href="https://bnplanner.greaper.net">BN Planner</a>
-            </li>
-            <li className="nav__item">
-              <a href="https://osu.ppy.sh/wiki/en/Ranking_Criteria/osu!catch">osu!catch RC</a>
-            </li>
-          </ul>
+          <nav className="nav">
+            <ul className="nav__wrapper">
+              <li className="nav__item">
+                <a href="https://bnplanner.greaper.net">BN Planner</a>
+              </li>
+              <li className="nav__item">
+                <a href="https://osu.ppy.sh/wiki/en/Ranking_Criteria/osu!catch">osu!catch RC</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>

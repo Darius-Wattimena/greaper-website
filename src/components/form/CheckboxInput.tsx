@@ -17,9 +17,7 @@ export default function CheckboxInput({
   return (
     <div className="checkbox-input">
       <label htmlFor={id}>
-        <div className="label-text">
-          {label}
-        </div>
+        <div className="label-text">{label}</div>
       </label>
       <input
         id={id}

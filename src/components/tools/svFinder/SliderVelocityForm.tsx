@@ -27,7 +27,8 @@ export default function SliderVelocityForm({ ascendance, setAscendance }: Slider
         />
         <p>
           <strong className="fake-bold">
-            This multiplier makes your sliders a lot faster resulting in unwalkable sliders when placed horizontally.
+            This multiplier makes your sliders a lot faster resulting in unwalkable sliders when
+            placed horizontally.
           </strong>
         </p>
       </div>
