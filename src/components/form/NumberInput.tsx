@@ -25,7 +25,6 @@ export default function NumberInput({
     const input = event.target.value
     setFormValue(input)
     if (isNumber(input)) {
-      console.log({ message: "Is Number", input})
       const parsedInput = Number(input)
 
       if (isMinValue(parsedInput) && isMaxValue(parsedInput)) {
@@ -33,7 +32,6 @@ export default function NumberInput({
         numberSetter(parsedInput)
       }
     } else {
-      console.log({ message: "Is Not Number", input})
       setHasInvalidInput(true)
     }
   }
