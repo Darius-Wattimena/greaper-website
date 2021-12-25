@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
+import { Outlet, BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import Home from './pages/home/Home'
 import Nav from './components/nav/Nav'

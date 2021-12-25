@@ -24,16 +24,19 @@ export default function NumberInput({
   function onFloatChange(event: React.ChangeEvent<HTMLInputElement>) {
     const input = event.target.value
     setFormValue(input)
+
     if (isNumber(input)) {
       const parsedInput = Number(input)
 
       if (isMinValue(parsedInput) && isMaxValue(parsedInput)) {
         setHasInvalidInput(false)
         numberSetter(parsedInput)
+
+        return
       }
-    } else {
-      setHasInvalidInput(true)
     }
+
+    setHasInvalidInput(true)
   }
 
   function isMinValue(parsedInput: number): boolean {
