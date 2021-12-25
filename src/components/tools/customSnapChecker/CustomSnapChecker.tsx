@@ -49,13 +49,13 @@ export default function CustomSnapChecker({ bpm }: SnappingSpecifierProps) {
   }
 
   function getClassNameBasedOfSnapType(snapType: SnapType): string {
-    if (snapType == SnapType.DISALLOWED) {
+    if (snapType === SnapType.DISALLOWED) {
       return 'snap-type__disallowed'
     }
-    if (snapType == SnapType.HIGHER_SNAPPED) {
+    if (snapType === SnapType.HIGHER_SNAPPED) {
       return 'snap-type__higher-snapped'
     }
-    if (snapType == SnapType.BASIC_SNAPPED) {
+    if (snapType === SnapType.BASIC_SNAPPED) {
       return 'snap-type__basic-snapped'
     }
     return ''

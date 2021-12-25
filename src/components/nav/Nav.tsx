@@ -11,15 +11,25 @@ export default function Nav() {
           <nav className="nav">
             <ul className="nav__wrapper">
               <li className="nav__item">
-                <NavLink exact to="/" activeClassName="navbar__item-active">
+                <NavLink
+                  end
+                  to="/"
+                  className={({ isActive }) => (isActive ? 'navbar__item-active' : '')}
+                >
                   Home
                 </NavLink>
               </li>
               {/* <li className="nav__item">
-                <NavLink to="/guides" activeClassName="navbar__item-active">Guides</NavLink>
+                <NavLink end to="/guides" className={({ isActive }) => (isActive ? "navbar__item-active" : "")}>
+                  Guides
+                </NavLink>
               </li> */}
               <li className="nav__item">
-                <NavLink to="/tools" activeClassName="navbar__item-active">
+                <NavLink
+                  end
+                  to="/tools"
+                  className={({ isActive }) => (isActive ? 'navbar__item-active' : '')}
+                >
                   Tools
                 </NavLink>
               </li>

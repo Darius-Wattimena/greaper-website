@@ -4,7 +4,6 @@ import SliderVelocityCalculator from '../../components/tools/svFinder/SliderVelo
 import SnappingSpecifier from '../../components/tools/snappingSpecifier/SnappingSpecifier'
 import NumberInput from '../../components/form/NumberInput'
 import CustomSnapChecker from '../../components/tools/customSnapChecker/CustomSnapChecker'
-import CheckboxInput from '../../components/form/CheckboxInput'
 
 export default function Tools() {
   const [bpm, setBpm] = useState<number>(180)

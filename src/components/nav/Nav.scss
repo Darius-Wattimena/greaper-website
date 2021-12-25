@@ -9,28 +9,26 @@
 .site-header {
   position: relative;
   background-color: $primary-color;
-}
 
-.site-header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 0;
-  padding-bottom: 0;
+  .site-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
 
-  ul {
-    list-style-type: none;
+    ul {
+      list-style-type: none;
+    }
+
+    nav ul {
+      margin: 0;
+    }
   }
 }
 
 .navbar__item-active {
   background-color: $secondary-color;
-}
-
-.site-header__wrapper {
-  nav ul {
-    margin: 0;
-  }
 }
 
 .site-header__middle {
