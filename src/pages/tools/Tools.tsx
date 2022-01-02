@@ -27,7 +27,7 @@ export default function Tools() {
             <SelectedToolName selectedTool={selectedTool} />
           </div>
           <div className="row tools__tool-row">
-            <div className="col-3 no-margin tools__side-bar">
+            <div className="col-3 no-spacing tools__side-bar">
               <ToolsSideBar
                 selectedTool={selectedTool}
                 bpm={bpm}
@@ -42,7 +42,7 @@ export default function Tools() {
                 setAscendance={setAscendance}
               />
             </div>
-            <div className="col-9 no-margin">
+            <div className="col-9 no-spacing tools_tool-container">
               <div className="tools__tool">
                 <SelectedTool
                   selectedTool={selectedTool}

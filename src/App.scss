@@ -15,6 +15,10 @@ body {
   overflow: scroll;
 }
 
+a {
+  cursor: pointer;
+}
+
 .wrapper {
   max-width: 1400px;
   margin-left: auto;
@@ -106,7 +110,7 @@ input[type='checkbox'] {
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
-  background: $text-color;
+  background: $background-color;
   border-radius: 5px;
   position: relative;
   box-sizing: content-box;

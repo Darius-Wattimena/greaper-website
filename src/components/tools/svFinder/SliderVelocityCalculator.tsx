@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import SliderVelocityForm from './SliderVelocityForm'
 import { Difficulty } from '../../../Types'
 
 interface SliderVelocityCalculatorProps {
@@ -21,7 +20,7 @@ export default function SliderVelocityCalculator({
     let rainSV
 
     if (ascendance) {
-      rainSV = 330 / bpm
+      rainSV = 375 / bpm
     } else {
       rainSV = 300 / bpm
     }
@@ -45,7 +44,7 @@ export default function SliderVelocityCalculator({
               While the given result is provided as the "Ideal SV" please keep in mind to test
               yourself as well.
             </strong>{' '}
-            The calculated SVs are based of the catchers speed combined with my personal preference.
+            The calculated SVs are based on the catchers speed (300 units per second).
           </p>
         </div>
       </div>

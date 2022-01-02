@@ -1,7 +1,7 @@
 export type Tool = 'Trigger Distance' | 'Slider Velocity' | 'Snapping'
 
 export enum SnapType {
-  NONE = 'None',
+  NONE = '✓',
   DISALLOWED = 'X',
   BASIC_SNAPPED = 'Basic',
   HIGHER_SNAPPED = 'Higher'

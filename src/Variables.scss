@@ -19,13 +19,32 @@ $background-color-table: $background-color;
 $background-color-table-striped: darken($background-color, 10%);
 */
 
-$primary-color: #1a4672;
-$secondary-color: lighten($primary-color, 10%);
+// $primary-color: #1a4672;
+// $primary-color: #3b5179;
+// $primary-color: #43589d;
+// $secondary-color: lighten($primary-color, 10%);
 
-$red-color: #cc4747;
-$orange-color: #cca047;
-$green-color: #76cc47;
+// Pastel purple/blue
+$primary-color: #716f81;
+$secondary-color: #b97a95;
+// $primary-color: #716F81;
+//$secondary-color: #B97A95;
 
+// Pastel red
+// $primary-color: #D35D6E;
+// $secondary-color: #EFB08C;
+
+// Default red/orange/green
+// $red-color: #cc4747;
+// $orange-color: #cca047;
+// $green-color: #76cc47;
+
+// alternative red/orange/green
+$red-color: #c24e4e;
+$orange-color: #c2944e;
+$green-color: #4ec254;
+
+/*
 $text-color: #d9d9d9;
 $text-color-light: #eeeeee;
 $text-color-dark: #151515;
@@ -38,6 +57,20 @@ $background-color-tools-settings: #292929;
 
 $background-color-table: $background-color;
 $background-color-table-striped: darken($background-color, 10%);
+*/
+
+$text-color: #111111;
+$text-color-light: #eeeeee;
+$text-color-dark: #0c0c0c;
+$border-color: #c6c6c6;
+$background-color: #ffffff;
+$background-color-container: #f9f9f9;
+$background-color-tool: $background-color-container;
+$background-color-tools-header: darken($primary-color, 10%);
+$background-color-tools-settings: darken($background-color-tool, 5%);
+
+$background-color-table: $background-color;
+$background-color-table-striped: darken($background-color, 5%);
 
 $padding: 8px;
 $padding-small: 4px;

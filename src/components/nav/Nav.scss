@@ -27,10 +27,6 @@
   }
 }
 
-.navbar__item-active {
-  background-color: $secondary-color;
-}
-
 .site-header__middle {
   text-align: center;
 }
@@ -45,6 +41,12 @@
   a {
     display: block;
     padding: 1.5rem 1rem;
+
+    transition: background-color, background-color 300ms;
+
+    &.navbar__item-active {
+      background-color: $secondary-color;
+    }
 
     &:hover {
       background-color: $secondary-color;

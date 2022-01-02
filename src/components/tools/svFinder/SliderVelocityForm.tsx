@@ -9,15 +9,17 @@ interface SliderVelocityFormProps {
 export default function SliderVelocityForm({ ascendance, setAscendance }: SliderVelocityFormProps) {
   return (
     <>
-      <hr />
-      <div className="row">
-        <div className="col-12">
-          <CheckboxInput
-            id="ascendance"
-            label="Ascendance multiplier"
-            initialValue={ascendance}
-            booleanSetter={setAscendance}
-          />
+      <div className="tools-settings-header">Tool Settings</div>
+      <div className="tools-settings">
+        <div className="row">
+          <div className="col-12">
+            <CheckboxInput
+              id="ascendance"
+              label="Ascendance multiplier"
+              initialValue={ascendance}
+              booleanSetter={setAscendance}
+            />
+          </div>
         </div>
       </div>
     </>

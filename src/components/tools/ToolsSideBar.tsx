@@ -47,41 +47,43 @@ export default function ToolsSideBar({
 
   return (
     <>
-      <div className="row">
-        <form onSubmit={event => event.preventDefault()}>
-          <NumberInput
-            id="bpm"
-            label="BPM"
-            initialValue={bpm.toString()}
-            numberSetter={setBpm}
-            min={1}
-            max={600}
-          />
-          <NumberInput
-            id="cs"
-            label="Circle Size (CS)"
-            initialValue={circleSize.toString()}
-            numberSetter={setCircleSize}
-            min={null}
-            max={10}
-          />
-          <NumberInput
-            id="sv"
-            label="Slider Velocity (SV)"
-            initialValue={sliderVelocity.toString()}
-            numberSetter={setSliderVelocity}
-            min={0.4}
-            max={3.6}
-          />
-          <NumberInput
-            id="svm"
-            label="Slider Velocity Multiplier (SVM)"
-            initialValue={sliderVelocityMultiplier.toString()}
-            numberSetter={setSliderVelocityMultiplier}
-            min={0.1}
-            max={4.0}
-          />
-        </form>
+      <div className="beatmap-settings">
+        <div className="row">
+          <form onSubmit={event => event.preventDefault()}>
+            <NumberInput
+              id="bpm"
+              label="BPM"
+              initialValue={bpm.toString()}
+              numberSetter={setBpm}
+              min={1}
+              max={600}
+            />
+            <NumberInput
+              id="cs"
+              label="Circle Size (CS)"
+              initialValue={circleSize.toString()}
+              numberSetter={setCircleSize}
+              min={null}
+              max={10}
+            />
+            <NumberInput
+              id="sv"
+              label="Slider Velocity (SV)"
+              initialValue={sliderVelocity.toString()}
+              numberSetter={setSliderVelocity}
+              min={0.4}
+              max={3.6}
+            />
+            <NumberInput
+              id="svm"
+              label="Slider Velocity Multiplier (SVM)"
+              initialValue={sliderVelocityMultiplier.toString()}
+              numberSetter={setSliderVelocityMultiplier}
+              min={0.1}
+              max={4.0}
+            />
+          </form>
+        </div>
       </div>
       {selectedToolSideBar}
     </>

@@ -117,16 +117,18 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
   }
 
   function getClassNameBasedOfSnapType(snapType: SnapType): string {
-    if (snapType == SnapType.DISALLOWED) {
-      return 'snap-type__disallowed'
+    switch (snapType) {
+      case SnapType.DISALLOWED:
+        return 'snap-type__disallowed'
+      case SnapType.HIGHER_SNAPPED:
+        return 'snap-type__higher-snapped'
+      case SnapType.BASIC_SNAPPED:
+        return 'snap-type__basic-snapped'
+      case SnapType.NONE:
+        return 'snap-type__allowed'
+      default:
+        return ''
     }
-    if (snapType == SnapType.HIGHER_SNAPPED) {
-      return 'snap-type__higher-snapped'
-    }
-    if (snapType == SnapType.BASIC_SNAPPED) {
-      return 'snap-type__basic-snapped'
-    }
-    return ''
   }
 
   return (
