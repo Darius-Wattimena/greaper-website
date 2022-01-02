@@ -6,15 +6,21 @@ import './SnappingSpecifier.scss'
 
 interface SnappingSpecifierProps {
   bpm: number
+  customNumerator: number
+  customDenominator: number
 }
 
-export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
+export default function SnappingSpecifier({
+  bpm,
+  customNumerator,
+  customDenominator
+}: SnappingSpecifierProps) {
   const [result, setResult] = useState<SnappingResult[]>([])
 
   useEffect(() => {
-    const snaps = calculateSnaps(bpm)
+    const snaps = calculateSnaps(bpm, customNumerator, customDenominator)
     setResult(specifySnappingCategories(snaps))
-  }, [bpm])
+  }, [bpm, customNumerator, customDenominator])
 
   function specifySnappingCategories(snaps: MillisecondSnappingReference): SnappingResult[] {
     return [
@@ -26,7 +32,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.CUP, snaps.purpleTick, false),
           GetSnapType(Difficulty.CUP, snaps.blueTick, false),
           GetSnapType(Difficulty.CUP, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.CUP, snaps.yellowTick, false)
+          GetSnapType(Difficulty.CUP, snaps.yellowTick, false),
+          GetSnapType(Difficulty.CUP, snaps.custom, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.CUP, snaps.whiteTick, true),
@@ -34,7 +41,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.CUP, snaps.purpleTick, true),
           GetSnapType(Difficulty.CUP, snaps.blueTick, true),
           GetSnapType(Difficulty.CUP, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.CUP, snaps.yellowTick, true)
+          GetSnapType(Difficulty.CUP, snaps.yellowTick, true),
+          GetSnapType(Difficulty.CUP, snaps.custom, true)
         ]
       },
       {
@@ -45,7 +53,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.SALAD, snaps.purpleTick, false),
           GetSnapType(Difficulty.SALAD, snaps.blueTick, false),
           GetSnapType(Difficulty.SALAD, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.SALAD, snaps.yellowTick, false)
+          GetSnapType(Difficulty.SALAD, snaps.yellowTick, false),
+          GetSnapType(Difficulty.SALAD, snaps.custom, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.SALAD, snaps.whiteTick, true),
@@ -53,7 +62,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.SALAD, snaps.purpleTick, true),
           GetSnapType(Difficulty.SALAD, snaps.blueTick, true),
           GetSnapType(Difficulty.SALAD, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.SALAD, snaps.yellowTick, true)
+          GetSnapType(Difficulty.SALAD, snaps.yellowTick, true),
+          GetSnapType(Difficulty.SALAD, snaps.custom, true)
         ]
       },
       {
@@ -64,7 +74,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.PLATTER, snaps.purpleTick, false),
           GetSnapType(Difficulty.PLATTER, snaps.blueTick, false),
           GetSnapType(Difficulty.PLATTER, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.PLATTER, snaps.yellowTick, false)
+          GetSnapType(Difficulty.PLATTER, snaps.yellowTick, false),
+          GetSnapType(Difficulty.PLATTER, snaps.custom, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.PLATTER, snaps.whiteTick, true),
@@ -72,7 +83,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.PLATTER, snaps.purpleTick, true),
           GetSnapType(Difficulty.PLATTER, snaps.blueTick, true),
           GetSnapType(Difficulty.PLATTER, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.PLATTER, snaps.yellowTick, true)
+          GetSnapType(Difficulty.PLATTER, snaps.yellowTick, true),
+          GetSnapType(Difficulty.PLATTER, snaps.custom, true)
         ]
       },
       {
@@ -83,7 +95,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.RAIN, snaps.purpleTick, false),
           GetSnapType(Difficulty.RAIN, snaps.blueTick, false),
           GetSnapType(Difficulty.RAIN, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.RAIN, snaps.yellowTick, false)
+          GetSnapType(Difficulty.RAIN, snaps.yellowTick, false),
+          GetSnapType(Difficulty.RAIN, snaps.custom, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.RAIN, snaps.whiteTick, true),
@@ -91,7 +104,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.RAIN, snaps.purpleTick, true),
           GetSnapType(Difficulty.RAIN, snaps.blueTick, true),
           GetSnapType(Difficulty.RAIN, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.RAIN, snaps.yellowTick, true)
+          GetSnapType(Difficulty.RAIN, snaps.yellowTick, true),
+          GetSnapType(Difficulty.RAIN, snaps.custom, true)
         ]
       },
       {
@@ -102,7 +116,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.OVERDOSE, snaps.purpleTick, false),
           GetSnapType(Difficulty.OVERDOSE, snaps.blueTick, false),
           GetSnapType(Difficulty.OVERDOSE, snaps.darkPurpleTick, false),
-          GetSnapType(Difficulty.OVERDOSE, snaps.yellowTick, false)
+          GetSnapType(Difficulty.OVERDOSE, snaps.yellowTick, false),
+          GetSnapType(Difficulty.OVERDOSE, snaps.custom, false)
         ],
         hyperdashSnaps: [
           GetSnapType(Difficulty.OVERDOSE, snaps.whiteTick, true),
@@ -110,7 +125,8 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           GetSnapType(Difficulty.OVERDOSE, snaps.purpleTick, true),
           GetSnapType(Difficulty.OVERDOSE, snaps.blueTick, true),
           GetSnapType(Difficulty.OVERDOSE, snaps.darkPurpleTick, true),
-          GetSnapType(Difficulty.OVERDOSE, snaps.yellowTick, true)
+          GetSnapType(Difficulty.OVERDOSE, snaps.yellowTick, true),
+          GetSnapType(Difficulty.OVERDOSE, snaps.custom, true)
         ]
       }
     ]
@@ -131,10 +147,17 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
     }
   }
 
+  const snappingHeader = customNumerator.toString().concat('/').concat(customDenominator.toString())
+
   return (
     <div className="row">
-      <div className="col-4">
-        <SnappingSpecifierForm />
+      <div className="col-4 note-col">
+        <p className="note">
+          <strong className="fake-bold">This does not take unsnapped objects into account.</strong>{' '}
+          For example, at 240 BPM a 1/2 dash is exactly 125 ms. When one of the two objects is
+          unsnapped for 1 ms the time between the two objects may be 124 ms instead (which is
+          unrankable).
+        </p>
       </div>
       <div className="col-8">
         <table>
@@ -191,8 +214,7 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
           <thead>
             <tr>
               <th rowSpan={2}>Difficulty</th>
-              <th colSpan={6}>Dash Snaps</th>
-              <th colSpan={6}>Hyperdash Snaps</th>
+              <th colSpan={7}>Dash Snaps</th>
             </tr>
             <tr>
               <th>1/1</th>
@@ -201,12 +223,7 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
               <th>1/4</th>
               <th>1/6</th>
               <th>1/8</th>
-              <th>1/1</th>
-              <th>1/2</th>
-              <th>1/3</th>
-              <th>1/4</th>
-              <th>1/6</th>
-              <th>1/8</th>
+              <th>{snappingHeader}</th>
             </tr>
           </thead>
           <tbody>
@@ -233,6 +250,38 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
                   <td className={getClassNameBasedOfSnapType(value.dashSnaps[5])}>
                     {value.dashSnaps[5]}
                   </td>
+                  <td className={getClassNameBasedOfSnapType(value.dashSnaps[6])}>
+                    {value.dashSnaps[6]}
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div className="col-12">
+        <table>
+          <thead>
+            <tr>
+              <th rowSpan={2}>Difficulty</th>
+              <th colSpan={7}>Hyperdash Snaps</th>
+            </tr>
+            <tr>
+              <th>1/1</th>
+              <th>1/2</th>
+              <th>1/3</th>
+              <th>1/4</th>
+              <th>1/6</th>
+              <th>1/8</th>
+              <th>{snappingHeader}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {result.map((value, index) => {
+              const key = `result-${index}`
+              return (
+                <tr key={key}>
+                  <th>{value.diff}</th>
                   <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[0])}>
                     {value.hyperdashSnaps[0]}
                   </td>
@@ -250,6 +299,9 @@ export default function SnappingSpecifier({ bpm }: SnappingSpecifierProps) {
                   </td>
                   <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[5])}>
                     {value.hyperdashSnaps[5]}
+                  </td>
+                  <td className={getClassNameBasedOfSnapType(value.hyperdashSnaps[6])}>
+                    {value.hyperdashSnaps[6]}
                   </td>
                 </tr>
               )

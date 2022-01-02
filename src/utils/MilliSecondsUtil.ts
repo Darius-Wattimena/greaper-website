@@ -1,6 +1,10 @@
 import { Difficulty, MillisecondSnappingReference, SnapType } from '../Types'
 
-export function calculateSnaps(bpm: number): MillisecondSnappingReference {
+export function calculateSnaps(
+  bpm: number,
+  customNumerator: number,
+  customDenominator: number
+): MillisecondSnappingReference {
   const oneMeasureMs = 60000 / bpm
 
   return {
@@ -14,7 +18,8 @@ export function calculateSnaps(bpm: number): MillisecondSnappingReference {
     oneSeven: oneMeasureMs / 7, // 1/7 snapping
     oneNine: oneMeasureMs / 9, // 1/9 snapping
     oneTwelve: oneMeasureMs / 12, // 1/12 snapping
-    oneSixteen: oneMeasureMs / 16 // 1/16 snapping
+    oneSixteen: oneMeasureMs / 16, // 1/16 snapping
+    custom: customDenominator === 0 ? 0 : (customNumerator * oneMeasureMs) / customDenominator
   }
 }
 

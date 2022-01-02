@@ -12,6 +12,8 @@ export default function Tools() {
   const [sliderVelocity, setSliderVelocity] = useState(1.0)
   const [sliderVelocityMultiplier, setSliderVelocityMultiplier] = useState(1.0)
   const [ascendance, setAscendance] = useState<boolean>(false)
+  const [customNumerator, setCustomNumerator] = useState(3)
+  const [customDenominator, setCustomDenominator] = useState(4)
 
   return (
     <div className="wrapper page">
@@ -40,6 +42,10 @@ export default function Tools() {
                 setSliderVelocityMultiplier={setSliderVelocityMultiplier}
                 ascendance={ascendance}
                 setAscendance={setAscendance}
+                customNumerator={customNumerator}
+                setCustomNumerator={setCustomNumerator}
+                customDenominator={customDenominator}
+                setCustomDenominator={setCustomDenominator}
               />
             </div>
             <div className="col-9 no-spacing tools_tool-container">
@@ -51,6 +57,8 @@ export default function Tools() {
                   circleSize={circleSize}
                   sliderVelocity={sliderVelocity}
                   sliderVelocityMultiplier={sliderVelocityMultiplier}
+                  customNumerator={customNumerator}
+                  customDenominator={customDenominator}
                 />
               </div>
             </div>

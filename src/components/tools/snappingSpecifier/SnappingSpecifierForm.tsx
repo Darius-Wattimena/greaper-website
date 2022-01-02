@@ -1,16 +1,37 @@
 import React from 'react'
+import CheckboxInput from '../../form/CheckboxInput'
+import SnappingInput from '../../form/SnappingInput'
 
-export default function SnappingSpecifierForm() {
+interface SnappingSpecifierFormProps {
+  customNumerator: number
+  setCustomNumerator: React.Dispatch<React.SetStateAction<number>>
+  customDenominator: number
+  setCustomDenominator: React.Dispatch<React.SetStateAction<number>>
+}
+
+export default function SnappingSpecifierForm({
+  customNumerator,
+  setCustomNumerator,
+  customDenominator,
+  setCustomDenominator
+}: SnappingSpecifierFormProps) {
   return (
-    <div className="row">
-      <div className="col-12 note-col">
-        <p className="note">
-          <strong className="fake-bold">This does not take unsnapped objects into account.</strong>{' '}
-          For example, at 240 BPM a 1/2 dash is exactly 125 ms. When one of the two objects is
-          unsnapped for 1 ms the time between the two objects may be 124 ms instead (which is
-          unrankable).
-        </p>
+    <>
+      <div className="tools-settings-header">Tool Settings</div>
+      <div className="tools-settings">
+        <div className="row">
+          <div className="col-12">
+            <SnappingInput
+              id="custom-snap"
+              label="Custom snapping"
+              initialNumeratorValue={customNumerator.toString()}
+              numeratorSetter={setCustomNumerator}
+              initialDenominatorValue={customDenominator.toString()}
+              denominatorSetter={setCustomDenominator}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

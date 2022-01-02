@@ -27,7 +27,8 @@ export enum Snapping {
   ONE_SEVEN = '1/7',
   ONE_NINE = '1/9',
   ONE_TWELVE = '1/12',
-  ONE_SIXTEEN = '1/16'
+  ONE_SIXTEEN = '1/16',
+  CUSTOM = 'CUSTOM'
 }
 
 export interface MillisecondSnappingReference {
@@ -42,4 +43,5 @@ export interface MillisecondSnappingReference {
   oneNine: number
   oneTwelve: number
   oneSixteen: number
+  custom: number
 }

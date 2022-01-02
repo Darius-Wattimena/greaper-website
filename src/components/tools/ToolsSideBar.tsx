@@ -6,6 +6,7 @@ import HyperTriggerDistanceCalculator from './hyperTriggerDistance/HyperTriggerD
 import SliderVelocityCalculator from './svFinder/SliderVelocityCalculator'
 import SnappingSpecifier from './snappingSpecifier/SnappingSpecifier'
 import CustomSnapChecker from './customSnapChecker/CustomSnapChecker'
+import SnappingSpecifierForm from './snappingSpecifier/SnappingSpecifierForm'
 
 interface ToolsSideBarProps {
   bpm: number
@@ -19,6 +20,10 @@ interface ToolsSideBarProps {
   selectedTool: Tool
   ascendance: boolean
   setAscendance: React.Dispatch<React.SetStateAction<boolean>>
+  customNumerator: number
+  setCustomNumerator: React.Dispatch<React.SetStateAction<number>>
+  customDenominator: number
+  setCustomDenominator: React.Dispatch<React.SetStateAction<number>>
 }
 
 export default function ToolsSideBar({
@@ -32,10 +37,25 @@ export default function ToolsSideBar({
   sliderVelocityMultiplier,
   setSliderVelocityMultiplier,
   ascendance,
-  setAscendance
+  setAscendance,
+  customNumerator,
+  setCustomNumerator,
+  customDenominator,
+  setCustomDenominator
 }: ToolsSideBarProps) {
   let selectedToolSideBar = <div />
   switch (selectedTool) {
+    case 'Trigger Distance':
+    case 'Snapping':
+      selectedToolSideBar = (
+        <SnappingSpecifierForm
+          customNumerator={customNumerator}
+          setCustomNumerator={setCustomNumerator}
+          customDenominator={customDenominator}
+          setCustomDenominator={setCustomDenominator}
+        />
+      )
+      break
     case 'Slider Velocity':
       selectedToolSideBar = (
         <SliderVelocityForm ascendance={ascendance} setAscendance={setAscendance} />

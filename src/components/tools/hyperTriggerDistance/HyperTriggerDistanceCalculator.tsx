@@ -8,20 +8,31 @@ interface HyperTriggerDistanceCalculatorProps {
   circleSize: number
   sliderVelocity: number
   sliderVelocityMultiplier: number
+  customNumerator: number
+  customDenominator: number
 }
 
 export default function HyperTriggerDistanceCalculator({
   bpm,
   circleSize,
   sliderVelocity,
-  sliderVelocityMultiplier
+  sliderVelocityMultiplier,
+  customNumerator,
+  customDenominator
 }: HyperTriggerDistanceCalculatorProps) {
   const [result, setResult] = useState<SnappingResult[]>([])
 
   useEffect(() => {
-    const snaps = calculateSnaps(bpm)
+    const snaps = calculateSnaps(bpm, customNumerator, customDenominator)
     setResult(calculateTriggerDistances(snaps))
-  }, [circleSize, bpm, sliderVelocity, sliderVelocityMultiplier])
+  }, [
+    circleSize,
+    bpm,
+    sliderVelocity,
+    sliderVelocityMultiplier,
+    customNumerator,
+    customDenominator
+  ])
 
   function getTriggerDistance(ms: number, dashRange: number): number {
     const timeToNext = ms - 1000 / 60 / 4
@@ -74,9 +85,17 @@ export default function HyperTriggerDistanceCalculator({
       getSnappingResult(Snapping.YELLOW_TICK, snaps.yellowTick, dashRange, 8),
       getSnappingResult(Snapping.ONE_NINE, snaps.oneNine, dashRange, 9),
       getSnappingResult(Snapping.ONE_TWELVE, snaps.oneTwelve, dashRange, 12),
-      getSnappingResult(Snapping.ONE_SIXTEEN, snaps.oneSixteen, dashRange, 16)
+      getSnappingResult(Snapping.ONE_SIXTEEN, snaps.oneSixteen, dashRange, 16),
+      getSnappingResult(
+        Snapping.CUSTOM,
+        snaps.custom,
+        dashRange,
+        customDenominator / customNumerator
+      )
     ]
   }
+
+  const customSnapping = customNumerator.toString().concat('/').concat(customDenominator.toString())
 
   return (
     <div className="row">
@@ -101,7 +120,7 @@ export default function HyperTriggerDistanceCalculator({
               const key = `result-${index}`
               return (
                 <tr key={key}>
-                  <td>{value.snapping}</td>
+                  <td>{value.snapping === Snapping.CUSTOM ? customSnapping : value.snapping}</td>
                   <td>{Math.round(value.msSnapping)}</td>
                   <td>{Math.floor(value.distanceNeed)}</td>
                   <td>{Math.ceil(value.xDistance * 100) / 100}</td>

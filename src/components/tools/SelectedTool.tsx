@@ -12,6 +12,8 @@ interface SelectedToolProps {
   circleSize: number
   sliderVelocity: number
   sliderVelocityMultiplier: number
+  customNumerator: number
+  customDenominator: number
 }
 
 export default function SelectedTool({
@@ -20,7 +22,9 @@ export default function SelectedTool({
   bpm,
   circleSize,
   sliderVelocity,
-  sliderVelocityMultiplier
+  sliderVelocityMultiplier,
+  customNumerator,
+  customDenominator
 }: SelectedToolProps) {
   switch (selectedTool) {
     case 'Trigger Distance':
@@ -30,12 +34,20 @@ export default function SelectedTool({
           circleSize={circleSize}
           sliderVelocity={sliderVelocity}
           sliderVelocityMultiplier={sliderVelocityMultiplier}
+          customNumerator={customNumerator}
+          customDenominator={customDenominator}
         />
       )
     case 'Slider Velocity':
       return <SliderVelocityCalculator bpm={bpm} ascendance={ascendance} />
     case 'Snapping':
-      return <SnappingSpecifier bpm={bpm} />
+      return (
+        <SnappingSpecifier
+          bpm={bpm}
+          customNumerator={customNumerator}
+          customDenominator={customDenominator}
+        />
+      )
     default:
       return <CustomSnapChecker bpm={bpm} />
   }
