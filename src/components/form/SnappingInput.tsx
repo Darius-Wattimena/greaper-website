@@ -75,7 +75,7 @@ export default function SnappingInput({
             }}
           />
         </div>
-        <div className="col-2" style={{ textAlign: 'center' }}>
+        <div className="col-2" style={{ textAlign: 'center', fontSize: '1.5rem' }}>
           /
         </div>
         <div className="col-5">
