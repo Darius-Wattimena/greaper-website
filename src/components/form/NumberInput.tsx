@@ -48,7 +48,7 @@ export default function NumberInput({
   }
 
   return (
-    <label htmlFor={id} className="col-12">
+    <label htmlFor={id} className="col-12 no-margin">
       {label}
       <input
         id={id}

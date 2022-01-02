@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import './index.scss'
-import './simple-grid.min.css'
+import './simple-grid.scss'
 
 ReactDOM.render(
   <React.StrictMode>

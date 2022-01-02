@@ -1,8 +1,10 @@
+export type Tool = 'Trigger Distance' | 'Slider Velocity' | 'Snapping'
+
 export enum SnapType {
   NONE = 'None',
-  DISALLOWED = 'Unrankable',
-  BASIC_SNAPPED = 'Basic-Snapped',
-  HIGHER_SNAPPED = 'Higher-Snapped'
+  DISALLOWED = 'X',
+  BASIC_SNAPPED = 'Basic',
+  HIGHER_SNAPPED = 'Higher'
 }
 
 export enum Difficulty {

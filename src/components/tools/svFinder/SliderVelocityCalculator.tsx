@@ -4,11 +4,11 @@ import { Difficulty } from '../../../Types'
 
 interface SliderVelocityCalculatorProps {
   bpm: number
+  ascendance: boolean
 }
 
-export default function SliderVelocityCalculator({ bpm }: SliderVelocityCalculatorProps) {
+export default function SliderVelocityCalculator({ bpm, ascendance }: SliderVelocityCalculatorProps) {
   const [result, setResult] = useState<SliderVelocityResult[]>([])
-  const [ascendance, setAscendance] = useState<boolean>(false)
 
   useEffect(() => {
     setResult(calculateIdealSliderVelocity())
@@ -36,7 +36,15 @@ export default function SliderVelocityCalculator({ bpm }: SliderVelocityCalculat
   return (
     <div className="row">
       <div className="col-6">
-        <SliderVelocityForm ascendance={ascendance} setAscendance={setAscendance} />
+        <div className="note-col">
+          <p className="note">
+            <strong className="fake-bold">
+              While the given result is provided as the "Ideal SV" please keep in mind to test
+              yourself as well.
+            </strong>{' '}
+            The calculated SVs are based of the catchers speed combined with my personal preference.
+          </p>
+        </div>
       </div>
       <div className="col-6">
         <table>

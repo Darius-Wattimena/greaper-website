@@ -1,3 +1,5 @@
+/*
+
 $primary-color: #366199;
 $secondary-color: #4780cc;
 
@@ -11,6 +13,28 @@ $border-color: #c6c6c6;
 $background-color: #e7e7e7;
 $background-color-container: #e0e0e0;
 $background-color-container-header: #1b304d;
+$background-color-tools: #d9d9d9;
+
+$background-color-table: $background-color;
+$background-color-table-striped: darken($background-color, 10%);
+*/
+
+$primary-color: #1a4672;
+$secondary-color: lighten($primary-color, 10%);
+
+$red-color: #cc4747;
+$orange-color: #cca047;
+$green-color: #76cc47;
+
+$text-color: #d9d9d9;
+$text-color-light: #eeeeee;
+$text-color-dark: #151515;
+$border-color: #484848;
+$background-color: #373737;
+$background-color-container: #2f2f2f;
+$background-color-tool: #2f2f2f;
+$background-color-tools-header: #222222;
+$background-color-tools-settings: #292929;
 
 $background-color-table: $background-color;
 $background-color-table-striped: darken($background-color, 10%);

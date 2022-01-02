@@ -1,0 +1,58 @@
+@import '../../Variables';
+
+.page .tools__container {
+  .tools__side-bar__header {
+    background-color: $background-color-tools-header;
+    padding: $padding;
+    color: $secondary-color;
+  }
+
+  .tools__tool-header-row {
+    display: flex;
+
+    .tools__side-bar__header {
+      border-right: 1px solid $border-color;
+    }
+  }
+
+  .tools__tool-row {
+    display: flex;
+
+    .tools__side-bar {
+      border-right: 1px solid $border-color;
+    }
+  }
+
+  .tools__side-bar {
+    background-color: $background-color-tools-settings;
+  }
+
+  .tools__tool-name {
+    background-color: $background-color-tools-header;
+    color: $secondary-color;
+  }
+
+  .tools__tool {
+    background-color: $background-color-tool;
+  }
+}
+
+.tools__tool-selector-row {
+  // border-top: 1px solid $secondary-color;
+  background-color: $primary-color;
+
+  .tools__tool-selector {
+    display: flex;
+
+    .tools__tool-selector-option {
+      padding: 0.5rem 2%;
+      //font-weight: 500;
+      font-size: 1.3rem;
+      //line-height: 1.7;
+
+      &.active-tool, &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
