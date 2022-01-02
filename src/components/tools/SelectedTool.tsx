@@ -1,7 +1,6 @@
 import HyperTriggerDistanceCalculator from './hyperTriggerDistance/HyperTriggerDistanceCalculator'
 import SliderVelocityCalculator from './svFinder/SliderVelocityCalculator'
 import SnappingSpecifier from './snappingSpecifier/SnappingSpecifier'
-import CustomSnapChecker from './customSnapChecker/CustomSnapChecker'
 import React from 'react'
 import { Tool } from '../../Types'
 
@@ -48,7 +47,5 @@ export default function SelectedTool({
           customDenominator={customDenominator}
         />
       )
-    default:
-      return <CustomSnapChecker bpm={bpm} />
   }
 }

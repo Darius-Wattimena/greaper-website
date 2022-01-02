@@ -2,10 +2,6 @@ import React from 'react'
 import NumberInput from '../form/NumberInput'
 import { Tool } from '../../Types'
 import SliderVelocityForm from './svFinder/SliderVelocityForm'
-import HyperTriggerDistanceCalculator from './hyperTriggerDistance/HyperTriggerDistanceCalculator'
-import SliderVelocityCalculator from './svFinder/SliderVelocityCalculator'
-import SnappingSpecifier from './snappingSpecifier/SnappingSpecifier'
-import CustomSnapChecker from './customSnapChecker/CustomSnapChecker'
 import SnappingSpecifierForm from './snappingSpecifier/SnappingSpecifierForm'
 
 interface ToolsSideBarProps {
