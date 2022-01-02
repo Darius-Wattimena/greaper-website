@@ -1,11 +1,11 @@
 import React from 'react'
 import NumberInput from '../form/NumberInput'
-import { Tool } from "../../Types";
-import SliderVelocityForm from "./svFinder/SliderVelocityForm";
-import HyperTriggerDistanceCalculator from "./hyperTriggerDistance/HyperTriggerDistanceCalculator";
-import SliderVelocityCalculator from "./svFinder/SliderVelocityCalculator";
-import SnappingSpecifier from "./snappingSpecifier/SnappingSpecifier";
-import CustomSnapChecker from "./customSnapChecker/CustomSnapChecker";
+import { Tool } from '../../Types'
+import SliderVelocityForm from './svFinder/SliderVelocityForm'
+import HyperTriggerDistanceCalculator from './hyperTriggerDistance/HyperTriggerDistanceCalculator'
+import SliderVelocityCalculator from './svFinder/SliderVelocityCalculator'
+import SnappingSpecifier from './snappingSpecifier/SnappingSpecifier'
+import CustomSnapChecker from './customSnapChecker/CustomSnapChecker'
 
 interface ToolsSideBarProps {
   bpm: number
@@ -34,14 +34,15 @@ export default function ToolsSideBar({
   ascendance,
   setAscendance
 }: ToolsSideBarProps) {
-
-  let selectedToolSideBar = <div />;
+  let selectedToolSideBar = <div />
   switch (selectedTool) {
-  case 'Slider Velocity':
-    selectedToolSideBar = <SliderVelocityForm ascendance={ascendance} setAscendance={setAscendance}/>
-    break
-  default:
-    break
+    case 'Slider Velocity':
+      selectedToolSideBar = (
+        <SliderVelocityForm ascendance={ascendance} setAscendance={setAscendance} />
+      )
+      break
+    default:
+      break
   }
 
   return (

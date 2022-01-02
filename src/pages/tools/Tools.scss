@@ -50,7 +50,8 @@
       font-size: 1.3rem;
       //line-height: 1.7;
 
-      &.active-tool, &:hover {
+      &.active-tool,
+      &:hover {
         background-color: $secondary-color;
       }
     }

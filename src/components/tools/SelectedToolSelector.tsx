@@ -13,21 +13,27 @@ export default function SelectedToolSelector({
   return (
     <>
       <a
-        className={`tools__tool-selector-option ${selectedTool === 'Slider Velocity' ? "active-tool" : ""}`}
+        className={`tools__tool-selector-option ${
+          selectedTool === 'Slider Velocity' ? 'active-tool' : ''
+        }`}
         href="#"
         onClick={() => setSelectedTool('Slider Velocity')}
       >
         Slider Velocity
       </a>
       <a
-        className={`tools__tool-selector-option ${selectedTool === 'Trigger Distance' ? "active-tool" : ""}`}
+        className={`tools__tool-selector-option ${
+          selectedTool === 'Trigger Distance' ? 'active-tool' : ''
+        }`}
         href="#"
         onClick={() => setSelectedTool('Trigger Distance')}
       >
         Trigger Distance
       </a>
       <a
-        className={`tools__tool-selector-option ${selectedTool === 'Snapping' ? "active-tool" : ""}`}
+        className={`tools__tool-selector-option ${
+          selectedTool === 'Snapping' ? 'active-tool' : ''
+        }`}
         href="#"
         onClick={() => setSelectedTool('Snapping')}
       >

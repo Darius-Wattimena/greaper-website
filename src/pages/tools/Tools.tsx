@@ -66,26 +66,22 @@ interface SelectedToolNameProps {
 }
 
 function SelectedToolName({ selectedTool }: SelectedToolNameProps) {
-  let selectedToolName;
+  let selectedToolName
 
   switch (selectedTool) {
     case 'Trigger Distance':
-      selectedToolName = "Hyperdash Trigger Distance Calculator";
-      break;
+      selectedToolName = 'Hyperdash Trigger Distance Calculator'
+      break
     case 'Slider Velocity':
-      selectedToolName = "Ideal Slider Velocity Calculator";
-      break;
+      selectedToolName = 'Ideal Slider Velocity Calculator'
+      break
     case 'Snapping':
-      selectedToolName = "Snapping Specifier";
-      break;
+      selectedToolName = 'Snapping Specifier'
+      break
     default:
-      selectedToolName = "Custom Snap Checker";
-      break;
+      selectedToolName = 'Custom Snap Checker'
+      break
   }
 
-  return (
-    <div className="col-9 no-margin tools__tool-name">
-      {selectedToolName}
-    </div>
-  )
+  return <div className="col-9 no-margin tools__tool-name">{selectedToolName}</div>
 }

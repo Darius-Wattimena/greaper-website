@@ -7,7 +7,10 @@ interface SliderVelocityCalculatorProps {
   ascendance: boolean
 }
 
-export default function SliderVelocityCalculator({ bpm, ascendance }: SliderVelocityCalculatorProps) {
+export default function SliderVelocityCalculator({
+  bpm,
+  ascendance
+}: SliderVelocityCalculatorProps) {
   const [result, setResult] = useState<SliderVelocityResult[]>([])
 
   useEffect(() => {
