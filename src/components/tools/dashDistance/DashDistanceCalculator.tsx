@@ -113,8 +113,8 @@ export default function DashDistanceCalculator({
         <div className="note-col">
           <p className="note">
             <strong className="fake-bold">All values are estimates.</strong> Calculating the dash
-            distance isn't really possible as it all depends where you currently are when catching the
-            previous fruit.
+            distance isn't really possible as it all depends where you currently are when catching
+            the previous fruit.
           </p>
         </div>
       </div>
@@ -138,8 +138,13 @@ export default function DashDistanceCalculator({
                 <tr key={key}>
                   <td>{value.snapping === Snapping.CUSTOM ? customSnapping : value.snapping}</td>
                   <td>{Math.round(value.msSnapping)}</td>
-                  <td>{Math.floor(value.minDistance)} - {Math.floor(value.maxDistance)}</td>
-                  <td>{Math.ceil(value.minXDistance * 100) / 100} - {Math.ceil(value.maxXDistance * 100) / 100}</td>
+                  <td>
+                    {Math.floor(value.minDistance)} - {Math.floor(value.maxDistance)}
+                  </td>
+                  <td>
+                    {Math.ceil(value.minXDistance * 100) / 100} -{' '}
+                    {Math.ceil(value.maxXDistance * 100) / 100}
+                  </td>
                 </tr>
               )
             })}
