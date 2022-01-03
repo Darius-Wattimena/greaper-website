@@ -42,6 +42,7 @@ export default function ToolsSideBar({
   let selectedToolSideBar = <div />
   switch (selectedTool) {
     case 'Trigger Distance':
+    case 'Dash Distance':
     case 'Snapping':
       selectedToolSideBar = (
         <SnappingSpecifierForm

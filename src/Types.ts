@@ -1,4 +1,4 @@
-export type Tool = 'Trigger Distance' | 'Slider Velocity' | 'Snapping'
+export type Tool = 'Trigger Distance' | 'Slider Velocity' | 'Snapping' | 'Dash Distance'
 
 export enum SnapType {
   NONE = '✓',

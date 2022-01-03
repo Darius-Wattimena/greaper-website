@@ -86,8 +86,11 @@ function SelectedToolName({ selectedTool }: SelectedToolNameProps) {
     case 'Snapping':
       selectedToolName = 'Snapping Specifier'
       break
+    case 'Dash Distance':
+      selectedToolName = 'Dash Distance Calculator'
+      break
     default:
-      selectedToolName = 'Custom Snap Checker'
+      selectedToolName = 'Unknown'
       break
   }
 

@@ -36,6 +36,14 @@ export default function SelectedToolSelector({
       >
         Trigger Distance
       </a>
+      <a
+        className={`tools__tool-selector-option ${
+          selectedTool === 'Dash Distance' ? 'active-tool' : ''
+        }`}
+        onClick={() => setSelectedTool('Dash Distance')}
+      >
+        Dash Distance
+      </a>
     </>
   )
 }

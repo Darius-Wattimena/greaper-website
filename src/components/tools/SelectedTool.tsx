@@ -3,6 +3,7 @@ import SliderVelocityCalculator from './svFinder/SliderVelocityCalculator'
 import SnappingSpecifier from './snappingSpecifier/SnappingSpecifier'
 import React from 'react'
 import { Tool } from '../../Types'
+import DashDistanceCalculator from './dashDistance/DashDistanceCalculator'
 
 interface SelectedToolProps {
   selectedTool: Tool
@@ -43,6 +44,17 @@ export default function SelectedTool({
       return (
         <SnappingSpecifier
           bpm={bpm}
+          customNumerator={customNumerator}
+          customDenominator={customDenominator}
+        />
+      )
+    case 'Dash Distance':
+      return (
+        <DashDistanceCalculator
+          bpm={bpm}
+          circleSize={circleSize}
+          sliderVelocity={sliderVelocity}
+          sliderVelocityMultiplier={sliderVelocityMultiplier}
           customNumerator={customNumerator}
           customDenominator={customDenominator}
         />

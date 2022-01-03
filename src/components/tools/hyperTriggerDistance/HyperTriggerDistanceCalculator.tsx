@@ -98,7 +98,7 @@ export default function HyperTriggerDistanceCalculator({
 
   return (
     <div className="row">
-      <div className="col-6">
+      <div className="col-9">
         <div className="note-col">
           <p className="note">
             <ul>
@@ -121,7 +121,7 @@ export default function HyperTriggerDistanceCalculator({
           </p>
         </div>
       </div>
-      <div className="col-6">
+      <div className="col-12">
         <table>
           <thead>
             <tr>
