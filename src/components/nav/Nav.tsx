@@ -20,7 +20,11 @@ export default function Nav() {
                 </NavLink>
               </li>
               <li className="nav__item">
-                <NavLink end to="/guides" className={({ isActive }) => (isActive ? "navbar__item-active" : "")}>
+                <NavLink
+                  end
+                  to="/guides"
+                  className={({ isActive }) => (isActive ? 'navbar__item-active' : '')}
+                >
                   Guides
                 </NavLink>
               </li>
