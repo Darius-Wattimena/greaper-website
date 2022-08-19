@@ -10,8 +10,8 @@ import CommonPatterning from './pages/guides/commonPatterning/CommonPatterning'
 import Flow from './pages/guides/flow/Flow'
 import Patterns from './pages/guides/patterns/Patterns'
 import './App.scss'
-import { useDarkMode } from "usehooks-ts";
-import github from './github.png';
+import { useDarkMode } from 'usehooks-ts'
+import github from './github.png'
 
 function App() {
   const { isDarkMode, toggle, enable, disable } = useDarkMode(false)
@@ -24,7 +24,7 @@ function App() {
     }
   }, [])
 
-  const themeClass = (isDarkMode) ? "theme-dark" : "theme-light"
+  const themeClass = isDarkMode ? 'theme-dark' : 'theme-light'
 
   return (
     <div className={`theme ${themeClass} website__wrapper`}>
@@ -41,35 +41,38 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-        <div className={"footer"}>
-          <div className={"footer__wrapper wrapper"}>
-            <div className={"footer__start"}>
-              <div className={"footer-nav__wrapper"}>
-                <a href="https://github.com/Darius-Wattimena/greaper-website" target="_blank" className={"button footer-nav__item"}>
-                  <img src={github} alt="Source Code" className={"logo"} />
+        <div className={'footer'}>
+          <div className={'footer__wrapper wrapper'}>
+            <div className={'footer__start'}>
+              <div className={'footer-nav__wrapper'}>
+                <a
+                  href="https://github.com/Darius-Wattimena/greaper-website"
+                  target="_blank"
+                  className={'button footer-nav__item'}
+                >
+                  <img src={github} alt="Source Code" className={'logo'} />
                 </a>
               </div>
             </div>
-            <div className={"footer__middle"} />
-            <div className={"footer__end"}>
-              <div className={"footer-nav__wrapper"}>
-                <button className='footer-nav__item beatmap-button' onClick={() => {
-                  toggle()
-                  window.location.reload()
-                }}>
-                  {(isDarkMode) ? (
+            <div className={'footer__middle'} />
+            <div className={'footer__end'}>
+              <div className={'footer-nav__wrapper'}>
+                <button
+                  className="footer-nav__item beatmap-button"
+                  onClick={() => {
+                    toggle()
+                    window.location.reload()
+                  }}
+                >
+                  {isDarkMode ? (
                     <div className="button__container">
                       🔅
-                      <div className='button__text'>
-                        Switch to Light mode
-                      </div>
+                      <div className="button__text">Switch to Light mode</div>
                     </div>
                   ) : (
                     <div className="button__container">
                       🌙
-                      <div className='button__text'>
-                        Switch to Dark mode
-                      </div>
+                      <div className="button__text">Switch to Dark mode</div>
                     </div>
                   )}
                 </button>

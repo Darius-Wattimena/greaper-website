@@ -182,8 +182,9 @@ table {
   display: flex;
 }
 
-button, a.button {
-  cursor:pointer;
+button,
+a.button {
+  cursor: pointer;
   margin: $padding;
   padding: $padding;
   border: unset;
@@ -197,7 +198,6 @@ button, a.button {
   }
 
   .button__container {
-
     .button__text {
       color: var(--text-color-light);
     }
@@ -222,7 +222,8 @@ button, a.button {
     }
 
     .footer-nav__item {
-      button, a {
+      button,
+      a {
         display: flex;
         margin: $padding-large;
       }
