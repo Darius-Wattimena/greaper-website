@@ -2,56 +2,54 @@
 
 ## What is Flow?
 
-Probably one of the most ambiguous terms in mapping, Flow can be described as the effect a pattern has on playability and expression. In osu!catch, flow is the direct connection of movement with the song itself, as well as the patterns used. It's the way the catcher moves through a pattern, how the pattern itself plays and its overall strain/difficulty comparatively to how intense the song's pace is.
+Probably one of the most ambiguous terms in mapping, flow can be described as the effect a pattern has on playability and expression. In osu!catch, flow is the direct connection of movement with the song and the patterns used. It's how the catcher moves through a pattern, how the pattern itself plays and its overall strain/difficulty compared to how intense the song's pace is.
 
-In general, the term flow is somewhat connected with how a pattern "feels" while playing. One way to explain the feeling of a pattern is to break down its objects and see how it moves between them.
+Flow is somewhat connected with how a pattern "feels" while playing. One way to explain the feeling of a pattern is to break down its objects and see how it moves between them.
 
-**Movement is key.** osu!catch has only an x-axis, because of this we can only emphasise a sound with movement. For example, moving too little towards a strong sound would give a negative effect on both the pattern and the player playing it. Because movement is key, playtesting your map is vital to ensure that your provided emphasis is correct.
+**Movement is key.** osu!catch has only an x-axis. Because of this, we can only emphasise a sound with movement. For example, moving too little toward a strong sound would have a negative effect on both the pattern and the player playing it. Because movement is key, playtesting your map is vital to ensure that your provided emphasis is correct.
 
 ## Types of Flow
 
-In catch there are three different type of flow:
+There are three different types of flow in osu!catch:
 
 - **Flow**
 - **Antiflow**
 - **Standstill**
 
-This doesn't mean that you can label every slider as a certain type of flow. For example, a circular slider can have flow, antiflow and a tiny bit of standstill in them at the same time, thus making it an exception. Although we will go more in-depth with this per type of flow, giving definitions and providing multiple examples for each of them.
+This doesn't mean you can label every slider as a particular type of flow. For example, a circular slider has flow, anti-flow and a bit of standstill simultaneously, thus making it an exception. Although we will go more in-depth with this per type of flow, giving definitions and providing multiple examples for each.
 
 ### Flow
 
-Flow is a movement between two objects in which everything can be caught without having to press a new direction key.
+You can classify something as Flow when the movement between two objects can be caught without having to press a new direction key.
 
-TODO: normal flow walk screenshot
+An example of flow can be seen below. Here we originated from the right side of the screen. Catching the next fruit (the circle on the left) has no direction change. This is called a _flowing movement_.
 
-This is the most basic example of flow, here we came from a left movement going towards the same direction for the next one, making us not change any of our inputs.
+![](https://i.imgur.com/Xe4ruNx.png)
 
-TODO: normal flow with dash screenshot
+The same logic applies to dashes as well. While the two objects are not walkable, it does require the player to press the dash key. There is still no direction change provided, making it flow to the left.
 
-This is also an example of flow, while the distance between the two objects are not walkable and making the player to press the dash key, no change in the movement key is needed making it flow.
+![](https://i.imgur.com/4n8oFT7.png)
 
-TODO: replace screenshot with one which is consistent with the other flow screenshots
+Like with dashes, the same applies to hyperdashes as well. With the below example, we have the same scenario. The player needs to use their dash key to catch the next fruit, and there is still no need to press a new direction key as the hyperdash flows to the left.
 
-![](https://i.imgur.com/5qfCSfT.png)
-
-As last an example with a hyperdash, while we now have a hyper generated on our object the flow is still the same as with the other examples since no change in movement key is needed.
+![](https://i.imgur.com/yi8d2pg.png)
 
 ### Antiflow
 
-Antiflow is a movement between two objects in which a new direction key needs to be pressed to catch the next object. For example, if you currently hold the left movement key, then having to switch to the right movement key to catch the next object is anti-flow.
+Anti-flow is a movement between two objects in which a new direction key needs to be pressed to catch the next object. For example, if you currently hold the left movement key, switching to the right movement key to catch the next object is anti-flow.
 
-![](https://i.imgur.com/JXgV3AX.png)
+An example of anti-flow can be seen below. Here we are provided with a hyperdash followed by a slider going towards the side we came from. Because we have to make a sudden change in motion, we call this side the unnatural side. The slider-body of 2 is classified as an anti-flow slider because of the abnormal movement. The movement between the hyper-fruit and the slider-head of 2 would be classified as flow.
 
-This is an example of antiflow, the catcher has to direction change after catching the sliderhead, otherwise, the player will miss. It requires more key inputs *(you have to change directions)* to not miss and follow the flow *(the movement needed)*.
+![](https://i.imgur.com/0gMFC4J.png)
 
 ### Standstill
 
-Standstill is a term for vertical flow. This last type of flow is rather different from the others already covered. Here no movement is needed to catch the next object, making the catcher to stand still.
+Standstill is a term for vertical flow. This flow type can be seen as one of the most straightforward. Here no movement is needed to catch the next object, making the catcher stand still.
 
-![](https://i.imgur.com/FmdZobh.png)
+![](https://i.imgur.com/5UqU9a1.png)
 
 ### Flowbreak
 
-Once antiflow or a standstill is provided an effect is created which is called a flowbreak. Providing a flowbreak is a way of creating contrast between patterns. For example, only providing flow in your map would become quite boring and is rather easy to play.
+Once anti-flow or a standstill is provided, an effect is created, which is called a flow break. Providing a flow break is a way of creating contrast between patterns. For example, only giving flow in your map would become boring and easy to play.
 
-To conclude, flow is created by using the three types of flow changes to actively map in a way that matches the pace and strength of the song as well as moving accordingly.
+To conclude, flow is created by using the three types of flow changes to actively map in a way that matches the pace and strength of the song and moves accordingly.
