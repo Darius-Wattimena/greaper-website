@@ -1,10 +1,10 @@
-﻿# Flow; Definition and Examples.
+﻿# Flow: Definition and Examples.
 
 ## What is Flow?
 
 Probably one of the most ambiguous terms in mapping, flow can be described as the effect a pattern has on playability and expression. In osu!catch, flow is the direct connection of movement with the song and the patterns used. It's how the catcher moves through a pattern, how the pattern itself plays and its overall strain/difficulty compared to how intense the song's pace is.
 
-Flow is somewhat connected with how a pattern "feels" while playing. One way to explain the feeling of a pattern is to break down its objects and see how it moves between them.
+Flow is somewhat connected with how a pattern _feels_ while playing. One way to explain the feeling of a pattern is to break down its objects and see how it moves between them.
 
 **Movement is key.** osu!catch has only an x-axis. Because of this, we can only emphasise a sound with movement. For example, moving too little toward a strong sound would have a negative effect on both the pattern and the player playing it. Because movement is key, playtesting your map is vital to ensure that your provided emphasis is correct.
 
@@ -16,7 +16,7 @@ There are three different types of flow in osu!catch:
 - **Antiflow**
 - **Standstill**
 
-This doesn't mean you can label every slider as a particular type of flow. For example, a circular slider has flow, anti-flow and a bit of standstill simultaneously, thus making it an exception. Although we will go more in-depth with this per type of flow, giving definitions and providing multiple examples for each.
+This doesn't mean you can label every slider as a particular type of flow. For example, a circular slider has flow, anti-flow and a bit of standstill simultaneously, thus making it an exception. Although we will go more in-depth with this per type of flow, giving definitions and providing examples for each.
 
 ### Flow
 
