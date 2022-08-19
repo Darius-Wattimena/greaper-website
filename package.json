@@ -3,18 +3,19 @@
   "version": "0.3.0",
   "private": true,
   "dependencies": {
-    "@types/react-router-dom": "5.3.3",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.29",
-    "@types/react": "18.0.6",
+    "@types/react": "17.0.2",
+    "@types/react-router-dom": "5.3.3",
     "dompurify": "2.3.6",
     "node-sass": "7.0.1",
-    "react": "18.0.6",
-    "react-dom": "18.0.6",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-markdown": "7.1.1",
     "react-router-dom": "6.2.1",
     "react-scripts": "5.0.0",
-    "typescript": "4.6.3"
+    "typescript": "4.6.3",
+    "usehooks-ts": "^2.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,17 +47,16 @@
     "lint"
   ],
   "devDependencies": {
-    "@types/react-dom": "18.0.6",
+    "@babel/eslint-parser": "7.17.0",
+    "@types/react-dom": "17.0.2",
     "@typescript-eslint/eslint-plugin": "5.21.0",
     "@typescript-eslint/parser": "5.21.0",
-    "@babel/eslint-parser": "7.17.0",
     "eslint": "8.14.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-react-app": "7.0.1",
     "eslint-import-resolver-typescript": "2.7.1",
-    "eslint-webpack-plugin": "3.1.1",
     "eslint-plugin-flowtype": "8.0.3",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest": "26.1.5",
@@ -64,6 +64,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.4.0",
+    "eslint-webpack-plugin": "3.1.1",
     "prettier": "2.6.2",
     "prettier-eslint": "14.0.1",
     "prettier-eslint-cli": "5.0.1"

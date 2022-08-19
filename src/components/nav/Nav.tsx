@@ -37,7 +37,7 @@ export default function Nav() {
           </nav>
         </div>
         <div className="site-header__middle">
-          <a href="https://osu.ppy.sh/users/2369776">
+          <a href="https://osu.ppy.sh/users/2369776" target="_blank">
             <img src={logo} alt="Greaper" className="brand" />
           </a>
         </div>

@@ -1,17 +1,17 @@
 @import '../../../Variables';
 
 .snap-type__disallowed {
-  background-color: $red-color;
-  color: $text-color-light;
+  background-color: var(--red-color);
+  color: var(--text-color-light);
 }
 
 .snap-type__higher-snapped {
-  background-color: $orange-color;
-  color: $text-color-light;
+  background-color: var(--orange-color);
+  color: var(--text-color-light);
 }
 
 .snap-type__basic-snapped,
 .snap-type__allowed {
-  background-color: $green-color;
-  color: $text-color-light;
+  background-color: var(--green-color);
+  color: var(--text-color-light);
 }

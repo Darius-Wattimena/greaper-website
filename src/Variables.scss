@@ -1,76 +1,54 @@
-/*
+html {
+  --primary-color: #716f81;
+  --secondary-color: #b97a95;
+  --text-color: #111111;
+  --text-color-light: #eeeeee;
+  --text-color-dark: #0c0c0c;
+  --border-color: #c6c6c6;
+  --background-color: #ffffff;
+  --background-color-container: #f9f9f9;
 
-$primary-color: #366199;
-$secondary-color: #4780cc;
+  --background-color-tool: var(--background-color-container);
+  --background-color-tools-header: #716F81FF;
+  --background-color-tools-settings: darken(var(--background-color-tool), 5%);
 
-$red-color: #cc4747;
-$orange-color: #cca047;
-$green-color: #76cc47;
+  --background-color-table: var(--background-color);
+  --background-color-table-striped: darken(var(--background-color), 5%);
 
-$text-color: #333447;
-$text-color-light: #eeeeee;
-$border-color: #c6c6c6;
-$background-color: #e7e7e7;
-$background-color-container: #e0e0e0;
-$background-color-container-header: #1b304d;
-$background-color-tools: #d9d9d9;
+  --red-color: #c24e4e;
+  --red-color-background: lighten(var(--red-color), 40%);
+  --orange-color: #c2944e;
+  --green-color: #4ec254;
 
-$background-color-table: $background-color;
-$background-color-table-striped: darken($background-color, 10%);
-*/
+  --darkmode-toggle-background: #64425c;
+  --darkmode-toggle-background-hover: #54374d;
+}
 
-// $primary-color: #1a4672;
-// $primary-color: #3b5179;
-// $primary-color: #43589d;
-// $secondary-color: lighten($primary-color, 10%);
+html[data-theme='dark'] {
+  --primary-color: #2d2d2d;
+  --secondary-color: #944444;
+  --text-color: #dcdcdc;
+  --text-color-light: #e3e3e3;
+  --text-color-dark: #0a0a0a;
+  --background-color: #1d1d1d;
+  --background-color-container: #383838;
+  --border-color: #545454;
 
-// Pastel purple/blue
-$primary-color: #716f81;
-$secondary-color: #b97a95;
-// $primary-color: #716F81;
-//$secondary-color: #B97A95;
+  --background-color-tool: var(--background-color-container);
+  --background-color-tools-header: #773f3f;
+  --background-color-tools-settings: lighten(var(--background-color-tool), 5%);
 
-// Pastel red
-// $primary-color: #D35D6E;
-// $secondary-color: #EFB08C;
+  --background-color-table: lighten(var(--background-color), 2%);
+  --background-color-table-striped: lighten(var(--background-color), 5%);
 
-// Default red/orange/green
-// $red-color: #cc4747;
-// $orange-color: #cca047;
-// $green-color: #76cc47;
+  --red-color: #814242;
+  --red-color-background: lighten(var(--red-color), 40%);
+  --orange-color: #816f42;
+  --green-color: #568142;
 
-// alternative red/orange/green
-$red-color: #c24e4e;
-$orange-color: #c2944e;
-$green-color: #4ec254;
-
-/*
-$text-color: #d9d9d9;
-$text-color-light: #eeeeee;
-$text-color-dark: #151515;
-$border-color: #484848;
-$background-color: #373737;
-$background-color-container: #2f2f2f;
-$background-color-tool: #2f2f2f;
-$background-color-tools-header: #222222;
-$background-color-tools-settings: #292929;
-
-$background-color-table: $background-color;
-$background-color-table-striped: darken($background-color, 10%);
-*/
-
-$text-color: #111111;
-$text-color-light: #eeeeee;
-$text-color-dark: #0c0c0c;
-$border-color: #c6c6c6;
-$background-color: #ffffff;
-$background-color-container: #f9f9f9;
-$background-color-tool: $background-color-container;
-$background-color-tools-header: darken($primary-color, 10%);
-$background-color-tools-settings: darken($background-color-tool, 5%);
-
-$background-color-table: $background-color;
-$background-color-table-striped: darken($background-color, 5%);
+  --darkmode-toggle-background: #4b3434;
+  --darkmode-toggle-background-hover: #573d3d;
+}
 
 $padding: 8px;
 $padding-small: 4px;

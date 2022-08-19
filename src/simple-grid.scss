@@ -26,7 +26,7 @@ body {
 
 * {
   font-family: $font-family;
-  color: $text-color;
+  color: var(--text-color);
   line-height: $font-height;
 }
 

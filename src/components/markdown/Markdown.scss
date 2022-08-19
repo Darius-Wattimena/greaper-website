@@ -2,8 +2,8 @@
 
 .page__markdown {
   a {
-    text-shadow: 0 0 0 darken($text-color, 50%);
-    color: $text-color;
+    text-shadow: 0 0 0 var(--text-color);
+    color: var(--text-color);
     text-decoration: underline;
   }
 }

@@ -8,7 +8,8 @@
 
 .site-header {
   position: relative;
-  background-color: $primary-color;
+  background-color: var(--primary-color);
+  flex: 0 1 auto;
 
   .site-header__wrapper {
     display: flex;
@@ -45,11 +46,11 @@
     transition: background-color, background-color 300ms;
 
     &.navbar__item-active {
-      background-color: $secondary-color;
+      background-color: var(--secondary-color);
     }
 
     &:hover {
-      background-color: $secondary-color;
+      background-color: var(--secondary-color);
     }
   }
 }

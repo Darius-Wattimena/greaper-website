@@ -2,7 +2,7 @@
 
 * {
   //margin: unset;
-  color: $text-color;
+  color: var(--text-color);
 }
 
 html,
@@ -11,12 +11,18 @@ body {
 }
 
 body {
-  background-color: $background-color;
+  background-color: var(--background-color);
   overflow: scroll;
 }
 
 a {
   cursor: pointer;
+}
+
+.website__wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
@@ -26,18 +32,23 @@ a {
   padding: $padding-large;
 }
 
+.content-wrapper {
+  flex: 1;
+}
+
 .page {
   margin-top: $padding;
+  margin-bottom: $padding;
 
   .page__header {
-    background-color: $primary-color;
-    color: $text-color-light;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
     padding: $padding-small $padding-large;
     margin: unset;
   }
 
   .page__breadcrumb {
-    background-color: $secondary-color;
+    background-color: var(--secondary-color);
     padding: $padding-small $padding-large;
 
     .page__breadcrumb-item {
@@ -53,22 +64,22 @@ a {
     }
 
     * {
-      color: $text-color-light;
+      color: var(--text-color-light);
     }
   }
 
   .page__container {
-    background-color: $background-color-container;
+    background-color: var(--background-color-container);
     //padding: $padding-small $padding-large;
 
     *.fake-bold {
       font-weight: normal;
-      color: $text-color;
+      color: var(--text-color);
     }
 
     a,
     p {
-      color: $text-color;
+      color: var(--text-color);
     }
   }
 }
@@ -79,8 +90,8 @@ a {
   .note {
     margin-top: unset;
     padding: $padding;
-    background-color: darken($background-color-container, 10%);
-    border: 1px solid darken($background-color-container, 20%);
+    background-color: var(--background-color-tools-settings);
+    border: 1px solid var(--background-color-tools-settings);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -91,14 +102,14 @@ input[type='number'],
 input[type='text'] {
   width: 100%;
   padding: $padding;
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
-  color: $text-color-dark;
+  color: var(--text-color-dark);
 
   &.form-input__error {
-    border-color: $red-color;
-    background-color: lighten($red-color, 40%);
+    border-color: var(--red-color);
+    background-color: var(--red-color-background);
   }
 }
 
@@ -110,20 +121,20 @@ input[type='checkbox'] {
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
-  background: $background-color;
+  background: var(--background-color-container);
   border-radius: 5px;
   position: relative;
   box-sizing: content-box;
   width: 1.3em;
   height: 1.3em;
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   transition: all 0.2s linear;
   margin: $padding-small;
 }
 
 input[type='checkbox']:checked {
-  background-color: $green-color;
-  border: 1px solid $green-color;
+  background-color: var(--green-color);
+  border: 1px solid var(--green-color);
 }
 
 input[type='checkbox']:focus {
@@ -133,7 +144,7 @@ input[type='checkbox']:focus {
 
 a {
   text-decoration: none;
-  color: $text-color-light;
+  color: var(--text-color-light);
 }
 
 table {
@@ -143,7 +154,7 @@ table {
 
   td,
   th {
-    border: 1px solid $border-color;
+    border: 1px solid var(--border-color);
     padding: $padding;
     text-align: center;
   }
@@ -151,15 +162,70 @@ table {
   th {
     padding-top: $padding;
     padding-bottom: $padding;
-    background-color: $primary-color;
-    color: $text-color-light;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
   }
 
   tr {
-    background-color: $background-color-table;
+    background-color: var(--background-color-table);
 
     &:nth-child(even) {
-      background-color: $background-color-table-striped;
+      background-color: var(--background-color-table-striped);
+    }
+  }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: flex;
+}
+
+button, a.button {
+  cursor:pointer;
+  margin: $padding;
+  padding: $padding;
+  border: unset;
+  border-radius: 5px;
+  transition: background-color 300ms;
+  color: var(--text-color-light);
+  background-color: var(--darkmode-toggle-background);
+
+  &:hover {
+    background-color: var(--darkmode-toggle-background-hover);
+  }
+
+  .button__container {
+
+    .button__text {
+      color: var(--text-color-light);
+    }
+  }
+}
+
+.footer {
+  flex: 0 1 auto;
+  background-color: var(--primary-color);
+
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .footer-nav__wrapper {
+      display: flex;
+      padding-inline-start: unset;
+      font-size: 1.2em;
+    }
+
+    .footer-nav__item {
+      button, a {
+        display: flex;
+        margin: $padding-large;
+      }
     }
   }
 }
