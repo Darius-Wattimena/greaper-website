@@ -19,11 +19,11 @@ export default function Nav() {
                   Home
                 </NavLink>
               </li>
-              {/* <li className="nav__item">
+              <li className="nav__item">
                 <NavLink end to="/guides" className={({ isActive }) => (isActive ? "navbar__item-active" : "")}>
                   Guides
                 </NavLink>
-              </li> */}
+              </li>
               <li className="nav__item">
                 <NavLink
                   end

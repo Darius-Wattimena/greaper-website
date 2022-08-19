@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Outlet, BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import Home from './pages/home/Home'
@@ -14,7 +14,7 @@ import { useDarkMode } from 'usehooks-ts'
 import github from './github.png'
 
 function App() {
-  const { isDarkMode, toggle, enable, disable } = useDarkMode(false)
+  const { isDarkMode, toggle } = useDarkMode(false)
 
   useEffect(() => {
     if (isDarkMode) {
