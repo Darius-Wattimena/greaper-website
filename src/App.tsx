@@ -5,13 +5,14 @@ import Home from './pages/home/Home'
 import Nav from './components/nav/Nav'
 import Tools from './pages/tools/Tools'
 import Guides from './pages/guides/Guides'
-import Rhythm from './pages/guides/rhythm/Rhythm'
-import CommonPatterning from './pages/guides/commonPatterning/CommonPatterning'
-import Flow from './pages/guides/flow/Flow'
-import Patterns from './pages/guides/patterns/Patterns'
-import './App.scss'
 import { useDarkMode } from 'usehooks-ts'
 import github from './github.png'
+import md_guides from './markdown/Guides.md'
+import md_flow from './markdown/Flow.md'
+import md_commonPatterning from './markdown/CommonPatterning.md'
+import md_patterns from './markdown/Patterns.md'
+import md_rhythm from './markdown/Rhythm.md'
+import './App.scss'
 
 function App() {
   const { isDarkMode, toggle } = useDarkMode(false)
@@ -33,11 +34,11 @@ function App() {
           <Route path="/" element={<Base />}>
             <Route path="/" element={<Home />} />
             <Route path="/tools" element={<Tools />} />
-            <Route path="/guides" element={<Guides />} />
-            <Route path="/guides/rhythm" element={<Rhythm />} />
-            <Route path="/guides/patterns" element={<Patterns />} />
-            <Route path="/guides/flow" element={<Flow />} />
-            <Route path="/guides/common-patterning" element={<CommonPatterning />} />
+            <Route path="/guides" element={<Guides markdown={md_guides} />} />
+            <Route path="/guides/rhythm" element={<Guides markdown={md_rhythm} guideName="Rhythm" />} />
+            <Route path="/guides/patterns" element={<Guides markdown={md_patterns} guideName="Patterns" />} />
+            <Route path="/guides/flow" element={<Guides markdown={md_flow} guideName="Flow" />} />
+            <Route path="/guides/common-patterning" element={<Guides markdown={md_commonPatterning} guideName="Common Patterning" />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
