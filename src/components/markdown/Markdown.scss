@@ -1,9 +1,26 @@
 @import '../../Variables';
 
 .page__markdown {
+  margin: 0 $padding;
+  font-size: 16px;
+
+  h1, h2 {
+    border-bottom: 1px solid var(--secondary-color)
+  }
+
   a {
     text-shadow: 0 0 0 var(--text-color);
     color: var(--text-color);
     text-decoration: underline;
+  }
+
+  p, blockquote, ul, ol, dl, table, pre, details {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1280px){
+  .page__markdown {
+    margin: 0 40px;
   }
 }
