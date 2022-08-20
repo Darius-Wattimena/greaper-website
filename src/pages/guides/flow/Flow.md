@@ -1,4 +1,4 @@
-﻿# Flow: Definition and Examples.
+﻿# Flow: Definition and Examples
 
 ## What is Flow?
 
