@@ -1,6 +1,4 @@
-﻿# Flow: Definition and Examples
-
-## What is Flow?
+﻿# Flow
 
 Probably one of the most ambiguous terms in mapping, flow can be described as the effect a pattern has on playability and expression. In osu!catch, flow is the direct connection of movement with the song and the patterns used. It's how the catcher moves through a pattern, how the pattern itself plays and its overall strain/difficulty compared to how intense the song's pace is.
 
@@ -13,7 +11,7 @@ Flow is somewhat connected with how a pattern _feels_ while playing. One way to 
 There are three different types of flow in osu!catch:
 
 - **Flow**
-- **Antiflow**
+- **Anti-flow**
 - **Standstill**
 
 This doesn't mean you can label every slider as a particular type of flow. For example, a circular slider has flow, anti-flow and a bit of standstill simultaneously, thus making it an exception. Although we will go more in-depth with this per type of flow, giving definitions and providing examples for each.
@@ -34,7 +32,7 @@ Like with dashes, the same applies to hyperdashes as well. With the below exampl
 
 ![](https://i.imgur.com/yi8d2pg.png)
 
-### Antiflow
+### Anti-flow
 
 Anti-flow is a movement between two objects in which a new direction key needs to be pressed to catch the next object. For example, if you currently hold the left movement key, switching to the right movement key to catch the next object is anti-flow.
 
