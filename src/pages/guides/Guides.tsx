@@ -17,10 +17,10 @@ export default function Guides({ markdown, guideName }: GuidesProps) {
             <NavLink to="/guides" className="page__breadcrumb-item">
               Guides
             </NavLink>
-            <a className="page__breadcrumb-item">{guideName}</a>
+            <div className="page__breadcrumb-item">{guideName}</div>
           </>
         ) : (
-          <a className="page__breadcrumb-item">Guides</a>
+          <div className="page__breadcrumb-item">Guides</div>
         )}
       </div>
       <div className="page__wrapper">

@@ -12,38 +12,38 @@ export default function SelectedToolSelector({
 }: SelectedToolSelectorProps) {
   return (
     <>
-      <a
+      <button
         className={`tools__tool-selector-option ${
           selectedTool === 'Slider Velocity' ? 'active-tool' : ''
         }`}
         onClick={() => setSelectedTool('Slider Velocity')}
       >
         Slider Velocity
-      </a>
-      <a
+      </button>
+      <button
         className={`tools__tool-selector-option ${
           selectedTool === 'Snapping' ? 'active-tool' : ''
         }`}
         onClick={() => setSelectedTool('Snapping')}
       >
         Snapping
-      </a>
-      <a
+      </button>
+      <button
         className={`tools__tool-selector-option ${
           selectedTool === 'Trigger Distance' ? 'active-tool' : ''
         }`}
         onClick={() => setSelectedTool('Trigger Distance')}
       >
         Trigger Distance
-      </a>
-      <a
+      </button>
+      <button
         className={`tools__tool-selector-option ${
           selectedTool === 'Dash Distance' ? 'active-tool' : ''
         }`}
         onClick={() => setSelectedTool('Dash Distance')}
       >
         Dash Distance
-      </a>
+      </button>
     </>
   )
 }

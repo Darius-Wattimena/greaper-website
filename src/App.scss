@@ -15,8 +15,14 @@ body {
   overflow: scroll;
 }
 
-a {
+a,
+button {
   cursor: pointer;
+  background-color: unset;
+  border: unset;
+  text-decoration: none;
+  padding: unset;
+  color: var(--text-color-light);
 }
 
 .website__wrapper {
@@ -50,6 +56,7 @@ a {
   .page__breadcrumb {
     background-color: var(--secondary-color);
     padding: $padding-small $padding-large;
+    display: flex;
 
     .page__breadcrumb-item {
       &:not(:last-child) {
@@ -142,11 +149,6 @@ input[type='checkbox']:focus {
   box-shadow: none;
 }
 
-a {
-  text-decoration: none;
-  color: var(--text-color-light);
-}
-
 table {
   border-spacing: unset;
   table-layout: fixed;
@@ -189,31 +191,31 @@ table {
   max-height: 675px;
 }
 
-button,
-a.button {
-  cursor: pointer;
-  margin: $padding;
-  padding: $padding;
-  border: unset;
-  border-radius: 5px;
-  transition: background-color 300ms;
-  color: var(--text-color-light);
-  background-color: var(--darkmode-toggle-background);
-
-  &:hover {
-    background-color: var(--darkmode-toggle-background-hover);
-  }
-
-  .button__container {
-    .button__text {
-      color: var(--text-color-light);
-    }
-  }
-}
-
 .footer {
   flex: 0 1 auto;
   background-color: var(--primary-color);
+
+  button,
+  a.button {
+    cursor: pointer;
+    margin: $padding;
+    padding: $padding;
+    border: unset;
+    border-radius: 5px;
+    transition: background-color 300ms;
+    color: var(--text-color-light);
+    background-color: var(--darkmode-toggle-background);
+
+    &:hover {
+      background-color: var(--darkmode-toggle-background-hover);
+    }
+
+    .button__container {
+      .button__text {
+        color: var(--text-color-light);
+      }
+    }
+  }
 
   .footer__wrapper {
     display: flex;

@@ -9,7 +9,8 @@
     border-bottom: 1px solid var(--secondary-color);
   }
 
-  a {
+  a,
+  button {
     text-shadow: 0 0 0 var(--text-color);
     color: var(--text-color);
     text-decoration: underline;
