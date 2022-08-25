@@ -31,10 +31,10 @@ jobs:
           at: .
       - run:
           name: Deploy to AWS S3 bucket
-          command: |
-            aws s3 sync build s3://www.greaper.net --delete --exact-timestamps
-            aws cloudfront create-invalidation --distribution-id $GREAPER_WEBSITE_ID --paths '/*'
-
+          command: aws s3 sync build s3://www.greaper.net --delete --exact-timestamps
+      - run:
+          name: Invalidate CloudFront
+          command: aws cloudfront create-invalidation --distribution-id ERACSWQ1BVQNY --paths "/*"
 workflows:
   build-approve-deploy:
     jobs:
