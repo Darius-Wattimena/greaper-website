@@ -12,6 +12,7 @@ import md_flow from './markdown/Flow.md'
 import md_commonPatterning from './markdown/CommonPatterning.md'
 import md_patterns from './markdown/Patterns.md'
 import md_rhythm from './markdown/Rhythm.md'
+import md_structure from './markdown/Structure.md'
 import './App.scss'
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
             <Route
               path="/guides/rhythm"
               element={<Guides markdown={md_rhythm} guideName="Rhythm" />}
+            />
+            <Route
+              path="/guides/structure"
+              element={<Guides markdown={md_structure} guideName="Structure" />}
             />
             <Route
               path="/guides/patterns"

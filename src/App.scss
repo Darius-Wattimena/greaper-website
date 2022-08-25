@@ -64,6 +64,8 @@ button {
       }
 
       &:not(:first-child) {
+        padding-left: 4px;
+
         &::before {
           content: ' / ';
         }
