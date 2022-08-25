@@ -18,21 +18,20 @@ jobs:
             - ~/.cache
           key: v1-dependencies-{{ checksum "package.json" }}
       - persist_to_workspace:
-          root: ~/repo
+          root: .
           paths:
-            - build
-            - package.json
+            - .
   deploy:
     working_directory: ~/repo
     docker:
       - image: cimg/aws:2022.06
     steps:
       - attach_workspace:
-          at: ~/repo
+          at: .
       - run:
           name: Deploy to AWS S3 bucket
           command: |
-            aws s3 sync build/ s3://www.greaper.net --delete --exact-timestamps
+            aws s3 sync build s3://www.greaper.net --delete --exact-timestamps
             aws cloudfront create-invalidation --distribution-id $GREAPER_WEBSITE_ID --paths '/*'
 
 workflows:
