@@ -58,7 +58,7 @@ function App() {
                 <a
                   href="https://github.com/Darius-Wattimena/greaper-website"
                   target="_blank"
-                  rel={'noopener'}
+                  rel={'noopener noreferrer'}
                   className={'button footer-nav__item'}
                 >
                   <img src={github} alt="Source Code" className={'logo'} />

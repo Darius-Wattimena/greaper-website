@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../../greaper.png'
 import './Nav.scss'
@@ -41,7 +41,7 @@ export default function Nav() {
           </nav>
         </div>
         <div className="site-header__middle">
-          <a href="https://osu.ppy.sh/users/2369776" target="_blank">
+          <a href="https://osu.ppy.sh/users/2369776" target="_blank" rel={'noopener noreferrer'}>
             <img src={logo} alt="Greaper" className="brand" />
           </a>
         </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import SnappingSpecifierForm from './SnappingSpecifierForm'
 import { Difficulty, MillisecondSnappingReference, SnapType } from '../../../Types'
 import { calculateSnaps, GetSnapType } from '../../../utils/MilliSecondsUtil'
 import './SnappingSpecifier.scss'

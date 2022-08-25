@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { isNumber } from '../../utils/FormUtil'
+import React from 'react'
 
 interface CheckboxInputProps {
   id: string
