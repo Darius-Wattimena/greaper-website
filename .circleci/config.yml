@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-        - image: cimg/node:16.13.1
+      - image: cimg/node:16.13.1
     steps:
       - checkout
       - restore_cache:
@@ -25,22 +25,14 @@ jobs:
   deploy:
     working_directory: ~/repo
     docker:
-      - image: amazon/aws-cli
+      - image: cimg/aws:2022.06
     steps:
       - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Set AWS CLI credentials
-          command: |            
-            FILE=~/.aws/credentials
-            mkdir -p `dirname $FILE`
-            echo "[default]" > $FILE
-            echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> $FILE
-            echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> $FILE
+          at: .
       - run:
           name: Deploy to AWS S3 bucket
           command: |
-            aws s3 sync --delete build/ s3://www.greaper.net
+            aws s3 sync build s3://www.greaper.net --delete --exact-timestamps
             aws cloudfront create-invalidation --distribution-id $GREAPER_WEBSITE_ID --paths '/*'
 
 workflows:
@@ -48,11 +40,11 @@ workflows:
     jobs:
       - build:
           context: build-context
-      - hold:
-          type: approval
-          requires:
-            - build
       - deploy:
           requires:
-            - hold
+            - build
           context: build-context
+          filters:
+            branches:
+              only:
+                - master
