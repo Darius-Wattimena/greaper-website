@@ -23,7 +23,7 @@ function App() {
     } else {
       document.documentElement.setAttribute('data-theme', 'light')
     }
-  }, [])
+  }, [isDarkMode])
 
   const themeClass = isDarkMode ? 'theme-dark' : 'theme-light'
 
@@ -58,6 +58,7 @@ function App() {
                 <a
                   href="https://github.com/Darius-Wattimena/greaper-website"
                   target="_blank"
+                  rel={'noopener'}
                   className={'button footer-nav__item'}
                 >
                   <img src={github} alt="Source Code" className={'logo'} />
@@ -71,7 +72,6 @@ function App() {
                   className="footer-nav__item beatmap-button"
                   onClick={() => {
                     toggle()
-                    window.location.reload()
                   }}
                 >
                   {isDarkMode ? (
