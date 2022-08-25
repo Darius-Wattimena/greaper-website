@@ -1,0 +1,59 @@
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: cimg/node:16.13.1
+version: 2.1
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+            - ~/.npm
+            - ~/.cache
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npm run predeploy
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - build
+            - package.json
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Set AWS CLI credentials
+          command: |            
+            FILE=~/.aws/credentials
+            mkdir -p `dirname $FILE`
+            echo "[default]" > $FILE
+            echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> $FILE
+            echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> $FILE
+      - run:
+          name: Deploy to AWS S3 bucket
+          command: |
+            aws s3 sync --delete build/ s3://www.greaper.net
+            aws cloudfront create-invalidation --distribution-id $GREAPER_WEBSITE_ID --paths '/*'
+
+workflows:
+  build-approve-deploy:
+    jobs:
+      - build:
+          context: build-context
+      - hold:
+          type: approval
+          requires:
+            - build
+      - deploy:
+          requires:
+            - hold
+          context: build-context
