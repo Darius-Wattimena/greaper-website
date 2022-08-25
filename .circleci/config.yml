@@ -17,7 +17,7 @@ jobs:
             - ~/.npm
             - ~/.cache
           key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm build
+      - run: npm run build
       - persist_to_workspace:
           root: .
           paths:
