@@ -1,11 +1,9 @@
-defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: cimg/node:16.13.1
 version: 2.1
 jobs:
   build:
-    <<: *defaults
+    working_directory: ~/repo
+    docker:
+        - image: cimg/node:16.13.1
     steps:
       - checkout
       - restore_cache:
@@ -25,7 +23,9 @@ jobs:
             - build
             - package.json
   deploy:
-    <<: *defaults
+    working_directory: ~/repo
+    docker:
+      - image: amazon/aws-cli
     steps:
       - attach_workspace:
           at: ~/repo
