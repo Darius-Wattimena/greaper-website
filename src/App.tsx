@@ -35,10 +35,19 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/guides" element={<Guides markdown={md_guides} />} />
-            <Route path="/guides/rhythm" element={<Guides markdown={md_rhythm} guideName="Rhythm" />} />
-            <Route path="/guides/patterns" element={<Guides markdown={md_patterns} guideName="Patterns" />} />
+            <Route
+              path="/guides/rhythm"
+              element={<Guides markdown={md_rhythm} guideName="Rhythm" />}
+            />
+            <Route
+              path="/guides/patterns"
+              element={<Guides markdown={md_patterns} guideName="Patterns" />}
+            />
             <Route path="/guides/flow" element={<Guides markdown={md_flow} guideName="Flow" />} />
-            <Route path="/guides/common-patterning" element={<Guides markdown={md_commonPatterning} guideName="Common Patterning" />} />
+            <Route
+              path="/guides/common-patterning"
+              element={<Guides markdown={md_commonPatterning} guideName="Common Patterning" />}
+            />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
