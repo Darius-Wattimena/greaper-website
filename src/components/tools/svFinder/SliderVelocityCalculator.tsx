@@ -13,27 +13,27 @@ export default function SliderVelocityCalculator({
   const [result, setResult] = useState<SliderVelocityResult[]>([])
 
   useEffect(() => {
-    setResult(calculateIdealSliderVelocity())
-  }, [bpm, ascendance])
+    function calculateIdealSliderVelocity(): SliderVelocityResult[] {
+      let rainSV
 
-  function calculateIdealSliderVelocity(): SliderVelocityResult[] {
-    let rainSV
+      if (ascendance) {
+        rainSV = 375 / bpm
+      } else {
+        rainSV = 300 / bpm
+      }
 
-    if (ascendance) {
-      rainSV = 375 / bpm
-    } else {
-      rainSV = 300 / bpm
+      return [
+        { diff: Difficulty.CUP, sv: rainSV * 0.72 },
+        { diff: Difficulty.SALAD, sv: rainSV * 0.78 },
+        { diff: Difficulty.PLATTER, sv: rainSV * 0.85 },
+        { diff: Difficulty.RAIN, sv: rainSV },
+        { diff: Difficulty.OVERDOSE, sv: rainSV * 1.1 },
+        { diff: Difficulty.DELUGE, sv: rainSV * 1.2 }
+      ]
     }
 
-    return [
-      { diff: Difficulty.CUP, sv: rainSV * 0.72 },
-      { diff: Difficulty.SALAD, sv: rainSV * 0.78 },
-      { diff: Difficulty.PLATTER, sv: rainSV * 0.85 },
-      { diff: Difficulty.RAIN, sv: rainSV },
-      { diff: Difficulty.OVERDOSE, sv: rainSV * 1.1 },
-      { diff: Difficulty.DELUGE, sv: rainSV * 1.2 }
-    ]
-  }
+    setResult(calculateIdealSliderVelocity())
+  }, [bpm, ascendance])
 
   return (
     <div className="row">

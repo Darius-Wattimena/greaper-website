@@ -22,6 +22,67 @@ export default function HyperTriggerDistanceCalculator({
   const [result, setResult] = useState<SnappingResult[]>([])
 
   useEffect(() => {
+    function getTriggerDistance(ms: number, dashRange: number): number {
+      const timeToNext = ms - 1000 / 60 / 4
+      return timeToNext + dashRange
+    }
+
+    function getSnappingResult(
+      snapping: Snapping,
+      snap: number,
+      dashRange: number,
+      xDistanceMultiplier: number
+    ): SnappingResult {
+      const tickDistance = getTriggerDistance(snap, dashRange)
+      const calculatedXDistance =
+        (tickDistance / (sliderVelocity * sliderVelocityMultiplier * 100)) * xDistanceMultiplier
+      let osuRoundedXDistance
+
+      if (snap < 50) {
+        osuRoundedXDistance = calculatedXDistance * 1.02
+      } else if (snap < 100) {
+        osuRoundedXDistance = calculatedXDistance * 1.01
+      } else if (snap < 200) {
+        osuRoundedXDistance = calculatedXDistance * 1.005
+      } else {
+        osuRoundedXDistance = calculatedXDistance
+      }
+
+      return {
+        snapping,
+        msSnapping: snap,
+        xDistance: osuRoundedXDistance,
+        distanceNeed: tickDistance
+      }
+    }
+
+    function calculateTriggerDistances(snaps: MillisecondSnappingReference): SnappingResult[] {
+      const catchDifficulty = (circleSize - 5.0) / 5.0
+      const fruitWidth = (64.0 * (1.0 - 0.699999988079071 * catchDifficulty)) / 128.0
+      const catcherWidth = 305.0 * fruitWidth * 0.7
+      const dashRange = catcherWidth / 2.0
+
+      return [
+        getSnappingResult(Snapping.WHITE_TICK, snaps.whiteTick, dashRange, 1),
+        getSnappingResult(Snapping.RED_TICK, snaps.redTick, dashRange, 2),
+        getSnappingResult(Snapping.PURPLE_TICK, snaps.purpleTick, dashRange, 3),
+        getSnappingResult(Snapping.BLUE_TICK, snaps.blueTick, dashRange, 4),
+        getSnappingResult(Snapping.ONE_FIVE, snaps.oneFive, dashRange, 5),
+        getSnappingResult(Snapping.DARK_PURPLE_TICK, snaps.darkPurpleTick, dashRange, 6),
+        getSnappingResult(Snapping.ONE_SEVEN, snaps.oneSeven, dashRange, 7),
+        getSnappingResult(Snapping.YELLOW_TICK, snaps.yellowTick, dashRange, 8),
+        getSnappingResult(Snapping.ONE_NINE, snaps.oneNine, dashRange, 9),
+        getSnappingResult(Snapping.ONE_TWELVE, snaps.oneTwelve, dashRange, 12),
+        getSnappingResult(Snapping.ONE_SIXTEEN, snaps.oneSixteen, dashRange, 16),
+        getSnappingResult(
+          Snapping.CUSTOM,
+          snaps.custom,
+          dashRange,
+          customDenominator / customNumerator
+        )
+      ]
+    }
+
     const snaps = calculateSnaps(bpm, customNumerator, customDenominator)
     setResult(calculateTriggerDistances(snaps))
   }, [
@@ -32,67 +93,6 @@ export default function HyperTriggerDistanceCalculator({
     customNumerator,
     customDenominator
   ])
-
-  function getTriggerDistance(ms: number, dashRange: number): number {
-    const timeToNext = ms - 1000 / 60 / 4
-    return timeToNext + dashRange
-  }
-
-  function getSnappingResult(
-    snapping: Snapping,
-    snap: number,
-    dashRange: number,
-    xDistanceMultiplier: number
-  ): SnappingResult {
-    const tickDistance = getTriggerDistance(snap, dashRange)
-    const calculatedXDistance =
-      (tickDistance / (sliderVelocity * sliderVelocityMultiplier * 100)) * xDistanceMultiplier
-    let osuRoundedXDistance
-
-    if (snap < 50) {
-      osuRoundedXDistance = calculatedXDistance * 1.02
-    } else if (snap < 100) {
-      osuRoundedXDistance = calculatedXDistance * 1.01
-    } else if (snap < 200) {
-      osuRoundedXDistance = calculatedXDistance * 1.005
-    } else {
-      osuRoundedXDistance = calculatedXDistance
-    }
-
-    return {
-      snapping,
-      msSnapping: snap,
-      xDistance: osuRoundedXDistance,
-      distanceNeed: tickDistance
-    }
-  }
-
-  function calculateTriggerDistances(snaps: MillisecondSnappingReference): SnappingResult[] {
-    const catchDifficulty = (circleSize - 5.0) / 5.0
-    const fruitWidth = (64.0 * (1.0 - 0.699999988079071 * catchDifficulty)) / 128.0
-    const catcherWidth = 305.0 * fruitWidth * 0.7
-    const dashRange = catcherWidth / 2.0
-
-    return [
-      getSnappingResult(Snapping.WHITE_TICK, snaps.whiteTick, dashRange, 1),
-      getSnappingResult(Snapping.RED_TICK, snaps.redTick, dashRange, 2),
-      getSnappingResult(Snapping.PURPLE_TICK, snaps.purpleTick, dashRange, 3),
-      getSnappingResult(Snapping.BLUE_TICK, snaps.blueTick, dashRange, 4),
-      getSnappingResult(Snapping.ONE_FIVE, snaps.oneFive, dashRange, 5),
-      getSnappingResult(Snapping.DARK_PURPLE_TICK, snaps.darkPurpleTick, dashRange, 6),
-      getSnappingResult(Snapping.ONE_SEVEN, snaps.oneSeven, dashRange, 7),
-      getSnappingResult(Snapping.YELLOW_TICK, snaps.yellowTick, dashRange, 8),
-      getSnappingResult(Snapping.ONE_NINE, snaps.oneNine, dashRange, 9),
-      getSnappingResult(Snapping.ONE_TWELVE, snaps.oneTwelve, dashRange, 12),
-      getSnappingResult(Snapping.ONE_SIXTEEN, snaps.oneSixteen, dashRange, 16),
-      getSnappingResult(
-        Snapping.CUSTOM,
-        snaps.custom,
-        dashRange,
-        customDenominator / customNumerator
-      )
-    ]
-  }
 
   const customSnapping = customNumerator.toString().concat('/').concat(customDenominator.toString())
 
