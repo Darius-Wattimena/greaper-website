@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tool } from '../../Types'
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
 interface SelectedToolSelectorProps {
   selectedTool: string

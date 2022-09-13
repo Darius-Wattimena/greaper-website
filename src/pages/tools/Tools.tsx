@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom"
+import { useParams } from 'react-router-dom'
 import ToolsSideBar from '../../components/tools/ToolsSideBar'
 import { isTool, Tool } from '../../Types'
 import SelectedToolSelector from '../../components/tools/SelectedToolSelector'
@@ -26,7 +26,7 @@ export default function Tools() {
         setSelectedTool(parsedTool)
       }
     }
-  }, [])
+  }, [tool])
 
   return (
     <div className="wrapper page">
