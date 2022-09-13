@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tool } from '../../Types'
+import { useNavigate } from "react-router-dom"
 
 interface SelectedToolSelectorProps {
   selectedTool: string
@@ -10,37 +11,51 @@ export default function SelectedToolSelector({
   selectedTool,
   setSelectedTool
 }: SelectedToolSelectorProps) {
+  let navigate = useNavigate()
+
   return (
     <>
       <button
         className={`tools__tool-selector-option ${
-          selectedTool === 'Slider Velocity' ? 'active-tool' : ''
+          selectedTool === 'slider-velocity' ? 'active-tool' : ''
         }`}
-        onClick={() => setSelectedTool('Slider Velocity')}
+        onClick={() => {
+          setSelectedTool('slider-velocity')
+          navigate('/tools/slider-velocity')
+        }}
       >
         Slider Velocity
       </button>
       <button
         className={`tools__tool-selector-option ${
-          selectedTool === 'Snapping' ? 'active-tool' : ''
+          selectedTool === 'snapping' ? 'active-tool' : ''
         }`}
-        onClick={() => setSelectedTool('Snapping')}
+        onClick={() => {
+          setSelectedTool('snapping')
+          navigate('/tools/snapping')
+        }}
       >
         Snapping
       </button>
       <button
         className={`tools__tool-selector-option ${
-          selectedTool === 'Trigger Distance' ? 'active-tool' : ''
+          selectedTool === 'trigger-distance' ? 'active-tool' : ''
         }`}
-        onClick={() => setSelectedTool('Trigger Distance')}
+        onClick={() => {
+          setSelectedTool('trigger-distance')
+          navigate('/tools/trigger-distance')
+        }}
       >
         Trigger Distance
       </button>
       <button
         className={`tools__tool-selector-option ${
-          selectedTool === 'Dash Distance' ? 'active-tool' : ''
+          selectedTool === 'dash-distance' ? 'active-tool' : ''
         }`}
-        onClick={() => setSelectedTool('Dash Distance')}
+        onClick={() => {
+          setSelectedTool('dash-distance')
+          navigate('/tools/dash-distance')
+        }}
       >
         Dash Distance
       </button>

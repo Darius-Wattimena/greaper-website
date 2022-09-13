@@ -1,4 +1,7 @@
-export type Tool = 'Trigger Distance' | 'Slider Velocity' | 'Snapping' | 'Dash Distance'
+export type Tool = 'trigger-distance' | 'slider-velocity' | 'snapping' | 'dash-distance'
+export function isTool (keyInput: string): keyInput is Tool {
+  return ['trigger-distance', 'slider-velocity', 'snapping', 'dash-distance'].includes(keyInput);
+}
 
 export enum SnapType {
   NONE = '✓',

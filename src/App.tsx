@@ -34,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Base />}>
             <Route path="/" element={<Home />} />
+            <Route path="/tools/:tool" element={<Tools />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/guides" element={<Guides markdown={md_guides} />} />
             <Route

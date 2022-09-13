@@ -41,9 +41,9 @@ export default function ToolsSideBar({
 }: ToolsSideBarProps) {
   let selectedToolSideBar = <div />
   switch (selectedTool) {
-    case 'Trigger Distance':
-    case 'Dash Distance':
-    case 'Snapping':
+    case 'trigger-distance':
+    case 'dash-distance':
+    case 'snapping':
       selectedToolSideBar = (
         <SnappingSpecifierForm
           customNumerator={customNumerator}
@@ -53,7 +53,7 @@ export default function ToolsSideBar({
         />
       )
       break
-    case 'Slider Velocity':
+    case 'slider-velocity':
       selectedToolSideBar = (
         <SliderVelocityForm ascendance={ascendance} setAscendance={setAscendance} />
       )

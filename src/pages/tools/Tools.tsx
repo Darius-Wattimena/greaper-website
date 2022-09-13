@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from "react-router-dom"
 import ToolsSideBar from '../../components/tools/ToolsSideBar'
-import { Tool } from '../../Types'
+import { isTool, Tool } from '../../Types'
 import SelectedToolSelector from '../../components/tools/SelectedToolSelector'
 import SelectedTool from '../../components/tools/SelectedTool'
 import './Tools.scss'
 
 export default function Tools() {
-  const [selectedTool, setSelectedTool] = useState<Tool>('Slider Velocity')
+  const [selectedTool, setSelectedTool] = useState<Tool>('slider-velocity')
   const [bpm, setBpm] = useState<number>(180)
   const [circleSize, setCircleSize] = useState(4.0)
   const [sliderVelocity, setSliderVelocity] = useState(1.0)
@@ -14,6 +15,18 @@ export default function Tools() {
   const [ascendance, setAscendance] = useState<boolean>(false)
   const [customNumerator, setCustomNumerator] = useState(3)
   const [customDenominator, setCustomDenominator] = useState(4)
+
+  const { tool } = useParams()
+
+  useEffect(() => {
+    if (tool) {
+      let parsedTool = tool as Tool
+
+      if (isTool(parsedTool)) {
+        setSelectedTool(parsedTool)
+      }
+    }
+  }, [])
 
   return (
     <div className="wrapper page">
@@ -77,16 +90,16 @@ function SelectedToolName({ selectedTool }: SelectedToolNameProps) {
   let selectedToolName
 
   switch (selectedTool) {
-    case 'Trigger Distance':
+    case 'trigger-distance':
       selectedToolName = 'Hyperdash Trigger Distance Calculator'
       break
-    case 'Slider Velocity':
+    case 'slider-velocity':
       selectedToolName = 'Ideal Slider Velocity Calculator'
       break
-    case 'Snapping':
+    case 'snapping':
       selectedToolName = 'Snapping Specifier'
       break
-    case 'Dash Distance':
+    case 'dash-distance':
       selectedToolName = 'Dash Distance Calculator'
       break
     default:

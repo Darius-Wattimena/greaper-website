@@ -27,7 +27,7 @@ export default function SelectedTool({
   customDenominator
 }: SelectedToolProps) {
   switch (selectedTool) {
-    case 'Trigger Distance':
+    case 'trigger-distance':
       return (
         <HyperTriggerDistanceCalculator
           bpm={bpm}
@@ -38,9 +38,9 @@ export default function SelectedTool({
           customDenominator={customDenominator}
         />
       )
-    case 'Slider Velocity':
+    case 'slider-velocity':
       return <SliderVelocityCalculator bpm={bpm} ascendance={ascendance} />
-    case 'Snapping':
+    case 'snapping':
       return (
         <SnappingSpecifier
           bpm={bpm}
@@ -48,7 +48,7 @@ export default function SelectedTool({
           customDenominator={customDenominator}
         />
       )
-    case 'Dash Distance':
+    case 'dash-distance':
       return (
         <DashDistanceCalculator
           bpm={bpm}
