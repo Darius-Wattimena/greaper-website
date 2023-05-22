@@ -61,7 +61,7 @@ export default function SliderVelocityCalculator({
             The calculated SVs are based on the catchers walk speed (300 units per second).
             <hr />
             <p>The "Custom Multiplier" can be used to calculate the following:</p>
-            <code>(300 / bpm) * custom walk speed</code>
+            <code>(300 / bpm) * custom multiplier</code>
           </p>
         </div>
       </div>
