@@ -43,7 +43,7 @@ export default function SliderVelocityForm({
             />
             <CheckboxInput
               id="greaper"
-              label="Greaper rounding"
+              label="Greaper ceiling"
               initialValue={greaper}
               booleanSetter={setGreaper}
             />
