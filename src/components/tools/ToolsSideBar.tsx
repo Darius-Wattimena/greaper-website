@@ -16,10 +16,14 @@ interface ToolsSideBarProps {
   selectedTool: Tool
   ascendance: boolean
   setAscendance: React.Dispatch<React.SetStateAction<boolean>>
+  greaper: boolean
+  setGreaper: React.Dispatch<React.SetStateAction<boolean>>
   customNumerator: number
   setCustomNumerator: React.Dispatch<React.SetStateAction<number>>
   customDenominator: number
   setCustomDenominator: React.Dispatch<React.SetStateAction<number>>
+  customWalkSpeedMultiplier: number
+  setCustomWalkSpeedMultiplier: React.Dispatch<React.SetStateAction<number>>
 }
 
 export default function ToolsSideBar({
@@ -34,10 +38,14 @@ export default function ToolsSideBar({
   setSliderVelocityMultiplier,
   ascendance,
   setAscendance,
+  greaper,
+  setGreaper,
   customNumerator,
   setCustomNumerator,
   customDenominator,
-  setCustomDenominator
+  setCustomDenominator,
+  customWalkSpeedMultiplier,
+  setCustomWalkSpeedMultiplier
 }: ToolsSideBarProps) {
   let selectedToolSideBar = <div />
   switch (selectedTool) {
@@ -55,7 +63,14 @@ export default function ToolsSideBar({
       break
     case 'slider-velocity':
       selectedToolSideBar = (
-        <SliderVelocityForm ascendance={ascendance} setAscendance={setAscendance} />
+        <SliderVelocityForm
+          ascendance={ascendance}
+          setAscendance={setAscendance}
+          greaper={greaper}
+          setGreaper={setGreaper}
+          customWalkSpeedMultiplier={customWalkSpeedMultiplier}
+          setCustomWalkSpeedMultiplier={setCustomWalkSpeedMultiplier}
+        />
       )
       break
     default:

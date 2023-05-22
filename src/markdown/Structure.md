@@ -25,6 +25,6 @@ The size of the fruits is determined by the Circle Size (CS) of the map. While t
 
 #### Slider Velocity
 
-The Slider Velocity (SV) is very important for maintaining structure. As 1.0x distance is mainly used for the _ideal_ walking. Using the correct SV will determine how far this walking distance will be. Because of this the [Ideal Slider Velocity Calculator](../../tools) tool provides a different SV for each difficulty.
+The Slider Velocity (SV) is very important for maintaining structure. As 1.0x distance is mainly used for the _ideal_ walking. Using the correct SV will determine how far this walking distance will be. Because of this the [Slider Velocity Calculator](../../tools) tool provides a different SV for each difficulty.
 
 When a Slider Velocity Multiplier (SVM) is used it will affect the set SV, thus also effecting all the X distances like the SV does. 

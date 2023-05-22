@@ -8,23 +8,27 @@ import DashDistanceCalculator from './dashDistance/DashDistanceCalculator'
 interface SelectedToolProps {
   selectedTool: Tool
   ascendance: boolean
+  greaper: boolean
   bpm: number
   circleSize: number
   sliderVelocity: number
   sliderVelocityMultiplier: number
   customNumerator: number
   customDenominator: number
+  customWalkSpeedMultiplier: number
 }
 
 export default function SelectedTool({
   selectedTool,
   ascendance,
+  greaper,
   bpm,
   circleSize,
   sliderVelocity,
   sliderVelocityMultiplier,
   customNumerator,
-  customDenominator
+  customDenominator,
+  customWalkSpeedMultiplier
 }: SelectedToolProps) {
   switch (selectedTool) {
     case 'trigger-distance':
@@ -39,7 +43,12 @@ export default function SelectedTool({
         />
       )
     case 'slider-velocity':
-      return <SliderVelocityCalculator bpm={bpm} ascendance={ascendance} />
+      return <SliderVelocityCalculator
+        bpm={bpm}
+        ascendance={ascendance}
+        greaper={greaper}
+        customWalkSpeedMultiplier={customWalkSpeedMultiplier}
+      />
     case 'snapping':
       return (
         <SnappingSpecifier

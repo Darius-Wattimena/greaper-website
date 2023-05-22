@@ -16,7 +16,8 @@ export enum Difficulty {
   PLATTER = 'Platter',
   RAIN = 'Rain',
   OVERDOSE = 'Overdose',
-  DELUGE = 'Deluge'
+  DELUGE = 'Deluge',
+  CUSTOM = 'Custom'
 }
 
 export enum Snapping {
