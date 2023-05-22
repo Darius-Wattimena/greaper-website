@@ -43,12 +43,14 @@ export default function SelectedTool({
         />
       )
     case 'slider-velocity':
-      return <SliderVelocityCalculator
-        bpm={bpm}
-        ascendance={ascendance}
-        greaper={greaper}
-        customWalkSpeedMultiplier={customWalkSpeedMultiplier}
-      />
+      return (
+        <SliderVelocityCalculator
+          bpm={bpm}
+          ascendance={ascendance}
+          greaper={greaper}
+          customMultiplier={customWalkSpeedMultiplier}
+        />
+      )
     case 'snapping':
       return (
         <SnappingSpecifier

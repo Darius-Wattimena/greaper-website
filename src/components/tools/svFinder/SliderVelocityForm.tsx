@@ -1,6 +1,6 @@
 import React from 'react'
 import CheckboxInput from '../../form/CheckboxInput'
-import NumberInput from "../../form/NumberInput"
+import NumberInput from '../../form/NumberInput'
 
 interface SliderVelocityFormProps {
   ascendance: boolean

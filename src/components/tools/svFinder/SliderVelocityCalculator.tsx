@@ -5,14 +5,14 @@ interface SliderVelocityCalculatorProps {
   bpm: number
   ascendance: boolean
   greaper: boolean
-  customWalkSpeedMultiplier: number
+  customMultiplier: number
 }
 
 export default function SliderVelocityCalculator({
   bpm,
   ascendance,
   greaper,
-  customWalkSpeedMultiplier
+  customMultiplier
 }: SliderVelocityCalculatorProps) {
   const [result, setResult] = useState<SliderVelocityResult[]>([])
 
@@ -42,12 +42,12 @@ export default function SliderVelocityCalculator({
         { diff: Difficulty.RAIN, sv: rainSV * rainMultiplier, speed: rainMultiplier },
         { diff: Difficulty.OVERDOSE, sv: rainSV * overdoseMultiplier, speed: overdoseMultiplier },
         { diff: Difficulty.DELUGE, sv: rainSV * delugeMultiplier, speed: delugeMultiplier },
-        { diff: Difficulty.CUSTOM, sv: rainSV * customWalkSpeedMultiplier, speed: customWalkSpeedMultiplier }
+        { diff: Difficulty.CUSTOM, sv: rainSV * customMultiplier, speed: customMultiplier }
       ]
     }
 
     setResult(calculateIdealSliderVelocity())
-  }, [bpm, ascendance, customWalkSpeedMultiplier])
+  }, [bpm, ascendance, customMultiplier])
 
   return (
     <div className="row">
@@ -55,7 +55,8 @@ export default function SliderVelocityCalculator({
         <div className="note-col">
           <p className="note">
             <strong className="fake-bold">
-              While the given result provides the "Base SV", these values are opinionated. Keep in mind to test yourself as well.
+              While the given result provides the "Base SV", these values are opinionated. Keep in
+              mind to test yourself as well.
             </strong>{' '}
             The calculated SVs are based on the catchers walk speed (300 units per second).
             <hr />
