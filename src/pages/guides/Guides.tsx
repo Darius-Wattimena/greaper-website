@@ -1,5 +1,5 @@
 import React from 'react'
-import Markdown from '../../components/markdown/Markdown'
+import MarkdownFile from '../../components/markdown/MarkdownFile'
 import { NavLink } from 'react-router-dom'
 
 interface GuidesProps {
@@ -25,7 +25,7 @@ export default function Guides({ markdown, guideName }: GuidesProps) {
       </div>
       <div className="page__wrapper">
         <div className="page__container">
-          <Markdown markdownFile={markdown} />
+          <MarkdownFile markdownFile={markdown} />
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'react-markdown'
 import './Markdown.scss'
 
 interface MarkdownProps {
   markdownFile: string
 }
 
-export default function Markdown({ markdownFile }: MarkdownProps) {
+export default function MarkdownFile({ markdownFile }: MarkdownProps) {
   const [source, setSource] = useState('')
 
   fetch(markdownFile)
@@ -18,7 +18,9 @@ export default function Markdown({ markdownFile }: MarkdownProps) {
   return (
     <div className="row">
       <div className="col-12">
-        <ReactMarkdown className="page__markdown">{source}</ReactMarkdown>
+        <div className="page__markdown">
+          <Markdown>{source}</Markdown>
+        </div>
       </div>
     </div>
   )

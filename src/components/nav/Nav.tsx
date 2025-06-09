@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../../greaper.png'
+import logo from '../../assets/greaper.png'
 import './Nav.scss'
 
 export default function Nav() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import Markdown from '../../components/markdown/Markdown'
+import MarkdownFile from '../../components/markdown/MarkdownFile'
 import md from './Home.md'
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="page__header">Home</h1>
       <div className="page__wrapper">
         <div className="page__container">
-          <Markdown markdownFile={md} />
+          <MarkdownFile markdownFile={md} />
         </div>
       </div>
     </div>

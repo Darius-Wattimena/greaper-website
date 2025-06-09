@@ -6,7 +6,7 @@ import Nav from './components/nav/Nav'
 import Tools from './pages/tools/Tools'
 import Guides from './pages/guides/Guides'
 import { useDarkMode } from 'usehooks-ts'
-import github from './github.png'
+import github from './assets/github.png'
 import md_guides from './markdown/Guides.md'
 import md_flow from './markdown/Flow.md'
 import md_commonPatterning from './markdown/CommonPatterning.md'
@@ -16,7 +16,7 @@ import md_structure from './markdown/Structure.md'
 import './App.scss'
 
 function App() {
-  const { isDarkMode, toggle } = useDarkMode(false)
+  const { isDarkMode, toggle } = useDarkMode({ defaultValue: false })
 
   useEffect(() => {
     if (isDarkMode) {
