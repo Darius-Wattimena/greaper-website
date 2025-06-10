@@ -4,45 +4,42 @@
   .tools__side-bar__header {
     background-color: var(--background-color-tools-header);
     padding: $padding;
-    color: var(--text-color-light);
+    color: var(--text-color-flipped);
   }
 
   .tools__tool-header-row {
     display: flex;
-    border: 1px solid var(--background-color-tools-header);
 
     .tools__side-bar__header {
-      border-right: 1px solid var(--background-color-tools-header);
+
     }
   }
 
   .tools__tool-row {
     display: flex;
-    border: 1px solid var(--background-color-tools-header);
-    background-color: var(--background-color-tool);
+    background-color: var(--background-color-container);
 
     .tools__side-bar {
       width: 25%;
-      //border-right: 1px solid var(--border-color);
-      border-right: 1px solid var(--background-color-tools-header);
       background-color: var(--background-color-tools-settings);
 
       .tools-settings-header {
         background-color: var(--background-color-tools-header);
         padding: 0.5rem 8%;
-        color: var(--text-color-light);
+        color: var(--text-color-flipped);
       }
 
       .tools-settings,
       .beatmap-settings {
-        padding: 0.5rem 8%;
+        padding: $padding-large;
+        //padding: 0.5rem 8%;
       }
     }
   }
 
   .tools__tool-name {
     background-color: var(--background-color-tools-header);
-    color: var(--text-color-light);
+    color: var(--text-color-flipped);
   }
 
   .tools_tool-container {
@@ -50,27 +47,46 @@
   }
 
   .tools__tool {
-    background-color: var(--background-color-tool);
+    background-color: var(--background-color-container);
   }
 }
 
 .tools__tool-selector-row {
-  background-color: var(--primary-color);
-  border: 1px solid var(--secondary-color);
+  background-color: var(--background-color-tool-selected);
 
   .tools__tool-selector {
     width: 100%;
     display: flex;
+    background-color: var(--primary-color);
 
-    .tools__tool-selector-option {
-      padding: 1rem 2%;
-      font-size: 1.2rem;
-      transition: background-color, box-shadow 300ms;
+    .tools__tool-selector-button-container {
+      width: 100%;
+      background-color: var(--background-color-tool-selected);
 
-      &.active-tool,
-      &:hover {
-        box-shadow: inset 0 -5px 0 var(--secondary-color);
-        //background-color: var(--secondary-color);
+      .tools__tool-selector-option {
+        width: 100%;
+        padding: 1rem 2%;
+        font-size: 1.2rem;
+        background-color: var(--primary-color);
+
+        &.active-tool-before {
+          border-bottom-right-radius: $border-radius-large;
+        }
+
+        &.active-tool-after {
+          border-bottom-left-radius: $border-radius-large;
+        }
+      }
+    }
+
+    .tools__tool-selector-button-container.active-tool-container {
+      background-color: var(--primary-color);
+
+      .active-tool {
+        border-top-left-radius: $border-radius-large;
+        border-top-right-radius: $border-radius-large;
+        background-color: var(--background-color-tool-selected);
+        color: var(--text-color-flipped);
       }
     }
   }

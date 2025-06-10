@@ -22,7 +22,7 @@ button {
   border: unset;
   text-decoration: none;
   padding: unset;
-  color: var(--text-color-light);
+  color: var(--text-color);
 }
 
 .website__wrapper {
@@ -35,7 +35,6 @@ button {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding: $padding-large;
 }
 
 .content-wrapper {
@@ -43,12 +42,12 @@ button {
 }
 
 .page {
-  margin-top: $padding;
-  margin-bottom: $padding;
+  margin-top: $padding-large;
+  margin-bottom: $padding-large;
 
   .page__header {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
+    background-color: var(--secondary-color);
+    color: var(--text-color-flipped);
     padding: $padding-small $padding-large;
     margin: unset;
   }
@@ -73,7 +72,7 @@ button {
     }
 
     * {
-      color: var(--text-color-light);
+      color: var(--text-color-flipped);
     }
   }
 
@@ -99,46 +98,77 @@ button {
   .note {
     margin-top: unset;
     padding: $padding;
-    background-color: var(--background-color-tools-settings);
-    border: 1px solid var(--background-color-tools-settings);
+    background-color: var(--background-color-container);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
   }
 }
 
-input[type='number'],
-input[type='text'] {
-  width: 100%;
-  padding: $padding;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: var(--text-color-dark);
+.input-field {
+  display: flex;
+  flex-direction: column;
 
-  &.form-input__error {
-    border-color: var(--red-color);
-    background-color: var(--red-color-background);
+  input[type='number'],
+  input[type='text'] {
+    max-width: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: $padding;
+    font-size: 1.1em;
+
+    &:focus {
+      outline-width: 0;
+    }
+
+    &::placeholder {
+      color: var(--text-color-placeholder);
+    }
+
+    &.form-input__error {
+      border-color: var(--red-color);
+      background-color: var(--red-color-background);
+    }
+  }
+
+  &.snap-input {
+    .snap-input__container {
+      display: flex;
+      align-items: center;
+
+      input {
+        width: 40%;
+      }
+
+      .snap-input__divider {
+        width: 20%;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
   }
 }
 
 .checkbox-input {
   display: flex;
   padding: 0.1rem 2%;
+  justify-content: space-between;
 }
 
 input[type='checkbox'] {
+  transform: scale(1.2);
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
   background: var(--background-color-container);
-  border-radius: 5px;
+  border-radius: $border-radius;
   position: relative;
   box-sizing: content-box;
   width: 1.3em;
   height: 1.3em;
   border: 1px solid var(--border-color);
-  transition: all 0.2s linear;
   margin: $padding-small;
 }
 
@@ -152,31 +182,39 @@ input[type='checkbox']:focus {
   box-shadow: none;
 }
 
+code {
+  padding: $padding-large;
+  border-radius: $border-radius;
+  border: var(--border-color) solid 1px;
+  background-color: var(--background-color-code);
+}
+
 table {
-  border-spacing: unset;
+  border-radius: $border-radius-large;
+  border-spacing: 0;
   table-layout: fixed;
   width: 100%;
+  overflow: hidden;
+
+
+  thead {
+    background-color: var(--background-color-table-header);
+  }
+
+  tbody {
+    tr {
+      background-color: var(--background-color-table);
+
+      &:nth-child(even) {
+        background-color: var(--background-color-table-striped);
+      }
+    }
+  }
 
   td,
   th {
-    border: 1px solid var(--border-color);
     padding: $padding;
     text-align: center;
-  }
-
-  th {
-    padding-top: $padding;
-    padding-bottom: $padding;
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-  }
-
-  tr {
-    background-color: var(--background-color-table);
-
-    &:nth-child(even) {
-      background-color: var(--background-color-table-striped);
-    }
   }
 }
 
@@ -204,18 +242,17 @@ table {
     margin: $padding;
     padding: $padding;
     border: unset;
-    border-radius: 5px;
-    transition: background-color 300ms;
-    color: var(--text-color-light);
-    background-color: var(--darkmode-toggle-background);
+    border-radius: $border-radius;
+    color: var(--text-color-flipped);
+    background-color: var(--background-color-container);
 
     &:hover {
-      background-color: var(--darkmode-toggle-background-hover);
+      background-color: var(--secondary-color);
     }
 
     .button__container {
       .button__text {
-        color: var(--text-color-light);
+        color: var(--text-color-flipped);
       }
     }
   }
@@ -231,6 +268,17 @@ table {
       display: flex;
       padding-inline-start: unset;
       font-size: 1.2em;
+
+      &.dark-mode-toggle button {
+        background-color: var(--darkmode-toggle-background);
+        .button__text {
+          color: var(--text-color-flipped);
+        }
+
+        &:hover {
+          background-color: var(--darkmode-toggle-background-hover);
+        }
+      }
     }
 
     .footer-nav__item {

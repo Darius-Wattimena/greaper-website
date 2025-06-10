@@ -4,8 +4,8 @@ On this part of my website you can find a handful of guides that can help you ge
 
 ## Basic Topics
 
-- [Flow](/guides/flow)
-- [Structure](/guides/structure) (WIP)
+- [Flow](./guides/flow)
+- [Structure](./guides/structure) (WIP)
 - Basic patterning (WIP)
 - Finding the SV for your difficulty (WIP)
 - How to map to the music (WIP)

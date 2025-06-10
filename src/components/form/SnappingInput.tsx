@@ -59,37 +59,33 @@ export default function SnappingInput({
   }
 
   return (
-    <>
-      <label htmlFor={id}>
+    <div className="input-field snap-input">
+      <label htmlFor={id} className="col-12 no-margin">
         <div className="col-12">{label}</div>
       </label>
-      <div>
-        <div className="col-5">
-          <input
-            id={id}
-            type="text"
-            value={numeratorFormValue}
-            className={numeratorHasInvalidInput ? 'form-input__error' : ''}
-            onChange={event => {
-              onNumeratorChange(event)
-            }}
-          />
-        </div>
-        <div className="col-2" style={{ textAlign: 'center', fontSize: '1.5rem' }}>
+      <div className="snap-input__container no-spacing">
+        <input
+          id={id}
+          type="text"
+          value={numeratorFormValue}
+          className={numeratorHasInvalidInput ? 'form-input__error' : ''}
+          onChange={event => {
+            onNumeratorChange(event)
+          }}
+        />
+        <div className="snap-input__divider">
           /
         </div>
-        <div className="col-5">
-          <input
-            id={id}
-            type="text"
-            value={denominatorFormValue}
-            className={denominatorHasInvalidInput ? 'form-input__error' : ''}
-            onChange={event => {
-              onDenominatorChange(event)
-            }}
-          />
-        </div>
+        <input
+          id={id + '-denominator'}
+          type="text"
+          value={denominatorFormValue}
+          className={denominatorHasInvalidInput ? 'form-input__error' : ''}
+          onChange={event => {
+            onDenominatorChange(event)
+          }}
+        />
       </div>
-    </>
+    </div>
   )
 }

@@ -31,9 +31,9 @@ export default function Tools() {
   }, [tool])
 
   return (
-    <div className="wrapper page">
-      <div className="row tools__tool-selector-row">
-        <div className="col-12 no-spacing tools__tool-selector">
+    <div className="container wrapper page">
+      <div className="tools__tool-selector-row">
+        <div className="row no-spacing tools__tool-selector">
           <SelectedToolSelector selectedTool={selectedTool} setSelectedTool={setSelectedTool} />
         </div>
       </div>

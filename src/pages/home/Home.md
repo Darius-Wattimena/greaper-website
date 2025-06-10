@@ -1,9 +1,15 @@
-Welcome to my own website. The goal of this website is to provide guides and tooling for mappers of osu!catch. The site is still in its early stages so not much can be found here yet.
+**Welcome! The goal of this website is to provide tooling for osu!catch mappers.**
 
-So far the site contains of tools which can do the following:
+So far the site can help you with the following:
 
-- Calculate the trigger distance of a hyperdash
-- Calculate the ideal slider velocity for your difficulty
-- Calculate if a snapping is unrankable at the given BPM
+- Calculate the ideal slider velocity for your difficulty.
+- Calculate the basic-snapped, higher-snapped and unrankable snap for any given BPM.
+- Calculate the trigger distance of a hyperdash.
+- Calculate an indication what dash distances you can use.
 
-If other tooling is desired then feel free to contact me via discord (Greaper#0001) or open a github issue at [the GitHub repository](https://github.com/Darius-Wattimena/greaper-website/issues).
+
+## Suggestions
+
+If you have any suggestions for new tools or features, please let me know! I am always looking to improve the site and add new functionality that can help mappers. 
+
+To make me aware of your suggestions, you can either open an issue on the [GitHub repository](https://github.com/Darius-Wattimena/greaper-website/issues), contact me via osu by sending [me a DM](https://osu.ppy.sh/home/messages/users/2369776) or by contacting me directly via Discord by messaging _greaper_.

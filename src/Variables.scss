@@ -1,48 +1,44 @@
 html[data-theme='light'] {
-  --primary-color: #716f81;
-  --secondary-color: #b97a95;
-  --text-color: #111111;
-  --text-color-light: #eeeeee;
-  --text-color-dark: #0c0c0c;
-  --border-color: #c6c6c6;
+  --primary-color: #cfcfcf;
+  --secondary-color: #833232;
+  --text-color: #2c2c2c;
+  --text-color-flipped: #e3e3e3;
   --background-color: #ffffff;
-  --background-color-container: #f9f9f9;
+  --background-color-container: #ececec;
+  --border-color: #f1f1f1;
 
-  --background-color-tool: var(--background-color-container);
-  --background-color-tools-header: #716f81ff;
-  --background-color-tools-settings: darken(var(--background-color-tool), 5%);
+  --background-color-code: #b7b7c5;
+  --background-color-table: color-mix(in srgb, var(--primary-color) 80%, white);
+  --background-color-table-header: color-mix(in srgb, var(--primary-color) 92%, black);
+  --background-color-table-striped: color-mix(in srgb, var(--primary-color) 95%, black);
+  --background-color-tools-settings: color-mix(in srgb, var(--background-color-container) 95%, black);
 
-  --background-color-table: var(--background-color);
-  --background-color-table-striped: darken(var(--background-color), 5%);
+  --darkmode-toggle-background: #2d2d2d;
+  --darkmode-toggle-background-hover: #833232;
 
-  --red-color: #c24e4e;
-  --red-color-background: lighten(var(--red-color), 40%);
-  --orange-color: #c2944e;
-  --green-color: #4ec254;
-
-  --darkmode-toggle-background: #64425c;
-  --darkmode-toggle-background-hover: #54374d;
+  --red-color: #a75353;
+  --red-color-background: color-mix(in srgb, var(--red-color) 60%, white);
+  --orange-color: #a77953;
+  --green-color: #5ba753;
 }
 
 html[data-theme='dark'] {
   --primary-color: #2d2d2d;
-  --secondary-color: #944444;
+  --secondary-color: #833232;
   --text-color: #dcdcdc;
-  --text-color-light: #e3e3e3;
-  --text-color-dark: #0a0a0a;
+  --text-color-flipped: #e3e3e3;
   --background-color: #1d1d1d;
   --background-color-container: #383838;
   --border-color: #545454;
 
-  --background-color-tool: var(--background-color-container);
-  --background-color-tools-header: #773f3f;
-  --background-color-tools-settings: lighten(var(--background-color-tool), 5%);
-
-  --background-color-table: lighten(var(--background-color), 2%);
-  --background-color-table-striped: lighten(var(--background-color), 5%);
+  --background-color-code: #33333e;
+  --background-color-table: color-mix(in srgb, var(--background-color) 95%, white);
+  --background-color-table-header: color-mix(in srgb, var(--background-color) 99%, black);
+  --background-color-table-striped: color-mix(in srgb, var(--background-color) 98%, white);
+  --background-color-tools-settings: color-mix(in srgb, var(--background-color-container) 95%, white);
 
   --red-color: #814242;
-  --red-color-background: lighten(var(--red-color), 40%);
+  --red-color-background: color-mix(in srgb, var(--red-color) 60%, white);
   --orange-color: #816f42;
   --green-color: #568142;
 
@@ -50,6 +46,16 @@ html[data-theme='dark'] {
   --darkmode-toggle-background-hover: #573d3d;
 }
 
+html {
+  --text-color-placeholder: #8b8b8b;
+
+  --background-color-tool-selected: var(--secondary-color);
+  --background-color-tools-header: var(--secondary-color);
+}
+
 $padding: 8px;
 $padding-small: 4px;
 $padding-large: 16px;
+
+$border-radius: 5px;
+$border-radius-large: 10px;

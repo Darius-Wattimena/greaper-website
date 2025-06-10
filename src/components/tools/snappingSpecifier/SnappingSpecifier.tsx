@@ -155,7 +155,7 @@ export default function SnappingSpecifier({
           <strong className="fake-bold">This does not take unsnapped objects into account.</strong>{' '}
           For example, at 240 BPM a 1/2 dash is exactly 125 ms. When one of the two objects is
           unsnapped for 1 ms the time between the two objects may be 124 ms instead (which is
-          unrankable).
+          unrankable for a Salad).
         </p>
       </div>
       <div className="col-8">

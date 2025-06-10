@@ -16,7 +16,7 @@ import md_structure from './markdown/Structure.md'
 import './App.scss'
 
 function App() {
-  const { isDarkMode, toggle } = useDarkMode({ defaultValue: false })
+  const { isDarkMode, toggle } = useDarkMode();
 
   useEffect(() => {
     if (isDarkMode) {
@@ -73,9 +73,9 @@ function App() {
             </div>
             <div className={'footer__middle'} />
             <div className={'footer__end'}>
-              <div className={'footer-nav__wrapper'}>
+              <div className={'footer-nav__wrapper dark-mode-toggle'}>
                 <button
-                  className="footer-nav__item beatmap-button"
+                  className="footer-nav__item"
                   onClick={() => {
                     toggle()
                   }}

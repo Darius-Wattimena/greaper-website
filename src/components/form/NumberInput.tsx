@@ -48,8 +48,10 @@ export default function NumberInput({
   }
 
   return (
-    <label htmlFor={id} className="col-12 no-margin">
-      {label}
+    <div className="input-field number-input">
+      <label htmlFor={id} className="col-12 no-margin">
+        {label}
+      </label>
       <input
         id={id}
         type="text"
@@ -59,6 +61,7 @@ export default function NumberInput({
           onFloatChange(event)
         }}
       />
-    </label>
+    </div>
+
   )
 }

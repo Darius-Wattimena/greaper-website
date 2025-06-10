@@ -44,14 +44,11 @@
     display: block;
     padding: 1.5rem 1rem;
 
-    transition: background-color, background-color 300ms;
 
-    &.navbar__item-active {
-      background-color: var(--secondary-color);
-    }
-
+    &.navbar__item-active,
     &:hover {
       background-color: var(--secondary-color);
+      color: var(--text-color-flipped);
     }
   }
 }

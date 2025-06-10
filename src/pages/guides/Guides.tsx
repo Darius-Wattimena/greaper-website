@@ -9,7 +9,7 @@ interface GuidesProps {
 
 export default function Guides({ markdown, guideName }: GuidesProps) {
   return (
-    <div className="wrapper page">
+    <div className="container wrapper page">
       <h1 className="page__header">Guides</h1>
       <div className="page__breadcrumb">
         {guideName ? (

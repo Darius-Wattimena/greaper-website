@@ -2,16 +2,16 @@
 
 .snap-type__disallowed {
   background-color: var(--red-color);
-  color: var(--text-color-light);
+  color: var(--text-color-flipped);
 }
 
 .snap-type__higher-snapped {
   background-color: var(--orange-color);
-  color: var(--text-color-light);
+  color: var(--text-color-flipped);
 }
 
 .snap-type__basic-snapped,
 .snap-type__allowed {
   background-color: var(--green-color);
-  color: var(--text-color-light);
+  color: var(--text-color-flipped);
 }
